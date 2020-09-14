@@ -6,7 +6,7 @@
 
 本人编程零基础，只略懂一些Python。因此本项目部分章节可能很基础，请见谅。
 
-关于Go的其他资源，参考此项目：[https://github.com/LearnGolang/LearnGo](https://github.com/LearnGolang/LearnGo)
+关于Go的其他资源，参考此项目：[https://github.com/0e0w/365GoLang](https://github.com/0e0w/365GoLang)
 
 本项目创建于2020年8月25日，最近的一次更新日期为2020年9月14日。
 
