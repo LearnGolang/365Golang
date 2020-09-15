@@ -28,7 +28,7 @@
   - Go以一种不同寻常的方式来诠释面向对象程序设计。Go没有类继承，甚至没有类。
   - Go不需要在语句或声明后面是有分号结尾。
 
-- [x] Go语言特点：Go语言和其他语言相比的优势是什么？（待补充）
+- [ ] Go语言特点：Go语言和其他语言相比的优势是什么？（待补充）
 
   - 并发性
 
@@ -46,7 +46,7 @@
     tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
     ```
 
-- [ ] Go环境变量：
+- [x] Go环境变量：
 
   - 设置GOPATH。
 
@@ -90,7 +90,7 @@
     CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
     ```
 
-  - go get github.com/LearnGolang/LearnGolang
+  - go get github.com/0e0w/365GoLang
 
   - gofmt //格式化Go代码
 
@@ -106,17 +106,19 @@
 
 - [x] 本节说明：通过一个简单例子认识Go语言的基本结构。
 
-- [x] 一个例子：Hello World
+- [x] 一个例子：Hello World！
 
   ```go
-  //这是我的第一个Go程序
+  // 001
   package main
-  import(
-    "fmt"
+  
+  import (
+  	"fmt"
   )
-  func main()  {
-    	fmt.Print("Hello World")
-  } 
+  
+  func main() {
+  	fmt.Println("Hello World!")
+  }
   ```
 
 
@@ -192,7 +194,10 @@
 
   - :=表示声明
   - name := expression
-  
+
+- [ ] 本节案例：
+
+
   </details>
 <details>
 <summary>Day004: 数据-Go语言常量</summary>
