@@ -8,7 +8,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年8月25日，最近的一次更新日期为2020年9月14日。
+本项目创建于2020年8月25日，最近的一次更新日期为2020年9月15日。
 
 已经更新至Day013: 函数-Go语言函数
 
@@ -41,6 +41,23 @@
 
   - [官网下载](https://golang.org/dl/)之后直接按照安装说明安装即可。
 
+    ```
+    wget https://golang.google.cn/dl/go1.15.2.linux-amd64.tar.gz
+    tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
+    ```
+
+- [ ] Go环境变量：
+
+  - 设置GOPATH。
+
+    ```
+    mkdir ~/.go
+    echo "GOPATH=$HOME/.go" >> ~/.bashrc
+    echo "export GOPATH" >> ~/.bashrc
+    echo "PATH=\$PATH:\$GOPATH/bin # Add GOPATH/bin to PATH for scripting" >> ~/.bashrc
+    source ~/.bashrc
+    ```
+
 - [x] Go语言编辑器：
 
   - [Goland](https://www.jetbrains.com/go)：JetBrains 公司的 Go 开发工具。
@@ -53,22 +70,24 @@
 
   - go bulid hello.go //将hello打包成可执行文件
 
+  - 执行下列命令前需要配置好GOPATH路径。
+
     ```
     //Windows下编译Mac, Linux平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build test.go
-    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build test.go
+    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
+    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build 001.go
     ```
 
     ```
     //Linux下编译Mac, Windows平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build test.go
-    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build test.go
+    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
+    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
     ```
 
     ```
     //Mac下编译Linux, Windows平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build test.go
-    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build test.go
+    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build 001.go
+    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
     ```
 
   - go get github.com/LearnGolang/LearnGolang
