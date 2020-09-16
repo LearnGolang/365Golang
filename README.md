@@ -113,6 +113,11 @@
     https://mirrors.aliyun.com/goproxy/
     https://goproxy.io/zh/
     ```
+    
+    ```
+    go env -w GO111MODULE=on
+    go env -w GOPROXY=https://goproxy.cn,direct
+    ```
 
 - [x] Go语言未来：
 
@@ -1007,7 +1012,7 @@
   
 
   </details>
-### 第二章：Go标准库
+### 第三章：Go项目参考
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
 
@@ -1026,7 +1031,45 @@
   
 
   </details>
-### 第三章：Go语言框架
+### 第四章：Go标准库包
+<details>
+<summary>Day000: 基础-Go语言并发</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+### 第五章：Go语言框架
+<details>
+<summary>Day000: 基础-Go语言并发</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+### 第六章：Go语言框架
 <details>
 <summary>Day100: 项目-Go漏洞扫描</summary>
 
