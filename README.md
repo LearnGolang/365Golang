@@ -91,7 +91,11 @@
     CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
     ```
 
-  - go get github.com/0e0w/365GoLang
+  - ```
+    go get github.com/0e0w/365GoLang
+    ```
+
+    使用go get之前需要安装git。
 
   - gofmt //格式化Go代码
 
@@ -99,8 +103,9 @@
 
 - [x] Go语言未来：
 
-  - Go语言未来的发展前景是光明的。
-
+  - Go语言拥有大量的优秀社区框架。
+- Go语言的未来发展前景是光明的。
+  
   </details>
 <details>
 <summary>Day002: 基础-Go语言例子</summary>
@@ -167,8 +172,23 @@
    
    - 函数的声明包含一个名字、一个参数列表、一个可选的返回值列表以及函数体。
    
+- [x] 本节案例：
 
- </details>
+   ```go
+   // 002
+   package main
+   
+   import (
+   	"fmt"
+   )
+   
+   func main() {
+   	fmt.Println("Hello World!")
+   }
+   ```
+
+</details>
+
 <details>
 <summary>Day003: 数据-Go语言变量</summary>
 
@@ -197,7 +217,6 @@
   - name := expression
 
 - [ ] 本节案例：
-
 
   </details>
 <details>
@@ -254,7 +273,12 @@
      //iota 表示从 0 开始自动加 1，所以 i=1<<0, j=3<<1（<< 表示左移的意思）
      //即：i=1, j=6，这没问题，关键在 k 和 l，从输出结果看 k=3<<2，l=3<<3。
       ```
-</details>
+  
+- [x] 本节案例：
+
+  
+
+  </details>
 <details>
 <summary>Day005: 数据-Go基本数据</summary>
 
@@ -276,6 +300,10 @@
 - [x] 字符串类型：
 
   - 字符串就是一串固定长度的字符连接起来的字符序列。Go 的字符串是由单个字节连接起来的。Go 语言的字符串的字节使用 UTF-8 编码标识 Unicode 文本。
+
+- [x] 本节案例：
+
+  
 
   </details>
 <details>
@@ -305,9 +333,14 @@
   - 数组元素可以通过索引（位置）来读取。格式为数组名后加中括号，中括号中为索引的值。
 
 - [ ] 多维数组：
+
 - [ ] 向函数传递数组：
 
-</details>
+- [x] 本节案例：
+
+  
+
+  </details>
 
 <details>
 <summary>Day007: 数据-Go语言切片</summary>
@@ -335,6 +368,10 @@
 
 - [ ] 切片截取：
 
+- [ ] 本节案例：
+
+  
+  
   </details>
 <details>
 <summary>Day008: 数据-Go语言集合</summary>
@@ -362,6 +399,10 @@
 
   - go run hello.go //编译运行hello.go
 
+- [ ] 本节案例：
+  
+  
+  
   </details>
 <details>
 <summary>Day009: 数据-Go语言结构</summary>
@@ -399,7 +440,11 @@
 - [x] 测试待删除：
 
   - go run hello.go //编译运行hello.go
-
+  
+- [ ] 本节案例：
+  
+  
+  
   </details>      
 <details>
 <summary>Day010: 语句-Go运算符号</summary>
@@ -487,6 +532,12 @@
   |   2    |        &&        |
   |   1    |       \|\|       |
   
+  
+  
+- [ ] 本节案例：
+
+  
+
   </details>
 <details>
 <summary>Day011: 语句-Go条件语句</summary>
@@ -571,6 +622,10 @@
 
   注意：Go 没有三目运算符，所以不支持 ?: 形式的条件判断。
 
+- [ ] 本节案例：
+  
+  
+  
   </details>
 <details>
 <summary>Day012: 语句-Go循环语句</summary>
@@ -752,7 +807,7 @@
         }
     }
     ```
-  
+- [ ] 本节案例：  
   </details> 
 <details>
 <summary>Day013: 函数-Go语言函数</summary>
@@ -855,8 +910,8 @@
 
   - go run hello.go //编译运行hello.go
 
+- [ ] 本节案例：
   </details>
-
 <details>
 <summary>Day000: 基础-Go语言方法</summary>
 
@@ -869,7 +924,7 @@
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
-
+- [ ] 本节案例：
   </details>
 
 <details>
@@ -884,7 +939,7 @@
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
-
+- [ ] 本节案例：
   </details>
 
 <details>
@@ -899,7 +954,7 @@
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
-
+- [ ] 本节案例：
   </details>
 <details>
 <summary>Day100: 项目-Go漏洞扫描</summary>
@@ -913,7 +968,7 @@
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
-
+- [ ] 本节案例：
   </details>
 <details>
 <summary>Day101: 项目-Go域名扫描</summary>
@@ -927,7 +982,7 @@
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
-
+- [ ] 本节案例：
   </details>
 <details>
 <summary>Day200: 源码-Go语言源码</summary>
@@ -941,7 +996,7 @@
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
-
+- [ ] 本节案例：
   </details>
 <details>
 <summary>Day365: Go语言入门</summary>
@@ -955,7 +1010,7 @@
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
-
+- [ ] 本节案例：
   </details>
 
 ## 0x03-参考资源
