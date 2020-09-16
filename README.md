@@ -67,7 +67,7 @@
   - [LiteIDE](http://liteide.org)：一款开源跨平台轻量级的Go语言IDE。
   - [Atom](https://atom.io)：一款跨平台开源文本编辑器。
   
-- [x] Go语言命令：
+- [x] Go语言基础命令：
 
   - go run hello.go //编译运行hello.go
 
@@ -105,9 +105,19 @@
     go env //查看Go环境配置
     ```
 
+- [x] Go语言代理：
+
+  - Go语言大量项目托管于Github，导致国内进行构建程序时会出奇的慢。可使用下列的代理加快构建。
+
+    ```
+    https://mirrors.aliyun.com/goproxy/
+    https://goproxy.io/zh/
+    ```
+
 - [x] Go语言未来：
 
   - Go语言拥有大量的优秀社区框架。
+  
 - Go语言的未来发展前景是光明的。
   
   </details>
