@@ -94,14 +94,16 @@
     ```
 
   - ```
-    go get github.com/0e0w/365GoLang
+    go get github.com/0e0w/365GoLang //使用go get之前需要安装git。
     ```
 
-    使用go get之前需要安装git。
+  - ```
+    gofmt //格式化Go代码
+    ```
 
-  - gofmt //格式化Go代码
-
-  - go env //查看Go环境配置
+  - ```
+    go env //查看Go环境配置
+    ```
 
 - [x] Go语言未来：
 
