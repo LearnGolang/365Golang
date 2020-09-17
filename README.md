@@ -6,9 +6,11 @@
 
 本人编程零基础，只略懂一些Python。因此本项目部分章节可能很基础，请见谅。
 
+本项目大量参考复制借鉴了其他类似项目。感谢这些作者们，感谢Gopher。
+
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年8月25日，最近的一次更新日期为2020年9月16日。
+本项目创建于2020年8月25日，最近的一次更新日期为2020年9月17日。
 
 已经更新至Day013: 函数-Go语言函数
 
@@ -995,7 +997,43 @@
   </details>
 ### 第二章：Go语言进阶
 <details>
-<summary>Day000: 基础-Go语言并发</summary>
+<summary>Day000: 基础-Go语言协程</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 基础-Go语言通道</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 基础-Go同步与锁</summary>
 
 - [ ] 本节说明：
 
