@@ -12,7 +12,7 @@
 
 本项目创建于2020年8月25日，最近的一次更新日期为2020年9月17日。
 
-已经更新至Day013: 函数-Go语言函数
+已经更新至第一章Day013: 函数-Go语言函数
 
 ## 0x02-学习进度
 
@@ -466,7 +466,79 @@
   
   
   
-  </details>      
+  </details> 
+<details>
+<summary>Day000: 基础-Go语言指针</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 基础-Go语言管道</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 基础-Go语言接口</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 基础-Go语言函数</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
 <details>
 <summary>Day010: 语句-Go运算符号</summary>
 
