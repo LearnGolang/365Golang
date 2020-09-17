@@ -209,9 +209,26 @@
    ```
 
 </details>
-
 <details>
-<summary>Day003: 数据-Go语言变量</summary>
+<summary>Day003: 基础-Go约定惯例</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day004: 数据-Go语言变量</summary>
 
 - [x] 本节说明：Go语言变量的使用。
 
@@ -285,7 +302,7 @@
 
   </details>
 <details>
-<summary>Day004: 数据-Go语言常量</summary>
+<summary>Day005: 数据-Go语言常量</summary>
 
 - [x] 本节说明：Go语言常量使用。
 
@@ -311,13 +328,14 @@
     ```
     显式类型定义：const b string = "abc"
     隐式类型定义：const b = "abc"
+    ```
   ```
     
   - 常量也可以在单行进行多重赋值：
-
+  
     ```go
     const a, b, c = 1, false, "str" //多重赋值
-    ```
+  ```
 
 - [x] iota： 特殊常量
 
@@ -390,7 +408,7 @@
 
   </details>
 <details>
-<summary>Day005: 数据-Go基本数据</summary>
+<summary>Day006: 数据-Go基本数据</summary>
 
 - [x] 本节说明：本节介绍Go语言的一些基本数据。
 
@@ -417,7 +435,7 @@
 
   </details>
 <details>
-<summary>Day006: 数据-Go语言数组</summary>
+<summary>Day007: 数据-Go语言数组</summary>
 
 - [x] 本节说明：本节介绍数组的相关概念。
 
@@ -453,7 +471,7 @@
   </details>
 
 <details>
-<summary>Day007: 数据-Go语言切片</summary>
+<summary>Day008: 数据-Go语言切片</summary>
 
 - [x] 本节说明：本节介绍Go语言切片的相关内容。
 
@@ -484,7 +502,7 @@
   
   </details>
 <details>
-<summary>Day008: 数据-Go语言集合</summary>
+<summary>Day009: 数据-Go语言集合</summary>
 
 - [x] 本节说明：本节介绍集合Map的相关内容。
 
@@ -515,7 +533,7 @@
   
   </details>
 <details>
-<summary>Day009: 数据-Go语言结构</summary>
+<summary>Day010: 数据-Go语言结构</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体的相关内容。
 
@@ -557,7 +575,7 @@
   
   </details> 
 <details>
-<summary>Day010: 数据-Go语言指针</summary>
+<summary>Day011: 数据-Go语言指针</summary>
 
 - [ ] 本节说明：
 
@@ -575,7 +593,7 @@
   
   </details>
 <details>
-<summary>Day011: 数据-Go语言管道</summary>
+<summary>Day012: 数据-Go语言管道</summary>
 
 - [ ] 本节说明：
 
@@ -593,7 +611,7 @@
   
   </details>
 <details>
-<summary>Day012: 数据-Go语言接口</summary>
+<summary>Day013: 数据-Go语言接口</summary>
 
 - [ ] 本节说明：
 
@@ -611,7 +629,7 @@
   
   </details>
 <details>
-<summary>Day013: 函数-Go语言函数</summary>
+<summary>Day014: 函数-Go语言函数</summary>
 
 - [x] 本节说明：本节介绍Go语言函数相关内容。
 
@@ -718,7 +736,7 @@
   
   </details>
 <details>
-<summary>Day010: 语句-Go运算符号</summary>
+<summary>Day015: 语句-Go运算符号</summary>
 
 - [x] 本节说明：本节介绍Go运算符相关内容。
 
@@ -809,7 +827,7 @@
 
   </details>
 <details>
-<summary>Day011: 语句-Go条件语句</summary>
+<summary>Day016: 语句-Go条件语句</summary>
 
 - [x] 本节说明：本节介绍Go语言条件语句相关内容。
 
@@ -897,7 +915,7 @@
   
   </details>
 <details>
-<summary>Day012: 语句-Go循环语句</summary>
+<summary>Day017: 语句-Go循环语句</summary>
 
 - [x] 本节说明：本节介绍循环语句的相关内容。
 
