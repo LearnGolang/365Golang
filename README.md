@@ -759,6 +759,8 @@
 
   - go run hello.go //编译运行hello.go
   
+- [ ] 待整理：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_07_package.md)
+  
 - [ ] 本节案例：
   
   
