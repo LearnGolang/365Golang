@@ -747,7 +747,7 @@
   
   </details>
 <details>
-<summary>Day015: 数据-G语言的包</summary>
+<summary>Day015: 数据-Go语言的包</summary>
 
 - [ ] 本节说明：
 
