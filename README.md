@@ -747,7 +747,25 @@
   
   </details>
 <details>
-<summary>Day015: 语句-Go运算符号</summary>
+<summary>Day015: 数据-G语言的包</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day016: 语句-Go运算符号</summary>
 
 - [x] 本节说明：本节介绍Go运算符相关内容。
 
@@ -838,7 +856,7 @@
 
   </details>
 <details>
-<summary>Day016: 语句-Go条件语句</summary>
+<summary>Day017: 语句-Go条件语句</summary>
 
 - [x] 本节说明：本节介绍Go语言条件语句相关内容。
 
@@ -926,7 +944,7 @@
   
   </details>
 <details>
-<summary>Day017: 语句-Go循环语句</summary>
+<summary>Day018: 语句-Go循环语句</summary>
 
 - [x] 本节说明：本节介绍循环语句的相关内容。
 
