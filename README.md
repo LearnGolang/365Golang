@@ -751,15 +751,39 @@
 <details>
 <summary>Day013: 数据-Go语言接口</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 
-- [x] Go语言介绍：
+- [x] interface介绍：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - Go语言接口定义了一组方法集合，但是这些方法集合仅仅只是被定义，它们没有在接口中实现。
   
-- [x] Go语言命令：
+  - Go 语言中的所有类型包括自定义类型都实现了interface{}接口，所有的类型如string、 int、 int64甚至是自定义的结构体类型都拥有interface{}空接口，这一点interface{}和Java中的Object类比较相似。
+  
+  - 空接口interface{}可以被当做任意类型的数值。
+  
+  - 接口类型的未初始化变量的值为nil。
+  
+    ```go
+    var i interface{} = 99 // i可以是任何类型
+    i = 44.09
+    i = "All"  // i 可接受任意类型的赋值
+    ```
+  
+  - 接口是一组抽象方法的集合，它必须由其他非接口类型实现，不能自我实现。Go 语言通过它可以实现很多面向对象的特性。通过如下格式定义接口：
+  
+    ```go
+    type Namer interface {
+        Method1(param_list) return_type
+        Method2(param_list) return_type
+        ...
+    }
+    ```
+  
+- [ ] 接口嵌入：
 
-  - go run hello.go //编译运行hello.go
+  - 一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
+  
+- [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)
   
 - [ ] 本节案例：
   
