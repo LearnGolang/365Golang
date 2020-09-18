@@ -713,46 +713,7 @@
   
   </details> 
 <details>
-<summary>Day011: 数据-Go语言指针</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day012: 数据-Go语言通道</summary>
-
-- [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
-
-- [x] channel介绍：
-
-  - Go 奉行通过通信来共享内存，而不是共享内存来通信。所以，channel 是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
-  - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day013: 数据-Go语言接口</summary>
+<summary>Day011: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 
@@ -787,6 +748,45 @@
   - 一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
   
 - [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day012: 数据-Go语言通道</summary>
+
+- [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
+
+- [x] channel介绍：
+
+  - Go 奉行通过通信来共享内存，而不是共享内存来通信。所以，channel 是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
+  - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day013: 数据-Go指针内存</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
   
 - [ ] 本节案例：
   
