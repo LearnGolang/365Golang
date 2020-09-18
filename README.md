@@ -1473,7 +1473,7 @@
 
   </details>
 <details>
-<summary>Day000: 基础-Go垃圾回收</summary>
+<summary>Day000: 基础-Go语言泛型</summary>
 
 - [ ] 本节说明：
 
