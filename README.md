@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年8月25日，最近的一次更新日期为2020年9月17日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年9月17日。
 
 项目不定期推到重来，暂时取消更新的最新提示。
 
@@ -662,15 +662,53 @@
 - [x] 本节案例：
   
   ```go
-  struct {
-  	x, y int
-  	u float32
-  	_ float32  // 填充
-  	A *[]int
-  	F func()
+  package main
+  
+  import (
+  	"fmt"
+  )
+  
+  type Human struct {
+  	name   string // 姓名
+  	Gender string // 性别
+  	Age    int    // 年龄
+  	string        // 匿名字段
   }
-  type S struct { a int; b float64 }
-  new(S)
+  
+  type Student struct {
+  	Human     // 匿名字段
+  	Room  int // 教室
+  	int       // 匿名字段
+  }
+  
+  func main() {
+  	//使用new方式
+  	stu := new(Student)
+  	stu.Room = 102
+  	stu.Human.name = "Titan"
+  	stu.Gender = "男"
+  	stu.Human.Age = 14
+  	stu.Human.string = "Student"
+  
+  	fmt.Println("stu is:", stu)
+  	fmt.Printf("Student.Room is: %d\n", stu.Room)
+  	fmt.Printf("Student.int is: %d\n", stu.int) // 初始化时已自动给予零值：0
+  	fmt.Printf("Student.Human.name is: %s\n", stu.name) //  (*stu).name
+  	fmt.Printf("Student.Human.Gender is: %s\n", stu.Gender)
+  	fmt.Printf("Student.Human.Age is: %d\n", stu.Age)
+  	fmt.Printf("Student.Human.string is: %s\n", stu.string)
+  
+  	// 使用结构体字面量赋值
+  	stud := Student{Room: 102, Human: Human{"Hawking", "男", 14, "Monitor"}}
+  
+  	fmt.Println("stud is:", stud)
+  	fmt.Printf("Student.Room is: %d\n", stud.Room)
+  	fmt.Printf("Student.int is: %d\n", stud.int) // 初始化时已自动给予零值：0
+  	fmt.Printf("Student.Human.name is: %s\n", stud.Human.name)
+  	fmt.Printf("Student.Human.Gender is: %s\n", stud.Human.Gender)
+  	fmt.Printf("Student.Human.Age is: %d\n", stud.Human.Age)
+  	fmt.Printf("Student.Human.string is: %s\n", stud.Human.string)
+  }
   ```
   
   </details> 
