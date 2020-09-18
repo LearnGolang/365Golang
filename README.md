@@ -788,6 +788,8 @@
 
   - go run hello.go //编译运行hello.go
   
+- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)
+  
 - [ ] 本节案例：
   
   
@@ -1381,7 +1383,61 @@
 
   </details>
 <details>
-<summary>Day000: 基础-Go语言通道</summary>
+<summary>Day000: 基础-Go面向对象</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 基础-Go同步与锁</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 基础-Go同步与锁</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 基础-Go同步与锁</summary>
 
 - [ ] 本节说明：
 
