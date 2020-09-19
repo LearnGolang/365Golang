@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年9月18日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年9月19日。
 
 项目不定期推到重来，暂时取消更新的最新提示。
 
@@ -1643,3 +1643,4 @@
 
 - https://www.runoob.com/go/go-tutorial.html
 - https://github.com/ffhelicopter/Go42
+- https://github.com/unknwon/the-way-to-go_ZH_CN
