@@ -1420,27 +1420,6 @@
   
   </details>
 
-<details>
-<summary>Day000: 函数-Go内置函数</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_15_errors.md)
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-
 ### 第二章：Go语言进阶
 <details>
 <summary>Day000: 数据-Go指针内存</summary>
@@ -1456,7 +1435,7 @@
 
   - go run hello.go //编译运行hello.go
   
-- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)
+- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.9.md)
   
 - [ ] 本节案例：
   
@@ -1697,6 +1676,26 @@
 
   </details>
 ### 第三章：Go标准库包
+<details>
+<summary>Day000: 函数-Go内置函数</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_15_errors.md)
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
 <details>
 <summary>Day000: 库包-Go时间日期</summary>
 
