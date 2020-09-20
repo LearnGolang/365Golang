@@ -443,30 +443,6 @@
      //即：i=1, j=6，这没问题，关键在 k 和 l，从输出结果看 k=3<<2，l=3<<3。
      ```
 
-- [x] 本节案例：
-
-  ```go
-package main
-  
-  import (
-  	"fmt"
-  )
-  
-  const (
-  	Pi = 3.1415926
-  	a  = iota
-  	b  = 3
-  	c  = iota
-  	d
-  	e = iota + 2
-  )
-  
-  func main() {
-  	fmt.Println("Hello World!")
-  	fmt.Println(Pi, a, b, c, d, e)
-  }
-  ```
-  
   </details>
 
 <details>
