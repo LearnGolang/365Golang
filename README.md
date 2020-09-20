@@ -422,19 +422,15 @@
          MB
          GB
          TB
-         PB
-         EB
-         ZB
-         YB
      )
      ```
-
+     
      一个例子：
-
+     
      ```go
-      const (
+   const (
           i=1<<iota
-          j=3<<iota
+       j=3<<iota
           k
           l
       )
@@ -486,7 +482,7 @@
 
   </details>
 <details>
-<summary>Day007: 数据-Go语言数组</summary>
+<summary>Day007: 数据-Go数组基础</summary>
 
 - [x] 本节说明：本节介绍Go语言数组的相关内容。
 
@@ -536,7 +532,7 @@
   </details>
 
 <details>
-<summary>Day008: 数据-Go语言切片</summary>
+<summary>Day008: 数据-Go切片基础</summary>
 
 - [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
 
@@ -578,7 +574,7 @@
   
   </details>
 <details>
-<summary>Day009: 数据-Go语言集合</summary>
+<summary>Day009: 数据-Go集合基础</summary>
 
 - [x] 本节说明：本节介绍集合Go语言集合(Map)的相关内容。
 
@@ -623,7 +619,7 @@
   
   </details>
 <details>
-<summary>Day010: 数据-Go语言结构</summary>
+<summary>Day010: 数据-Go结构基础</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 
@@ -738,7 +734,7 @@
   
   </details> 
 <details>
-<summary>Day011: 数据-Go语言接口</summary>
+<summary>Day011: 数据-Go接口基础</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 
@@ -780,7 +776,7 @@
   
   </details>
 <details>
-<summary>Day012: 数据-Go语言通道</summary>
+<summary>Day012: 数据-Go通道基础</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 
@@ -1391,6 +1387,95 @@
   </details>
 
 ### 第二章：Go语言进阶
+<details>
+<summary>Day000: 数据-Go数组进阶</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 数据-Go切片进阶</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 数据-Go集合进阶</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 数据-Go结构进阶</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+  </details>
+<details>
+<summary>Day000: 基础-Go语言协程</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
 <details>
 <summary>Day000: 基础-Go语言协程</summary>
 
