@@ -96,8 +96,8 @@
 
     ```
     // Linux下编译Mac, Windows平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
     CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
+    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
     ```
 
     ```
