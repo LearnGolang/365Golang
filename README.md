@@ -466,8 +466,8 @@ package main
   	fmt.Println(Pi, a, b, c, d, e)
   }
   ```
-  
-  </details>
+
+</details>
 <details>
 <summary>Day006: 数据-Go基本数据</summary>
 
