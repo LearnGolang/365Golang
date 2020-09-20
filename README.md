@@ -18,7 +18,7 @@
 
 ## 0x02-学习进度
 
-本项目暂时计划共六章。
+本项目暂时计划共六章：
 
 - 第一章：Go语言基础
 - 第二章：Go语言进阶
@@ -873,27 +873,6 @@
   
   </details>
 <details>
-<summary>Day013: 数据-Go指针内存</summary>
-
-- [ ] 本节说明：本节介绍Go语言指针相关内容。
-
-- [x] Go语言指针介绍：
-
-  - Go 语言是一门类型安全和内存安全的编程语言。虽然 Go 语言中仍有指针的存在，但并不允许进行指针运算
-  - 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
 <summary>Day014: 函数-Go语言函数</summary>
 
 - [x] 本节说明：本节介绍Go语言函数相关内容。
@@ -1463,6 +1442,27 @@
   </details>
 
 ### 第二章：Go语言进阶
+<details>
+<summary>Day000: 数据-Go指针内存</summary>
+
+- [ ] 本节说明：本节介绍Go语言指针相关内容。
+
+- [x] Go语言指针介绍：
+
+  - Go 语言是一门类型安全和内存安全的编程语言。虽然 Go 语言中仍有指针的存在，但并不允许进行指针运算
+  - 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
 <details>
 <summary>Day000: 数据-Go数组进阶</summary>
 
