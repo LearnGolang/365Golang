@@ -541,6 +541,8 @@
     
   - 标准库中有四个包对字符串处理尤为重要：bytes、strings、strconv和unicode包。
 
+  - [参考待进行1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md)
+
 - [x] 本节案例：
 
   
@@ -1687,7 +1689,99 @@
   </details>
 ### 第三章：Go标准库包
 <details>
-<summary>Day000: 基础-Go语言并发</summary>
+<summary>Day000: 库包-Go时间日期</summary>
+
+- [ ] 本节说明：本节介绍Go中时间和日期的包。
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)
+
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言并发</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言并发</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言并发</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言并发</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言并发</summary>
 
 - [ ] 本节说明：
 
