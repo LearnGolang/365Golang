@@ -425,8 +425,7 @@
      )
      ```
      
-     一个例子：
-  </details>
+     </details>
 
 <details>
 <summary>Day006: 数据-Go基本数据</summary>
