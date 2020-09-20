@@ -528,12 +528,12 @@
   - 非解释字符串：
     
     ```
-      `This is a raw string \n` 中的 `\n\` 会被原样输出。
+    `This is a raw string \n` 中的 `\n\` 会被原样输出。
     ```
     
   - 字符串拼接：
     
-    - 直接使用运算符
+    - 直接使用运算符+
     - fmt.Sprintf()
     - strings.Join()
     - bytes.Buffer
