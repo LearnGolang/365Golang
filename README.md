@@ -445,28 +445,6 @@
 
 - [x] 本节案例：
 
-  ```go
-package main
-  
-  import (
-  	"fmt"
-  )
-  
-  const (
-  	Pi = 3.1415926
-  	a  = iota
-  	b  = 3
-  	c  = iota
-  	d
-  	e = iota + 2
-  )
-  
-  func main() {
-  	fmt.Println("Hello World!")
-  	fmt.Println(Pi, a, b, c, d, e)
-  }
-  ```
-  
   </details>
 <details>
 <summary>Day006: 数据-Go基本数据</summary>
