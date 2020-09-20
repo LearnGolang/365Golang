@@ -439,6 +439,33 @@
 
   - 布尔型的值只可以是常量 true 或者 false。一个简单的例子：var b bool = true。
   
+  - 两个类型相同的值可以使用相等 == 或者不等 != 运算符来进行比较并获得一个布尔型的值。
+  
+  - 非运算符：
+  
+    ```go
+    !T -> false
+    !F -> true
+    ```
+  
+  - 和运算符：
+  
+    ```go
+    T && T -> true
+    T && F -> false
+    F && T -> false
+    F && F -> false
+    ```
+  
+  - 或运算符：
+  
+    ```go
+    T || T -> true
+    T || F -> true
+    F || T -> true
+    F || F -> false
+    ```
+  
 - [x] 数字类型：
 
   - 整型 int 和浮点型 float32、float64，Go 语言支持整型和浮点型数字，并且支持复数，其中位的运算采用补码。
