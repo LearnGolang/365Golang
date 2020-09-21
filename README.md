@@ -1153,13 +1153,13 @@
     }
     ```
 
-- [ ] switch 语句：
+- [x] switch 语句：
 
-  - switch语句用于基于不同条件执行不同动作，每一个 case 分支都是唯一的，从上至下逐一测试，直到匹配为止。
+  - switch语句是存在多个条件判断的情况下，分别执行其对应的语句。
 
-  - switch 语句执行的过程从上至下，直到找到匹配项，匹配项后面也不需要再加 break。
+  - switch语句从上至下执行，直到找到匹配项，匹配项后面也不需要再加 break。
 
-  - switch 默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case，如果我们需要执行后面的 case，可以使用 fallthrough 。
+  - switch语句默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case，如果我们需要执行后面的 case，可以使用 fallthrough 。
 
     ```go
     switch var1 {
@@ -1171,6 +1171,29 @@
             ...
     }
     ```
+
+  - 任何支持进行相等判断的类型都可以作为测试表达式的条件，包括 int、string、指针等。
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+    	var num1 int = 7
+    
+    	switch {
+    	    case num1 < 0:
+    		    fmt.Println("Number is negative")
+    	    case num1 > 0 && num1 < 10:
+    		    fmt.Println("Number is between 0 and 10")
+    	    default:
+    		    fmt.Println("Number is 10 or greater")
+    	}
+    }
+    ```
+
+- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.3.md)
 
 - [x] select 语句：
 
@@ -1206,17 +1229,21 @@
 <details>
 <summary>Day018: 语句-Go循环语句</summary>
 
-- [x] 本节说明：本节介绍循环语句的相关内容。
+- [x] 本节说明：本节介绍Go语言循环语句的相关内容。
 
 - [x] Go循环语句：
 
-  - 在不少实际问题中有许多具有规律性的重复操作，因此在程序中就需要重复执行某些语句。
+  - 在实际问题中有大量的具有规律性的重复操作，在程序开发中便需要重复执行某些语句。
 
 - [x] for循环：重复执行语句块
+
+  - Go 语言中只有 for 结构可以重复执行某些语句。
 
   - for 循环是一个循环控制结构，可以执行指定次数的循环。
 
   - Go 语言的 For 循环有 3 种形式，只有其中的一种使用分号。
+
+  - **基于计数器的迭代**：
 
     ```go
     for  初始化语句; 条件语句; 修饰语句 {}
@@ -1229,25 +1256,20 @@
     ```
 
     ```go
-    for condition { }
-    ```
-
-    ```go
-    for { }
-    // 无限循环
-    ```
-
-  - for 循环的 range 格式可以对 slice、map、数组、字符串等进行迭代循环。格式如下：
-
-  - 在循环中同时使用多个计数器：
-
-    ```go
-    for key, value := range oldMap {
-        newMap[key] = value
+    package main
+    
+    import "fmt"
+    
+    func main() {
+    	for i := 0; i < 5; i++ {
+    		fmt.Printf("This is the %d iteration\n", i)
+    	}
     }
     ```
 
-  - 计算 1 到 10 的数字之和：
+    for condition { }
+
+  - **基于条件判断的迭代**：
 
     ```go
     package main
@@ -1255,15 +1277,28 @@
     import "fmt"
     
     func main() {
-            sum := 0
-            for i := 0; i <= 10; i++ {
-                    sum += i
-            }
-            fmt.Println(sum)
+    	var i int = 5
+    
+    	for i >= 0 {
+    		i = i - 1
+    		fmt.Printf("The variable i is now: %d\n", i)
+    	}
     }
     ```
 
-  - 无限循环:
+  - **无限循环：**
+
+    条件语句是可以被省略的，如 i:=0; ; i++ 或 for { } 或 for ;; { }（;; 会在使用 gofmt 时被移除）：这些循环的本质就是无限循环。最后一个形式可以被改写为 for true { }，但一般情况下都会直接写
+
+    ```go
+     for { }
+    ```
+
+    ```go
+    for t, err = p.Token(); err == nil; t, err = p.Token() {
+    	...
+    }
+    ```
 
     ```go
     package main
@@ -1278,6 +1313,45 @@
             fmt.Println(sum) // 无法输出
     }
     ```
+
+  - **for-range 结构：**
+
+    for 循环的 range 格式可以对 slice、map、数组、字符串等进行迭代循环。
+
+    在循环中可以同时使用多个计数器：
+
+    ```go
+    for key, value := range oldMap {
+        newMap[key] = value
+    }
+    ```
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+    	str := "Go is a beautiful language!"
+    	fmt.Printf("The length of str is: %d\n", len(str))
+    	for pos, char := range str {
+    		fmt.Printf("Character on position %d is: %c \n", pos, char)
+    	}
+    	fmt.Println()
+    	str2 := "Chinese: 日本語"
+    	fmt.Printf("The length of str2 is: %d\n", len(str2))
+    	for pos, char := range str2 {
+        	fmt.Printf("character %c starts at byte position %d\n", char, pos)
+    	}
+    	fmt.Println()
+    	fmt.Println("index int(rune) rune    char bytes")
+    	for index, rune := range str2 {
+        	fmt.Printf("%-2d      %d      %U '%c' % X\n", index, rune, rune, rune, []byte(string(rune)))
+    	}
+    }
+    ```
+
+    
 
   - For-each range 循环：这种格式的循环可以对字符串、数组、切片等进行迭代输出元素。
 
