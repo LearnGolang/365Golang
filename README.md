@@ -977,6 +977,7 @@
   
   
   </details>
+<details>
 <summary>Day015: 函数-Go语言方法</summary>
 
 - [ ] 本节说明：本节介绍Go语法内容。
@@ -1498,9 +1499,9 @@
   
 
   </details>
-<details>
 
 ### 第二章：Go语言进阶
+
 <details>
 <summary>Day000: 数据-Go指针内存</summary>
 
@@ -1755,7 +1756,9 @@
   
 
   </details>
+
 ### 第三章：Go标准库包
+
 <details>
 <summary>Day000: 函数-Go内置函数</summary>
 
@@ -1886,7 +1889,9 @@
   
 
   </details>
+
 ### 第四章：Go网络爬虫
+
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
 
@@ -1905,7 +1910,9 @@
   
 
   </details>
+
 ### 第五章：GoWeb框架
+
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
 
@@ -1924,7 +1931,9 @@
   
 
   </details>
+
 ### 第六章：Go漏洞扫描
+
 <details>
 <summary>Day100: 项目-Go漏洞扫描</summary>
 
