@@ -1267,8 +1267,6 @@
     }
     ```
 
-    for condition { }
-
   - **基于条件判断的迭代**：
 
     ```go
@@ -1328,35 +1326,6 @@
 
     ```go
     package main
-    
-    import "fmt"
-    
-    func main() {
-    	str := "Go is a beautiful language!"
-    	fmt.Printf("The length of str is: %d\n", len(str))
-    	for pos, char := range str {
-    		fmt.Printf("Character on position %d is: %c \n", pos, char)
-    	}
-    	fmt.Println()
-    	str2 := "Chinese: 日本語"
-    	fmt.Printf("The length of str2 is: %d\n", len(str2))
-    	for pos, char := range str2 {
-        	fmt.Printf("character %c starts at byte position %d\n", char, pos)
-    	}
-    	fmt.Println()
-    	fmt.Println("index int(rune) rune    char bytes")
-    	for index, rune := range str2 {
-        	fmt.Printf("%-2d      %d      %U '%c' % X\n", index, rune, rune, rune, []byte(string(rune)))
-    	}
-    }
-    ```
-
-    
-
-  - For-each range 循环：这种格式的循环可以对字符串、数组、切片等进行迭代输出元素。
-
-    ```go
-    package main
     import "fmt"
     
     func main() {
@@ -1407,62 +1376,86 @@
     }
     ```
 
-- [ ] 循环控制语句：
+- [x] 循环控制语句：
 
   - break 语句：
 
-    - 用于循环语句中跳出循环，并开始执行循环之后的语句。
+    用于循环语句中跳出循环，并开始执行循环之后的语句。
 
-    - break 在 switch（开关语句）中在执行一条 case 后跳出语句的作用。
+    break 在 switch（开关语句）中在执行一条 case 后跳出语句的作用。
 
-    - 在多重循环中，可以用标号 label 标出想 break 的循环。
+    在多重循环中，可以用标号 label 标出想 break 的循环。
 
-      ```go
-      break;
-      ```
+    ```go
+    break
+    ```
+
+    ```go
+    for {
+    	i = i - 1
+    	fmt.Printf("The variable i is now: %d\n", i)
+    	if i < 0 {
+    		break
+    	}
+    }
+    ```
 
   - continue语句：
 
-    - Go 语言的 continue 语句 有点像 break 语句。但是 continue 不是跳出循环，而是跳过当前循环执行下一次循环语句。
+    跳过当前循环执行下一次循环语句。
 
-    - for 循环中，执行 continue 语句会触发 for 增量语句的执行。
+    for 循环中，执行 continue 语句会触发 for 增量语句的执行。
 
-    - 在多重循环中，可以用标号 label 标出想 continue 的循环。
+    在多重循环中，可以用标号 label 标出想 continue 的循环。
 
-      ```go
-      continue;
-      ```
+    ```go
+    continue
+    ```
+
+    ```go
+    package main
+    
+    func main() {
+    	for i := 0; i < 10; i++ {
+    		if i == 5 {
+    			continue
+    		}
+    		print(i)
+    		print(" ")
+    	}
+    }
+    ```
 
   - goto 语句：
 
-    - Go 语言的 goto 语句可以无条件地转移到过程中指定的行。
+    Go 语言的 goto 语句可以无条件地转移到过程中指定的行。
 
-    - goto 语句通常与条件语句配合使用。可用来实现条件转移， 构成循环，跳出循环体等功能。
+    goto 语句通常与条件语句配合使用。可用来实现条件转移， 构成循环，跳出循环体等功能。
 
-    - 但是，在结构化程序设计中一般不主张使用 goto 语句， 以免造成程序流程的混乱，使理解和调试程序都产生困难。
+    但是，在结构化程序设计中一般不主张使用 goto 语句， 以免造成程序流程的混乱，使理解和调试程序都产生困难。
 
-      ```go
-      goto label;
-      ..
-      .
-      label: statement;
-      ```
+    ```go
+    goto label;
+    ..
+    .
+    label: statement;
+    ```
 
-- [x] 无限循环：
-  
-  - 如果循环中条件语句永远不为 false 则会进行无限循环，我们可以通过 for 循环语句中只设置一个条件表达式来执行无限循环：
-  
     ```go
     package main
-    import "fmt"
     
     func main() {
-        for true  {
-            fmt.Printf("这是无限循环。\n");
-        }
+    	i:=0
+    	HERE:
+    		print(i)
+    		i++
+    		if i==5 {
+    			return
+    		}
+    		goto HERE
     }
     ```
-  
+
 - [ ] 本节案例： 
   
   
