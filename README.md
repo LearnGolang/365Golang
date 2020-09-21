@@ -16,14 +16,15 @@
 
 ~~已经更新至第一章Day013: 函数-Go语言函数~~
 
-本项目暂时计划共六章：
+本项目暂时计划共七章：
 
 - [第一章：Go语言基础](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%80%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
 - [第二章：Go语言进阶](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%8C%E7%AB%A0go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
 - [第三章：Go标准库包](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%89%E7%AB%A0go%E6%A0%87%E5%87%86%E5%BA%93%E5%8C%85)
-- [第四章：Go网络爬虫](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB)
-- [第五章：GoWeb框架](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0goweb%E6%A1%86%E6%9E%B6)
-- [第六章：Go漏洞扫描](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F)
+- [第四章：Go语言算法]()
+- [第五章：Go网络爬虫]()
+- [第六章：GoWeb框架](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0goweb%E6%A1%86%E6%9E%B6)
+- [第七章：Go漏洞扫描]()
 
 ## 0x02-学习进度
 
@@ -1104,6 +1105,8 @@
 
 - [ ] 空(nil)切片：
 
+- [ ] [参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)
+
 - [ ] 本节案例：
 
   
@@ -1336,9 +1339,17 @@
 - [x] Go函数介绍：
 
   - 函数是基本的代码块，用于执行一个任务。Go 语言最少有个 main() 函数。
-  - Go是编译型语言，所以函数编写的顺序是无关紧要的；鉴于可读性的需求，最好把 main() 函数写在文件的前面，其他函数按照一定逻辑顺序进行编写（例如函数被调用的顺序）。
+  - Go是编译型语言，函数编写的顺序是无关紧要的；鉴于可读性的需求，最好把 main() 函数写在文件的前面，其他函数按照一定逻辑顺序进行编写（例如函数被调用的顺序）。
   - Go 语言标准库提供了多种可动用的内置的函数。例如，len() 函数可以接受不同类型参数并返回该类型的长度。如果我们传入的是字符串则返回字符串的长度，如果传入的是数组，则返回数组中包含的元素个数。
   - main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）。main 函数既没有参数，也没有返回类型（与 C 家族中的其它语言恰好相反）。如果为 main 函数添加了参数或者返回类型，将会引发构建错误。
+  - 目前 Go 没有泛型（generic）的概念，也就是说它不支持那种支持多种类型的函数
+  
+- [x] Go 里面有三种类型的函数：
+
+  - 普通的带有名字的函数。
+- 匿名函数或者lambda函数。
+  
+- 方法（Methods）。
   
 - [x] 函数定义：
 
@@ -1350,45 +1361,83 @@
     func function_name( [parameter list] ) [return_types] {
        函数体
     }
-    //func：函数由 func 开始声明
-    //function_name：函数名称，函数名和参数列表一起构成了函数签名。
-    //parameter list：参数列表，参数就像一个占位符，当函数被调用时，你可以将值传递给参数，这个值被称为实际参数。参数列表指定的是参数类型、顺序、及参数个数。参数是可选的，也就是说函数也可以不包含参数。
-    //return_types：返回类型，函数返回一列值。return_types 是该列值的数据类型。有些功能不需要返回值，这种情况下 return_types 不是必须的。
-    //函数体：函数定义的代码集合。
     ```
-
-- [ ] 函数调用：
+  
+- [x] 函数调用：
 
   - 当创建函数时，你定义了函数需要做什么，通过调用该函数来执行指定任务。
 
   - 调用函数，向函数传递参数，并返回值。
 
     ```go
+    pack1.Function(arg1, arg2, …, argn)
+    ```
+    
+    上面的代码中Function 是 pack1 包里面的一个函数，括号里的是被调用函数的实参（argument）：这些值被传递给被调用函数的形参。
+    
+    ```go
     package main
-    import "fmt"
+    
     func main() {
-       /* 定义局部变量 */
-       var a int = 100
-       var b int = 200
-       var ret int
-       /* 调用函数并返回最大值 */
-       ret = max(a, b)
-       fmt.Printf( "最大值是 : %d\n", ret )
+        println("In main before calling greeting")
+        greeting()
+        println("In main after calling greeting")
     }
-    /* 函数返回两个数的最大值 */
-    func max(num1, num2 int) int {
-       /* 定义局部变量 */
-       var result int
-       if (num1 > num2) {
-          result = num1
-       } else {
-          result = num2
-       }
-       return result
+    
+    func greeting() {
+        println("In greeting: Hi!!!!!")
     }
     ```
 
-- [ ] 函数返回多个值：
+  - 函数可以将其他函数调用作为它的参数，只要这个被调用函数的返回值个数、返回值类型和返回值的顺序与调用函数所需求的实参是一致的
+
+  - 函数也可以以申明的方式被使用，作为一个函数类型，就像：
+
+    ```go
+    type binOp func(int, int) int
+    ```
+
+    这里不需要函数体 {}。
+
+  - 函数是一等值（first-class value）：它们可以赋值给变量，就像 add := binOp 一样。
+
+- [x] 函数参数：
+
+  - 函数定义时，它的形参一般是有名字的，不过我们也可以定义没有形参名的函数，只有相应的形参类型，就像这样：func f(int, int, float64)。
+
+  - 函数如果使用参数，该变量可称为函数的形参。
+
+  - 形参就像定义在函数体内的局部变量。
+
+  - 没有参数的函数通常被称为 niladic 函数（niladic function），就像 main.main()。
+
+  - 调用函数，可以通过两种方式来传递参数：
+
+      - 按值传递(call by value)：值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
+
+      - 按引用传递(call by reference)：引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+        fmt.Printf("Multiply 2 * 5 * 6 = %d\n", MultiPly3Nums(2, 5, 6))
+        // var i1 int = MultiPly3Nums(2, 5, 6)
+        // fmt.Printf("MultiPly 2 * 5 * 6 = %d\n", i1)
+    }
+    
+    func MultiPly3Nums(a int, b int, c int) int {
+        // var product int = a * b * c
+        // return product
+        return a * b * c
+    }
+    ```
+
+- [x] 函数返回值：
+
+  - 尽量使用命名返回值：会使代码更清晰、更简短，同时更加容易读懂。
 
   - 一个例子：
 
@@ -1404,22 +1453,7 @@
     }
     ```
 
-- [ ] 函数参数：
-
-  - 函数如果使用参数，该变量可称为函数的形参。
-  - 形参就像定义在函数体内的局部变量。
-  - 调用函数，可以通过两种方式来传递参数：
-
-
-  - 值传递：
-
-    - 值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
-    
-  - 引用传递：
-
-    - 引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
-
-- [ ] 函数用法：
+- [x] 函数用法：
 
   - 函数作为另外一个函数的实参：
     - 函数定义后可作为另外一个函数的实参数传入。
@@ -1428,14 +1462,10 @@
   - 方法：
     - 方法就是一个包含了接受者的函数
 
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-
 - [ ] 本节案例：
+
   
-  
-  
+
   </details>
 <details>
 <summary>Day017: 函数-Go语言方法</summary>
@@ -1478,7 +1508,7 @@
   
   </details>
 <details>
-<summary>Day020: 错误-Go错误处理</summary>
+<summary>Day019: 错误-Go错误处理</summary>
 
 - [ ] 本节说明：
 
@@ -1770,7 +1800,7 @@
 
   - go run hello.go //编译运行hello.go
   
-- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_15_errors.md)
+- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_15_errors.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.5.md)
   
 - [ ] 本节案例：
   
@@ -1888,7 +1918,65 @@
 
   </details>
 
-### 第四章：Go网络爬虫
+### 第四章：Go语言算法
+
+<details>
+<summary>Day000: 算法-Go递归算法</summary>
+
+- [ ] 本节说明：
+
+- [x] Go递归介绍：
+
+  - 递归函数、递归算法、
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 库包-Go时间日期</summary>
+
+- [ ] 本节说明：本节介绍Go中时间和日期的包。
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)
+
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言并发</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+### 第五章：Go网络爬虫
 
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
@@ -1909,7 +1997,7 @@
 
   </details>
 
-### 第五章：GoWeb框架
+### 第六章：GoWeb框架
 
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
@@ -1930,7 +2018,7 @@
 
   </details>
 
-### 第六章：Go漏洞扫描
+### 第七章：Go漏洞扫描
 
 <details>
 <summary>Day100: 项目-Go漏洞扫描</summary>
