@@ -21,10 +21,10 @@
 - [第一章：Go语言基础](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%80%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
 - [第二章：Go语言进阶](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%8C%E7%AB%A0go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
 - [第三章：Go标准库包](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%89%E7%AB%A0go%E6%A0%87%E5%87%86%E5%BA%93%E5%8C%85)
-- [第四章：Go语言算法]()
-- [第五章：Go网络爬虫]()
-- [第六章：GoWeb框架](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0goweb%E6%A1%86%E6%9E%B6)
-- [第七章：Go漏洞扫描]()
+- [第四章：Go语言算法](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
+- [第五章：Go网络爬虫](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB)
+- [第六章：GoWeb框架](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0goweb%E6%A1%86%E6%9E%B6)
+- [第七章：Go漏洞扫描](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F)
 
 ## 0x02-学习进度
 
