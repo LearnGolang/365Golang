@@ -81,6 +81,12 @@
     source ~/.bashrc
     ```
 
+- [x] 使用 GOPATH模式从src目录下开始引入包需关闭go mod模式。
+
+  ```
+  export GO111MODULE=off
+  ```
+  
 - [x] Go语言编辑器：
 
   - [Goland](https://www.jetbrains.com/go)：JetBrains 公司的 Go 开发工具。
@@ -1869,7 +1875,7 @@
 
   - go run hello.go //编译运行hello.go
   
-- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)
+- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.11.md)
 
 - [ ] 本节案例：
 
