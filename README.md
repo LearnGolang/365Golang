@@ -685,10 +685,6 @@
     map4 := map[string]string{"a": "1", "b": "2", "c": "3"}
     ```
 
-- [ ] 测试待删除：
-
-  - go run hello.go //编译运行hello.go
-
 - [ ] 本节案例：
   
   
@@ -879,13 +875,14 @@
 
 - [x] Go函数介绍：
 
-  - 函数是基本的代码块，用于执行一个任务。
-  - Go 语言最少有个 main() 函数。
-  - 函数声明告诉了编译器函数的名称，返回类型，和参数。
+  - 函数是基本的代码块，用于执行一个任务。Go 语言最少有个 main() 函数。
+  - Go是编译型语言，所以函数编写的顺序是无关紧要的；鉴于可读性的需求，最好把 main() 函数写在文件的前面，其他函数按照一定逻辑顺序进行编写（例如函数被调用的顺序）。
   - Go 语言标准库提供了多种可动用的内置的函数。例如，len() 函数可以接受不同类型参数并返回该类型的长度。如果我们传入的是字符串则返回字符串的长度，如果传入的是数组，则返回数组中包含的元素个数。
   - main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）。main 函数既没有参数，也没有返回类型（与 C 家族中的其它语言恰好相反）。如果为 main 函数添加了参数或者返回类型，将会引发构建错误。
   
 - [x] 函数定义：
+
+  - 函数声明告诉了编译器函数的名称，返回类型，和参数。
 
   - Go语言函数基本组成：关键字func、函数名、参数列表、返回值、函数体和返回语句。语法如下：
 
@@ -980,8 +977,27 @@
   
   
   </details>
+<summary>Day015: 函数-Go语言方法</summary>
+
+- [ ] 本节说明：本节介绍Go语法内容。
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
 <details>
-<summary>Day015: 数据-Go语言的包</summary>
+<summary>Day016: 数据-Go语言的包</summary>
 
 - [ ] 本节说明：包、模块的相互关系？
 
@@ -1001,7 +1017,7 @@
   
   </details>
 <details>
-<summary>Day016: 语句-Go运算符号</summary>
+<summary>Day017: 语句-Go运算符号</summary>
 
 - [x] 本节说明：本节介绍Go运算符相关内容。
 
@@ -1098,7 +1114,7 @@
 
   </details>
 <details>
-<summary>Day017: 语句-Go条件判断</summary>
+<summary>Day018: 语句-Go条件判断</summary>
 
 - [x] 本节说明：本节介绍Go语言条件判断语句的相关内容。
 
@@ -1227,7 +1243,7 @@
   
   </details>
 <details>
-<summary>Day018: 语句-Go循环语句</summary>
+<summary>Day019: 语句-Go循环语句</summary>
 
 - [x] 本节说明：本节介绍Go语言循环语句的相关内容。
 
@@ -1463,7 +1479,7 @@
   </details> 
 
 <details>
-<summary>Day019: 错误-Go错误处理</summary>
+<summary>Day020: 错误-Go错误处理</summary>
 
 - [ ] 本节说明：
 
@@ -1483,25 +1499,6 @@
 
   </details>
 <details>
-<summary>Day020: 函数-Go语言方法</summary>
-
-- [ ] 本节说明：本节介绍Go语法内容。
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
 
 ### 第二章：Go语言进阶
 <details>
