@@ -1396,7 +1396,7 @@
   </details> 
 
 <details>
-<summary>Day000: 错误-Go错误处理</summary>
+<summary>Day019: 错误-Go错误处理</summary>
 
 - [ ] 本节说明：
 
@@ -1408,7 +1408,7 @@
 
   - go run hello.go //编译运行hello.go
   
-- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_16_function.md)
+- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_16_function.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.2.md)
 
 - [ ] 本节案例：
 
@@ -1416,7 +1416,7 @@
 
   </details>
 <details>
-<summary>Day000: 函数-Go语言方法</summary>
+<summary>Day020: 函数-Go语言方法</summary>
 
 - [ ] 本节说明：本节介绍Go语法内容。
 
