@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年9月20日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年9月21日。
 
 项目不定期推到重来，暂时取消更新的最新提示。
 
@@ -57,7 +57,7 @@
 
   - https://golang.org
   - https://github.com/golang
-  - https://github.com/0e0w/LearnGolang
+  - [LearnGolang](https://github.com/0e0w/LearnGolang)
 
 - [x] Go语言安装：
 
@@ -143,10 +143,10 @@
 - [x] Go语言未来：
 
   - Go语言拥有大量的优秀社区框架。
-  
-- Go语言的未来发展前景是光明的。
+  - Go语言的未来发展前景是光明的。
   
   </details>
+  
 <details>
 <summary>Day002: 基础-Go语言例子</summary>
 
@@ -1098,17 +1098,17 @@
 
   </details>
 <details>
-<summary>Day017: 语句-Go条件语句</summary>
+<summary>Day017: 语句-Go条件判断</summary>
 
-- [x] 本节说明：本节介绍Go语言条件语句相关内容。
+- [x] 本节说明：本节介绍Go语言条件判断语句的相关内容。
 
-- [x] 条件语句介绍：
+- [x] 条件判断语句介绍：
 
-  - 条件语句需要开发者通过指定一个或多个条件，并通过测试条件是否为 true 来决定是否执行指定语句，并在条件为 false 的情况在执行另外的语句。
+  - 条件语句需要指定一个或多个条件，通过测试条件是否为 true 来决定是否执行指定语句，当条件为 false 的情况在执行另外的语句。
   
 - [x] if语句：
 
-  - if 语句由一个布尔表达式后紧跟一个或多个语句组成。
+  - if 语句用于测试某个条件（布尔型或逻辑型）的语句。由一个布尔表达式后紧跟一个或多个语句组成。
 
     ```go
     if 布尔表达式 {
@@ -1141,6 +1141,18 @@
     }
     ```
 
+  - 三层嵌套。
+
+    ```go
+    if condition1 {
+    	// do something	
+    } else if condition2 {
+    	// do something else	
+    } else {
+    	// catch-all or default
+    }
+    ```
+
 - [ ] switch 语句：
 
   - switch语句用于基于不同条件执行不同动作，每一个 case 分支都是唯一的，从上至下逐一测试，直到匹配为止。
@@ -1162,6 +1174,8 @@
 
 - [x] select 语句：
 
+  - select 结构，用于 channel 的选择。
+
   - select 是 Go 中的一个控制结构，类似于 switch 语句。每个 case 必须是一个通信操作，要么是发送要么是接收。
 
   - select 随机执行一个可运行的 case。如果没有 case 可运行，它将阻塞，直到有 case 可运行。一个默认的子句应该总是可运行的。
@@ -1182,6 +1196,8 @@
 
   注意：Go 没有三目运算符，所以不支持 ?: 形式的条件判断。
 
+- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.1.md)
+  
 - [ ] 本节案例：
   
   
