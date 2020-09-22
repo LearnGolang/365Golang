@@ -1934,11 +1934,29 @@
 ### 第三章：Go标准库包
 
 <details>
-<summary>Day000: 数据-Go语言的包</summary>
+<summary>Day000: 函数-Go内置函数</summary>
 
-- [ ] 本节说明：包、模块的相互关系？
+- [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
-- [x] Go语言介绍：
+- [x] Go内置函数介绍：
+
+  - 不需要进行导入操作就可以使用的内置函数。它们有时可以针对不同的类型进行操作，例如：len、cap 和 append，或必须用于系统级的操作，例如：panic。因此，它们需要直接获得编译器的支持。
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 库包-Go语言库包</summary>
+
+- [x] 本节说明：本节介绍Go语言库包的相关内容。
+
+- [x] Go语言标准库介绍：
 
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
@@ -1950,26 +1968,6 @@
   
 - [ ] 本节案例：
 
-  
-  </details>
-<details>
-<summary>Day000: 函数-Go内置函数</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_15_errors.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.5.md)
-  
-- [ ] 本节案例：
-  
-  
   
   </details>
 <details>
