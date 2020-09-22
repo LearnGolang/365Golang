@@ -1956,15 +1956,10 @@
 
 - [x] 本节说明：本节介绍Go语言库包的相关内容。
 
-- [x] Go语言标准库介绍：
+- [x] Go语言标准库概述：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 待整理：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_07_package.md)、[参考2](https://github.com/ffhelicopter/Go42/blob/master/content/42_08_project.md)
+  - Go语言标准库就是Go包。需要import导入之后使用某些功能。
+  - 像 fmt、os 等这样具有常用功能的内置包在 Go 语言中有 150 个以上，它们被称为标准库，大部分(一些底层的除外)内置于 Go 本身
   
 - [ ] 本节案例：
 
@@ -1991,7 +1986,7 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go语言并发</summary>
+<summary>Day000: 库包-Go正则匹配</summary>
 
 - [ ] 本节说明：
 
@@ -2009,7 +2004,7 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go语言并发</summary>
+<summary>Day000: 库包-Go精密计算</summary>
 
 - [ ] 本节说明：
 
