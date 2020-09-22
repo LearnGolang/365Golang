@@ -1115,8 +1115,46 @@
     var slice1 []type = make([]type, len,cap)// 使用make()函数来创建切片
     ```
 
+  - 使用make生成切片：
 
-- [x] 切片重组：
+    ```go
+    package main
+    import "fmt"
+    
+    func main() {
+    	var slice1 []int = make([]int, 10)
+    	// load the array/slice:
+    	for i := 0; i < len(slice1); i++ {
+    		slice1[i] = 5 * i
+    	}
+    
+    	// print the slice:
+    	for i := 0; i < len(slice1); i++ {
+    		fmt.Printf("Slice at %d is %d\n", i, slice1[i])
+    	}
+    	fmt.Printf("\nThe length of slice1 is %d\n", len(slice1))
+    	fmt.Printf("The capacity of slice1 is %d\n", cap(slice1))
+    }
+    ```
+
+- [x] 将切片传递给函数：
+
+  ```go
+  func sum(a []int) int {
+  	s := 0
+  	for i := 0; i < len(a); i++ {
+  		s += a[i]
+  	}
+  	return s
+  }
+  
+  func main() {
+  	var arr = [5]int{0, 1, 2, 3, 4}
+  	sum(arr[:])
+  }
+  ```
+
+- [x] 切片重组
 
   - 通过改变切片长度得到新切片的过程称之为切片重组 reslicing。
   - 在一个切片基础上重新划分一个切片时，新的切片会继续引用原有切片的数组。
@@ -1126,13 +1164,14 @@
 
 - [ ] 空(nil)切片：
 
-- [ ] [参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)
+- [ ] [参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md)
 
 - [ ] 本节案例：
 
   
-  
+
   </details>
+
 <details>
 <summary>Day012: 数据-Go集合基础</summary>
 
