@@ -1941,7 +1941,7 @@
 
   </details>
 <details>
-<summary>Day000: 基础-Go垃圾回收</summary>
+<summary>Day000: 基础-Go语言进阶</summary>
 
 - [ ] 本节说明：
 
@@ -2050,7 +2050,7 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go语言并发</summary>
+<summary>Day000: 库包-Go语言库包</summary>
 
 - [ ] 本节说明：
 
@@ -2068,7 +2068,7 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go语言并发</summary>
+<summary>Day000: 库包-Go语言库包</summary>
 
 - [ ] 本节说明：
 
@@ -2086,7 +2086,7 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go语言并发</summary>
+<summary>Day000: 库包-Go语言库包</summary>
 
 - [ ] 本节说明：
 
@@ -2125,7 +2125,7 @@
   
   </details>
 <details>
-<summary>Day000: 库包-Go时间日期</summary>
+<summary>Day000: 算法-Go语言算法</summary>
 
 - [ ] 本节说明：本节介绍Go中时间和日期的包。
 
@@ -2145,7 +2145,7 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go语言并发</summary>
+<summary>Day000: 算法-Go语言算法</summary>
 
 - [ ] 本节说明：
 
