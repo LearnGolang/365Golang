@@ -81,12 +81,6 @@
     source ~/.bashrc
     ```
 
-- [x] 使用 GOPATH模式从src目录下开始引入包需关闭go mod模式。
-
-  - ```
-    export GO111MODULE=off
-    ```
-
 - [x] Go语言编辑器：
 
   - [Goland](https://www.jetbrains.com/go)：JetBrains 公司的 Go 开发工具。
@@ -132,6 +126,12 @@
     ```
 
   - 使用 `go install` 能够很轻松地对第三方包进行部署。
+
+  - 使用 GOPATH模式从src目录下开始引入包需关闭go mod模式。
+
+    ```
+    export GO111MODULE=off
+    ```
 
 - [x] Go语言代理：
 
@@ -183,7 +183,7 @@
   - 变量
   - 常量
   - 语句
-  - 表达式
+  - 语法
   - 注释
 - [x] 名称：
 
@@ -222,7 +222,6 @@
 - [x] 本节案例：
 
    ```go
-   // 002
    package main
    
    import (
@@ -238,7 +237,7 @@
 <details>
 <summary>Day003: 基础-Go约定惯例</summary>
 
-- [x] 本节说明：本节介绍Go语言中约定和惯例。
+- [x] 本节说明：本节介绍Go语言中的一些约定和惯例。
 
 - [x] Go编码规范：https://golang.org/ref/spec
 
@@ -269,7 +268,7 @@
 <details>
 <summary>Day004: 数据-Go语言变量</summary>
 
-- [x] 本节说明：介绍Go语言变量的相关内容。
+- [x] 本节说明：本节介绍Go语言变量的相关内容。
 
 - [x] 基本描述：
 
@@ -360,7 +359,7 @@
 <details>
 <summary>Day005: 数据-Go语言常量</summary>
 
-- [x] 本节说明：Go语言常量使用。
+- [x] 本节说明：本节介绍Go语言常量的内容。
 
 - [x] 常量说明：
 
@@ -1179,13 +1178,22 @@
 
 - [x] Map介绍：
 
-  - Map 是一种无序的键值对的集合。Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。
+  - Map 是一种元素对（pair）的无序集合，pair 的一个元素是 key，对应的另一个元素是 value，Map结构也称为关联数组或字典。
+  - Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。
   - Map 是一种集合，所以我们可以像迭代数组和切片那样迭代它。不过，Map 是无序的，我们无法决定它的返回顺序，这是因为 Map 是使用 hash 表来实现的。
   - 在声明的时候不需要知道 Map 的长度，Map 是可以动态增长的。
+  - 不要使用 new，永远用 make 来构造 map。
   
-- [x] 定义Map：
+- [x] 申明定义Map：
 
-  - 可以使用内建函数 make 也可以使用 map 关键字来定义 Map:
+  - map 是引用类型，可以使用如下声明：
+
+    ```go
+    var map1 map[keytype]valuetype
+    var map1 map[string]int
+    ```
+    
+  - 可以使用内建函数 make 也可以使用 map 关键字来定义 Map。
 
     ```go
     // 声明变量，默认 map 是 nil
@@ -1206,6 +1214,55 @@
     
     // map中有三个值
     map4 := map[string]string{"a": "1", "b": "2", "c": "3"}
+    ```
+
+  - 一个示例
+
+    ```go
+    package main
+    import "fmt"
+    
+    func main() {
+    	var mapLit map[string]int
+    	//var mapCreated map[string]float32
+    	var mapAssigned map[string]int
+    
+    	mapLit = map[string]int{"one": 1, "two": 2}
+    	mapCreated := make(map[string]float32)
+    	mapAssigned = mapLit
+    
+    	mapCreated["key1"] = 4.5
+    	mapCreated["key2"] = 3.14159
+    	mapAssigned["two"] = 3
+    
+    	fmt.Printf("Map literal at \"one\" is: %d\n", mapLit["one"])
+    	fmt.Printf("Map created at \"key2\" is: %f\n", mapCreated["key2"])
+    	fmt.Printf("Map assigned at \"two\" is: %d\n", mapLit["two"])
+    	fmt.Printf("Map literal at \"ten\" is: %d\n", mapLit["ten"])
+    }
+    ```
+
+  - for-range与map
+
+    ```go
+    // 使用 for 循环构造 map
+    for key, value := range map1 {
+    	...
+    }
+    ```
+
+    ```go
+    // 只获取值
+    for _, value := range map1 {
+    	...
+    }
+    ```
+
+    ```go
+    // 只获取 key
+    for key := range map1 {
+    	fmt.Printf("key is: %d\n", key)
+    }
     ```
 
 - [ ] 本节案例：
