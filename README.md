@@ -1277,26 +1277,16 @@
 
 - [x] struct介绍：
 
-  - Go语言通过结构体的形式支持用户自定义类型，或者叫定制类型。
-  - Go语言结构体是实现自定义类型的一种重要数据类型。
-  - 结构体是复合类型（composite types），它由一系列属性组成，每个属性都有自己的类型和值的，结构体通过属性把数据聚集在一起。
+  - Go语言通过类型别名（alias types）和结构体的形式支持用户自定义类型，或者叫定制类型。
+  - 一个带属性的结构体试图表示一个现实世界中的实体。
   - 结构体是由一系列具有相同类型或不同类型的数据构成的数据集合。结构体中可以定义不同类型的数据。
+  - 结构体是复合类型（composite types），它由一系列属性组成，每个属性都有自己的类型和值的，结构体通过属性把数据聚集在一起。结构体也是值类型，因此可以通过new函数来创建。
+  - 组成结构体类型的那些数据称为 字段（fields）。每个字段都有一个类型和一个名字；在一个结构体中，字段名字必须是唯一的。
   - 方法（Method）可以访问这些数据，就好像它们是这个独立实体的一部分。
 
 - [x] 定义结构体：
 
-  - 结构体定义需要使用 type 和 struct 语句。struct 语句定义一个新的数据类型，结构体中有一个或多个成员。type 语句设定了结构体的名称。结构体的格式如下：
-
-    ```go
-    type struct_variable_type struct {
-       member definition
-       member definition
-       ...
-       member definition
-    }
-    ```
-
-  - 结构体是由一系列称为字段（fields）的命名元素组成，每个元素都有一个名称和一个类型。 字段名称可以显式指定（IdentifierList）或隐式指定（EmbeddedField），没有显式字段名称的字段称为匿名（内嵌）字段。在结构体中，非空字段名称必须是唯一的。
+  - 结构体定义需要使用 type 和 struct 语句。结构体中有一个或多个成员。type 语句设定了结构体的名称。结构体的格式如下：
 
     ```go
     type identifier struct {
@@ -1305,12 +1295,45 @@
         ...
     }
     ```
+    
+  - `type T struct {a, b int}` 也是合法的语法，它更适用于简单的结构体。
 
   - 一个空结构体：struct {}
 
   - 一旦定义了结构体类型，它就能用于变量的声明。
 
-  - 结构体是值类型，因此也可以通过 new 函数来创建。
+  - 结构体的字段可以是任何类型，甚至是结构体本身，也可以是函数或者接口。可以声明结构体类型的一个变量，然后像下面这样给它的字段赋值：
+
+    ```go
+    var s T
+    s.a = 5
+    s.b = 8
+    ```
+
+  - 一个例子：
+
+    ```go
+    package main
+    import "fmt"
+    
+    type struct1 struct {
+        i1  int
+        f1  float32
+        str string
+    }
+    
+    func main() {
+        ms := new(struct1)
+        ms.i1 = 10
+        ms.f1 = 15.5
+        ms.str= "Chris"
+    
+        fmt.Printf("The int is: %d\n", ms.i1)
+        fmt.Printf("The float is: %f\n", ms.f1)
+        fmt.Printf("The string is: %s\n", ms.str)
+        fmt.Println(ms)
+    }
+    ```
 
 - [x] 访问结构体成员：
 
@@ -1330,7 +1353,7 @@
 
   - 带标签的结构体：结构体中的字段除了有名字和类型外，还可以有一个可选的标签（tag）。它是一个附属于字段的字符串，可以是文档或其他的重要标记。标签的内容不可以在一般的编程中使用，只有 reflect 包能获取它。
 
-- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_18_struct.md)
+- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_18_struct.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.1.md)
   
 - [x] 本节案例：
   
