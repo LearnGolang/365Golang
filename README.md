@@ -1105,7 +1105,6 @@
   
 - [x] 定义切片：
 
-
   - 切片有俩种定义方式
 
     ```go
@@ -1113,9 +1112,9 @@
     ```
 
     ```go
-    var slice1 []type = make([]type, len,cap)
-    // 使用make()函数来创建切片
+    var slice1 []type = make([]type, len,cap)// 使用make()函数来创建切片
     ```
+
 
 - [x] 切片重组：
 
