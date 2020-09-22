@@ -1659,17 +1659,20 @@
 <details>
 <summary>Day017: 函数-Go语言方法</summary>
 
-- [ ] 本节说明：本节介绍Go语法内容。
+- [x] 本节说明：本节介绍Go语言方法相关内容。
 
-- [x] Go语言介绍：
+- [x] Go语言方法介绍：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
+  - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
+  - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
+  - 一个类型加上它的方法等价于面向对象中的一个类。
   
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
   
-- [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)
+- [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)
   
 - [ ] 本节案例：
   
@@ -1912,6 +1915,8 @@
 
   - go run hello.go //编译运行hello.go
   
+- [ ] [垃圾回收参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.8.md)
+
 - [ ] 本节案例：
 
   
