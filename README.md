@@ -1216,7 +1216,7 @@
     map4 := map[string]string{"a": "1", "b": "2", "c": "3"}
     ```
 
-  - 一个示例
+  - 一个示例：
 
     ```go
     package main
@@ -1654,27 +1654,7 @@
   
   </details>
 <details>
-<summary>Day018: 数据-Go语言的包</summary>
-
-- [ ] 本节说明：包、模块的相互关系？
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 待整理：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_07_package.md)、[参考2](https://github.com/ffhelicopter/Go42/blob/master/content/42_08_project.md)
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day019: 错误-Go错误处理</summary>
+<summary>Day018: 错误-Go错误处理</summary>
 
 - [ ] 本节说明：
 
@@ -1953,6 +1933,25 @@
 
 ### 第三章：Go标准库包
 
+<details>
+<summary>Day000: 数据-Go语言的包</summary>
+
+- [ ] 本节说明：包、模块的相互关系？
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 待整理：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_07_package.md)、[参考2](https://github.com/ffhelicopter/Go42/blob/master/content/42_08_project.md)
+  
+- [ ] 本节案例：
+
+  
+  </details>
 <details>
 <summary>Day000: 函数-Go内置函数</summary>
 
