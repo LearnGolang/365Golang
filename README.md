@@ -1429,6 +1429,8 @@
   
   - Go语言中的接口都很简短，通常它们会包含0个、最多3个方法。
   
+  - 使用接口使代码更具有普适性。
+  
   - 接口类型的未初始化变量的值为nil。
   
     ```go
@@ -1449,11 +1451,7 @@
     }
     ```
   
-- [ ] 接口嵌入：
-
-  - 一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
-  
-- [ ] 一些例子：
+- [x] 一些例子：
 
   - 示例1：
 
@@ -1490,6 +1488,8 @@
 
   - 示例2：接口嵌套接口
 
+    一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
+
     接口File包含了ReadWrite和Lock的所有方法，它还额外有一个Close()方法。
 
     ```go
@@ -1510,8 +1510,10 @@
     }
     ```
 
-    
-
+- [ ] 接口排序：
+  
+  - 使用 Sorter 接口排序
+  
 - [ ] 参考链接：[接口参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)、[接口参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.1.md)
   
 - [ ] 本节案例：
@@ -1523,18 +1525,12 @@
 <details>
 <summary>Day015: 数据-Go反射基础</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 
-- [ ] range：
+- [ ] 反射reflect介绍：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。这是元编程的一种形式。
   
-- [ ] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_16_function.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.2.md)
-
 - [ ] 本节案例：
 
   
@@ -1923,16 +1919,14 @@
 <details>
 <summary>Day000: 进阶-Go面向对象</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节介绍Go语言面向对象的相关内容。
 
-- [x] Go语言介绍：
+- [ ] Go面向对象：
 
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
-- [x] Go语言命令：
+- [ ] [面向对象参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.13.md)
 
-  - go run hello.go //编译运行hello.go
-  
 - [ ] 本节案例：
 
   
