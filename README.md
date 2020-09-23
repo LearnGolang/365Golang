@@ -256,7 +256,7 @@
 
   - Go 语言也使用分号作为语句的结束，但一般会省略分号。像在标识符后面；整数、浮点、复数、Rune或字符串等字面量后面；关键字break、continue、fallthrough、或者return后面；操作符或标点符号++、--、)、]或}之后等等都可以使用分号，但是往往会省略掉，像LiteIDE编辑器会在保存.go文件时自动过滤掉这些分号，所以在Go语言开发中一般不用过多关注分号的使用。
   - 左大括号 { 不能单独一行，这是编译器的强制规定，否则你在使用 gofmt 时就会出现错误提示“ expected declaration, found '{' ”。右大括号 } 需要单独一行。
-  - 在定义接口名时也有惯例，一般单方法接口由方法名称加上-er后缀来命名。
+  - 在定义接口名时也有惯例，接口的名字由方法名加 [e]r 后缀组成，例如 Printer、Reader、Writer、Logger、Converter 等等。还有一些不常用的方式（当后缀 er 不合适时），比如 Recoverable，此时接口名以 able 结尾，或者以 I 开头（像 .NET 或 Java 中那样）。
 
 - [x] 注释：
 
@@ -1417,13 +1417,17 @@
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 
-- [x] interface介绍：
+- [x] 接口interface介绍：
 
-  - Go语言接口定义了一组方法集合，但是这些方法集合仅仅只是被定义，它们没有在接口中实现。
+  - Go语言有非常灵活的接口概念，通过它可以实现很多面向对象的特性。接口提供了一种方式来说明对象的行为：如果谁能搞定这件事，它就可以用在这儿。
+  
+  - Go语言接口定义了一组方法（方法集），但是这些方法不包含（实现）代码：它们没有被实现（它们是抽象的）。接口里也不能包含变量。
   
   - Go 语言中的所有类型包括自定义类型都实现了interface{}接口，所有的类型如string、 int、 int64甚至是自定义的结构体类型都拥有interface{}空接口，这一点interface{}和Java中的Object类比较相似。
   
   - 空接口interface{}可以被当做任意类型的数值。
+  
+  - Go语言中的接口都很简短，通常它们会包含0个、最多3个方法。
   
   - 接口类型的未初始化变量的值为nil。
   
@@ -1433,6 +1437,8 @@
     i = "All"  // i 可接受任意类型的赋值
     ```
   
+- [x] 接口interface定义：
+
   - 接口是一组抽象方法的集合，它必须由其他非接口类型实现，不能自我实现。Go 语言通过它可以实现很多面向对象的特性。通过如下格式定义接口：
   
     ```go
@@ -1447,7 +1453,42 @@
 
   - 一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
   
-- [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)
+- [ ] 一个例子：
+
+  - 示例：
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    type Shaper interface {
+    	Area() float32
+    }
+    
+    type Square struct {
+    	side float32
+    }
+    
+    func (sq *Square) Area() float32 {
+    	return sq.side * sq.side
+    }
+    
+    func main() {
+    	sq1 := new(Square)
+    	sq1.side = 5
+    
+    	var areaIntf Shaper
+    	areaIntf = sq1
+    	// shorter,without separate declaration:
+    	// areaIntf := Shaper(sq1)
+    	// or even:
+    	// areaIntf := sq1
+    	fmt.Printf("The square has area: %f\n", areaIntf.Area())
+    }
+    ```
+
+- [ ] 参考链接：[接口参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)、[接口参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.1.md)
   
 - [ ] 本节案例：
   
