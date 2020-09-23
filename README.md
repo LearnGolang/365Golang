@@ -1534,31 +1534,10 @@
 - [ ] 本节案例：
 
   
-
   </details>
+
 <details>
-<summary>Day016: 数据-Go通道基础</summary>
-
-- [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
-
-- [x] channel介绍：
-
-  - Go 奉行通过通信来共享内存，而不是共享内存来通信。所以，channel 是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
-  - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day017: 函数-Go语言函数</summary>
+<summary>Day016: 函数-Go语言函数</summary>
 
 - [x] 本节说明：本节介绍Go语言函数相关内容。
 
@@ -1743,7 +1722,7 @@
 
   </details>
 <details>
-<summary>Day018: 函数-Go语言方法</summary>
+<summary>Day017: 函数-Go语言方法</summary>
 
 - [x] 本节说明：本节介绍Go语言方法相关内容。
 
@@ -1754,10 +1733,6 @@
   - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
   - 一个类型加上它的方法等价于面向对象中的一个类。
   
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
 - [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)
   
 - [ ] 本节案例：
@@ -1766,19 +1741,32 @@
   
   </details>
 <details>
-<summary>Day019: 错误-Go错误处理</summary>
+<summary>Day018: 错误-Go错误处理</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节介绍Go语言中的错误处理。
 
-- [ ] range：
+- [x] 错误处理介绍：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - Go语言中没有像 Java等语言的 try/catch异常机制，不能执行抛异常操作。但是有defer-panic-and-recover 机制。这种机制就是错误处理。
+  - Go语言的设计者觉得try/catch 机制的使用太泛滥了，而且从底层向更高的层级抛异常太耗费资源。他们给Go语言设计的机制也可以 “捕捉” 异常，但是更轻量，并且只应该作为（处理错误的）最后的手段。
+  - Go语言是怎么处理普通错误的呢？通过在函数和方法中返回错误对象作为它们的唯一或最后一个返回值——如果返回 nil，则没有错误发生——并且主调（calling）函数总是应该检查收到的错误。
+  - Go语言检查和报告错误条件的惯有方式：
+    - 产生错误的函数会返回两个变量，一个值和一个错误码；如果后者是 nil 就是成功，非 nil 就是发生了错误。
+    - 为了防止发生错误时正在执行的函数（如果有必要的话甚至会是整个程序）被中止，在调用函数后必须检查错误。
   
-- [ ] Go语言命令：
+- [x] 错误处理：
 
-  - go run hello.go //编译运行hello.go
+  - Go 有一个预先定义的 error 接口类型：
   
-- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_16_function.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.2.md)
+    ```go
+    type error interface {
+    	Error() string
+    }
+    ```
+  
+- [ ] 定义错误：
+
+- [ ] [错误参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.1.md)
 
 - [ ] 本节案例：
 
@@ -1786,6 +1774,40 @@
 
   </details>
 
+<details>
+<summary>Day019: 并发-Go语言协程</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day020: 并发-Go通道基础</summary>
+
+- [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
+
+- [x] channel介绍：
+
+  - Go 奉行通过通信来共享内存，而不是共享内存来通信。所以，channel 是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
+  - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
+  
+- [ ] 本节参考：[通道参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)
+  
+- [ ] 本节案例：
+
+
+  </details>
 ### 第二章：Go语言进阶
 
 <details>
@@ -1880,26 +1902,9 @@
 
   
   </details>
+
 <details>
-<summary>Day000: 基础-Go语言协程</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-
-  </details>
-<details>
-<summary>Day000: 基础-Go语言协程</summary>
+<summary>Day000: 基础-Go语言程序</summary>
 
 - [ ] 本节说明：
 
