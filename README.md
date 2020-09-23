@@ -25,7 +25,7 @@
 - [第五章：Go网络爬虫](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB)
 - [第六章：GoWeb框架](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0goweb%E6%A1%86%E6%9E%B6)
 - [第七章：Go漏洞扫描](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F)
-- 第八章：Go语言源码
+- [第八章：Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AB%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
 
 ## 0x02-学习进度
 
@@ -1778,33 +1778,34 @@
 <details>
 <summary>Day019: 并发-Go语言协程</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
-- [x] Go语言介绍：
+- [x] 协程goroutine介绍：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
+  - Go语言原生支持应用之间的通信（网络，客户端和服务端，分布式计算）和程序的并发。
 
-  - go run hello.go //编译运行hello.go
-  
+
+  - 不要通过共享内存来通信，而通过通信来共享内存。 
+  - Go语言协程比其他语言协程更强大，也很容易从协程的逻辑复用到Go协程。
+
+- [x] [协程参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md)
+
 - [ ] 本节案例：
 
   
 
   </details>
 <details>
-<summary>Day020: 并发-Go通道基础</summary>
+<summary>Day020: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
+- [x] 通道channel介绍：
 
-- [x] channel介绍：
-
-  - Go 奉行通过通信来共享内存，而不是共享内存来通信。所以，channel 是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
+  - Go语言奉行通过通信来共享内存，而不是共享内存来通信。所以，channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
   - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
-  
-- [ ] 本节参考：[通道参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)
-  
+- [ ] 通道操作符：<-
+  - 同一个操作符 <- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么
+- [ ] 本节参考：[通道参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)、[通道参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.2.md)
 - [ ] 本节案例：
 
 
@@ -2203,17 +2204,11 @@
 
   - 递归函数、递归算法、
   
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
 - [ ] 本节案例：
-  
-  
   
   </details>
 <details>
-<summary>Day000: 算法-Go语言算法</summary>
+<summary>Day000: 算法-Go漏桶算法</summary>
 
 - [ ] 本节说明：本节介绍Go中时间和日期的包。
 
@@ -2221,11 +2216,7 @@
 
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)
+- [ ] [漏桶算法参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.15.md)
 
 - [ ] 本节案例：
 
