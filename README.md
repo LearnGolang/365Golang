@@ -2134,7 +2134,7 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go语言库包</summary>
+<summary>Day000: 库包-Go读写数据</summary>
 
 - [ ] 本节说明：
 
@@ -2142,10 +2142,8 @@
 
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
-- [x] Go语言命令：
+- [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)
 
-  - go run hello.go //编译运行hello.go
-  
 - [ ] 本节案例：
 
   
