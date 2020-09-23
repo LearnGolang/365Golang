@@ -2340,7 +2340,7 @@
   
   </details>
 <details>
-<summary>Day365: Go语言入门</summary>
+<summary>Day365: 源码-Go语言入门</summary>
 
 - [ ] 本节说明：
 
@@ -2378,7 +2378,7 @@
   
   </details>
 <details>
-<summary>Day00: 源码-Go域名扫描</summary>
+<summary>Day000: 源码-Go域名扫描</summary>
 
 - [ ] 本节说明：
 
