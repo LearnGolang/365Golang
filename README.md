@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年9月22日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年9月23日。
 
 项目不定期推到重来，暂时取消更新的最新提示。
 
@@ -39,6 +39,7 @@
 
   - Go语言是编译型的开源的程序设计语言。编译器、库和工具的源代码可以免费获得。可以容易的构造简单、可靠且高效的软件。 2007年末由Robert Griesemer, Rob Pike, Ken Thompson主持开发，后来加入了Ian Lance Taylor, Russ Cox等人。最终于2009年11月开源。在2012年发布了Go 1稳定版本。
   - Go语言没有构造或析构函数、没有运算符重载、没有形参默认值、暂时没有泛型、没有异常、没有宏、没有函数注解、没有线程局部存储。Go没有类继承，甚至没有类。
+  - Go 语言不是一种 “传统” 的面向对象编程语言：它里面没有类和继承的概念。
   - Go语言有垃圾回收、有包系统、有一等公民函数、有词法作用域、有系统调用接口等。
   - Go语言以一种不同寻常的方式来诠释面向对象程序设计。
   
@@ -1410,6 +1411,7 @@
   ```
   
   </details> 
+
 <details>
 <summary>Day014: 数据-Go接口基础</summary>
 
@@ -1452,8 +1454,29 @@
   
   
   </details>
+
 <details>
-<summary>Day015: 数据-Go通道基础</summary>
+<summary>Day015: 数据-Go反射基础</summary>
+
+- [ ] 本节说明：
+
+- [ ] range：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [ ] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] [参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_16_function.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.2.md)
+
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day016: 数据-Go通道基础</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 
@@ -1474,7 +1497,7 @@
   
   </details>
 <details>
-<summary>Day016: 函数-Go语言函数</summary>
+<summary>Day017: 函数-Go语言函数</summary>
 
 - [x] 本节说明：本节介绍Go语言函数相关内容。
 
@@ -1659,7 +1682,7 @@
 
   </details>
 <details>
-<summary>Day017: 函数-Go语言方法</summary>
+<summary>Day018: 函数-Go语言方法</summary>
 
 - [x] 本节说明：本节介绍Go语言方法相关内容。
 
@@ -1682,7 +1705,7 @@
   
   </details>
 <details>
-<summary>Day018: 错误-Go错误处理</summary>
+<summary>Day019: 错误-Go错误处理</summary>
 
 - [ ] 本节说明：
 
