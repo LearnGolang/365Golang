@@ -1453,9 +1453,9 @@
 
   - 一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
   
-- [ ] 一个例子：
+- [ ] 一些例子：
 
-  - 示例：
+  - 示例1：
 
     ```go
     package main
@@ -1487,6 +1487,30 @@
     	fmt.Printf("The square has area: %f\n", areaIntf.Area())
     }
     ```
+
+  - 示例2：接口嵌套接口
+
+    接口File包含了ReadWrite和Lock的所有方法，它还额外有一个Close()方法。
+
+    ```go
+    type ReadWrite interface {
+        Read(b Buffer) bool
+        Write(b Buffer) bool
+    }
+    
+    type Lock interface {
+        Lock()
+        Unlock()
+    }
+    
+    type File interface {
+        ReadWrite
+        Lock
+        Close()
+    }
+    ```
+
+    
 
 - [ ] 参考链接：[接口参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)、[接口参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.1.md)
   
