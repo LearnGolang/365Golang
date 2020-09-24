@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年9月23日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年9月24日。
 
 项目不定期推到重来，暂时取消更新的最新提示。
 
@@ -2123,6 +2123,56 @@
   
 - [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)
 
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go请求响应</summary>
+
+- [x] 本节说明：本节介绍Go语言中的net/http包内容。
+
+- [x] HTTP请求响应：
+
+  - 不论是在漏洞利用还是漏洞验证过程中， 使用到的最多的方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
+  - 本节是漏洞验证中最重要的内容。
+  
+- [x] 一些例子：
+
+  - 访问并读取页面：
+  
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"net/http"
+    )
+    
+    var urls = []string{
+    	"http://www.google.com/",
+    	"http://golang.org/",
+    	"http://blog.golang.org/",
+    }
+    
+    func main() {
+    	// Execute an HTTP HEAD request for all url's
+    	// and returns the HTTP status string or an error string.
+    	for _, url := range urls {
+    		resp, err := http.Head(url)
+    		if err != nil {
+    			fmt.Println("Error:", url, err)
+    		}
+    		fmt.Println(url, ": ", resp.Status)
+    	}
+    }
+    ```
+  
+  - 发送get参数请求：
+  - 发送post参数请求：
+  - 发送cookie参数请求：
+  
 - [ ] 本节案例：
 
   
