@@ -117,8 +117,8 @@
   - 安装依赖：
     
     ```
-  go mod download
-    go get github.com/0e0w/365GoLang
+    go mod download
+    go get -u github.com/0e0w/365GoLang
     ```
     
   - 格式化Go代码：
