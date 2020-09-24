@@ -22,9 +22,9 @@
 - [第二章：Go语言进阶](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%8C%E7%AB%A0go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
 - [第三章：Go标准库包](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%89%E7%AB%A0go%E6%A0%87%E5%87%86%E5%BA%93%E5%8C%85)
 - [第四章：Go语言算法](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
-- [第五章：Go网络爬虫](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB)
-- [第六章：GoWeb框架](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0goweb%E6%A1%86%E6%9E%B6)
-- [第七章：Go漏洞扫描](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F)
+- [第五章：Go漏洞扫描]()
+- [第六章：Go网络爬虫]()
+- [第七章：GoWeb框架]()
 - [第八章：Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AB%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
 
 ## 0x02-学习进度
@@ -2062,12 +2062,25 @@
   
 - [ ] 本节案例：
 
+  </details>
+<details>
+<summary>Day000: 库包-Go输入输出</summary>
+
+- [x] 本节说明：本节介绍Go语言库包的相关内容。
+
+- [x] Go语言标准库概述：
+
+  - Go语言标准库就是Go包。需要import导入之后使用某些功能。
+  - 像 fmt、os 等这样具有常用功能的内置包在 Go 语言中有 150 个以上，它们被称为标准库，大部分(一些底层的除外)内置于 Go 本身
+  
+- [ ] 本节案例：
+
   
   </details>
 <details>
 <summary>Day000: 库包-Go时间日期</summary>
 
-- [x] 本节说明：本节介绍Go中时间和日期的包。
+- [ ] 本节说明：本节介绍Go中时间和日期的包。
 
 - [x] Go语言介绍：
 
@@ -2353,7 +2366,100 @@
   
 
   </details>
-### 第五章：Go网络爬虫
+
+### 第五章：Go漏洞扫描
+
+<details>
+<summary>Day000: 扫描-Go目录扫描</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 扫描-Go端口扫描</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 扫描-Go密码扫描</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 扫描-Go域名扫描</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 扫描-Go漏洞扫描</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+### 第六章：Go网络爬虫
 
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
@@ -2374,7 +2480,7 @@
 
   </details>
 
-### 第六章：GoWeb框架
+### 第七章：GoWeb框架
 
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
@@ -2395,80 +2501,6 @@
 
   </details>
 
-### 第七章：Go漏洞扫描
-
-<details>
-<summary>Day100: 项目-Go漏洞扫描</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day101: 项目-Go域名扫描</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day200: 源码-Go语言源码</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day365: 源码-Go语言入门</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
 ### 第八章：Go语言源码
 
 <details>
