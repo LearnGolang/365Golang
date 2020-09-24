@@ -1850,7 +1850,7 @@
   
   </details>
 <details>
-<summary>Day000: 数据-Go数组进阶</summary>
+<summary>Day000: 数据-Go语言数组</summary>
 
 - [ ] 本节说明：
 
@@ -1868,7 +1868,7 @@
 
   </details>
 <details>
-<summary>Day000: 数据-Go切片进阶</summary>
+<summary>Day000: 数据-Go语言切片</summary>
 
 - [ ] 本节说明：
 
@@ -1886,7 +1886,7 @@
 
   </details>
 <details>
-<summary>Day000: 数据-Go集合进阶</summary>
+<summary>Day000: 数据-Go语言集合</summary>
 
 - [ ] 本节说明：
 
@@ -1904,7 +1904,7 @@
 
   </details>
 <details>
-<summary>Day000: 数据-Go结构进阶</summary>
+<summary>Day000: 数据-Go语言结构</summary>
 
 - [ ] 本节说明：
 
@@ -1921,24 +1921,6 @@
   
   </details>
 
-<details>
-<summary>Day000: 基础-Go语言程序</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-
-  </details>
 <details>
 <summary>Day000: 进阶-Go面向对象</summary>
 
@@ -2069,7 +2051,7 @@
 ### 第三章：Go标准库包
 
 <details>
-<summary>Day000: 库包-Go语言库包</summary>
+<summary>Day000: 库包-Go包的管理</summary>
 
 - [x] 本节说明：本节介绍Go语言库包的相关内容。
 
@@ -2233,6 +2215,24 @@
 
   </details>
 <details>
+<summary>Day000: 库包-Go发送邮件</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
 <summary>Day000: 库包-Go语言库包</summary>
 
 - [ ] 本节说明：
@@ -2250,7 +2250,61 @@
   
 
   </details>
+<details>
+<summary>Day000: 库包-Go语言库包</summary>
 
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言库包</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day000: 库包-Go语言库包</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+  
 ### 第四章：Go语言算法
 
 <details>
