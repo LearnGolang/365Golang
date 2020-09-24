@@ -2599,10 +2599,8 @@
 
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
-- [x] Go语言命令：
+- [x] [逆向工程参考1](https://www.anquanke.com/member/122079)
 
-  - go run hello.go //编译运行hello.go
-  
 - [ ] 本节案例：
   
   
