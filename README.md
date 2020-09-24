@@ -2367,7 +2367,7 @@
 
   </details>
 
-### 第五章：Go漏洞扫描
+### 第五章：Go安全工具
 
 <details>
 <summary>Day000: 扫描-Go目录扫描</summary>
@@ -2406,7 +2406,7 @@
   
   </details>
 <details>
-<summary>Day000: 扫描-Go密码扫描</summary>
+<summary>Day000: 扫描-Go密码爆破</summary>
 
 - [ ] 本节说明：
 
@@ -2459,6 +2459,43 @@
   
   
   </details>
+<details>
+<summary>Day000: 扫描-Go隧道代理</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+<details>
+<summary>Day000: 扫描-Go病毒免杀</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
+
 ### 第六章：Go网络爬虫
 
 <details>
