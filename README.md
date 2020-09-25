@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年9月24日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年9月25日。
 
 项目处于未完成阶段。不定期推到重来，暂时取消更新的最新说明。
 
@@ -88,32 +88,41 @@
   - [Goland](https://www.jetbrains.com/go)：JetBrains 公司的 Go 开发工具。
   - [LiteIDE](http://liteide.org)：一款开源跨平台轻量级的Go语言IDE。
   
-- [x] Go语言基础命令：
+- [x] Go语言命令：
 
-  - go run hello.go //编译运行hello.go
+  - 运行go程序：
 
-  - go bulid hello.go //将hello打包成可执行文件
+    ```
+    go run hello.go
+    ```
 
-  - 执行下列命令前需要配置好GOPATH路径。
-
+  - 打包成可执行程序：
+    
+    ```
+    go build hello.go
+    go build
+    ```
+    
+  - 生成不同平台下的可执行程序：需配置GOPATH。
+    
     ```
     // Linux下编译Mac, Windows平台的64位可执行程序：
     CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
     CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
     ```
-
+    
     ```
     // Windows下编译Mac, Linux平台的64位可执行程序：
     CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
     CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build 001.go
     ```
-
+    
     ```
     // Mac下编译Linux, Windows平台的64位可执行程序：
     CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build 001.go
     CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
     ```
-
+    
   - 安装依赖：
     
     ```
@@ -139,6 +148,28 @@
     go install
     ```
 
+  - 其他的go命令：
+
+    ```
+    bug         start a bug report
+    build       compile packages and dependencies
+    clean       remove object files and cached files
+    doc         show documentation for package or symbol
+    env         print Go environment information
+    fix         update packages to use new APIs
+    fmt         gofmt (reformat) package sources
+    generate    generate Go files by processing source
+    get         add dependencies to current module and install them
+    install     compile and install packages and dependencies
+    list        list packages or modules
+    mod         module maintenance
+    run         compile and run Go program
+    test        test packages
+    tool        run specified go tool
+    version     print Go version
+    vet         report likely mistakes in packages
+    ```
+    
   - 从GOPATH/src目录开始引入包，需关闭go mod模式：
 
     ```
