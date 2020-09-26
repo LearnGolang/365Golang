@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年9月25日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年9月26日。
 
 项目处于未完成阶段。不定期推到重来，暂时取消更新的最新说明。
 
@@ -1076,7 +1076,7 @@
 
   </details>
 <details>
-<summary>Day010: 数据-Go数组基础</summary>
+<summary>Day010: 数据-Go语言基础</summary>
 
 - [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
 
@@ -1143,7 +1143,7 @@
   </details>
 
 <details>
-<summary>Day011: 数据-Go切片基础</summary>
+<summary>Day011: 数据-Go语言切片</summary>
 
 - [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
 
@@ -1225,7 +1225,7 @@
   </details>
 
 <details>
-<summary>Day012: 数据-Go集合基础</summary>
+<summary>Day012: 数据-Go语言集合</summary>
 
 - [x] 本节说明：本节介绍集合Go语言集合(Map)的相关内容。
 
@@ -1324,7 +1324,7 @@
   
   </details>
 <details>
-<summary>Day013: 数据-Go结构基础</summary>
+<summary>Day013: 数据-Go语言结构</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 
@@ -1463,7 +1463,7 @@
   </details> 
 
 <details>
-<summary>Day014: 数据-Go接口基础</summary>
+<summary>Day014: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 
@@ -1573,7 +1573,7 @@
   </details>
 
 <details>
-<summary>Day015: 数据-Go反射基础</summary>
+<summary>Day015: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 
@@ -1771,6 +1771,7 @@
   
 
   </details>
+
 <details>
 <summary>Day017: 函数-Go内置函数</summary>
 
@@ -1896,80 +1897,7 @@
 - [ ] 本节案例：
   
   
-  
   </details>
-<details>
-<summary>Day000: 数据-Go语言数组</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-
-  </details>
-<details>
-<summary>Day000: 数据-Go语言切片</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-
-  </details>
-<details>
-<summary>Day000: 数据-Go语言集合</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-
-  </details>
-<details>
-<summary>Day000: 数据-Go语言结构</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-  </details>
-
 <details>
 <summary>Day000: 进阶-Go面向对象</summary>
 
