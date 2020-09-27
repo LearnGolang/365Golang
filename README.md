@@ -1088,13 +1088,26 @@
   - %v  //自动匹配类型
   - %T  //数据类型
   
+- [ ] 数据类型转换：
+
+  - int(a)
+
+- [ ] 类型别名：
+
+  - 给一个类型另取一个别名：
+
+    ```go
+    type bigint int64
+    var a bigint
+    ```
+
 - [x] 本节案例：
 
   
 
   </details>
 <details>
-<summary>Day010: 数据-Go语言基础</summary>
+<summary>Day010: 数据-Go语言数组</summary>
 
 - [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
 
@@ -2066,6 +2079,27 @@
 
   - Go语言标准库就是Go包。需要import导入之后使用某些功能。
   - 像 fmt、os 等这样具有常用功能的内置包在 Go 语言中有 150 个以上，它们被称为标准库，大部分(一些底层的除外)内置于 Go 本身
+  
+- [ ] 输入案例参考：
+
+  - 案例1：
+  
+    ```
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    func main() {
+    	var a int
+    	fmt.Printf("请输入a:")
+    	fmt.Scanf("%d", &a)
+    	//fmt.Scan(&a)
+    	fmt.Println("a =", a)
+    
+    }
+    ```
   
 - [ ] 本节案例：
 
