@@ -1692,18 +1692,18 @@
         函数体
     }
     ```
-  
+
   - 无参数无返回的函数
-  
-    ```
+
+    ```go
     func MyFunc(){
     	
     }
     ```
-  
+
   - 有参数无返回的函数
-  
-    ```
+
+    ```go
     func main() {
     	Myfunc("url", "t")
     }
@@ -1711,12 +1711,32 @@
     func Myfunc(aa, bb string) {
     	fmt.Println(aa)
     	fmt.Println(bb)
+    }
+    ```
+
+    不定参数类型：不定参数只能是形参中的最好一个参数。
+
+    ```go
+    func Myfunc(args ...int) {
+    	fmt.Println(aa)
+    	fmt.Println(bb)
+    }
+    ```
+
+  - 无参数有返回的函数：有返回值的函数需要通过return返回。
+
+    ```go
+    func MyFunc() int {
     
     }
     ```
-  
+
   - 有参数有返回的函数
-  
+
+    ```go
+    
+    ```
+
 - [x] 函数调用：
 
   - 当创建函数时，你定义了函数需要做什么，通过调用该函数来执行指定任务。
