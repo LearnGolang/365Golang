@@ -688,12 +688,14 @@
 
   - switch语句是存在多个条件判断的情况下，分别执行其对应的语句。
 
-  - switch语句从上至下执行，直到找到匹配项，匹配项后面也不需要再加 break。
+  - switch语句默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case。
 
-  - switch语句默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case，如果我们需要执行后面的 case，可以使用 fallthrough 。
+  - 如果我们需要执行后面的 case，可以使用 fallthrough 。
+
+  - switch后面可以写变量本身。和case后面的变量进行比较之后进行执行对应语句。
 
     ```go
-    switch var1 {
+    switch var1 { 
         case val1:
             ...
         case val2:
@@ -713,7 +715,7 @@
     func main() {
     	var num1 int = 7
     
-    	switch {
+    	switch { //无条件执行
     	    case num1 < 0:
     		    fmt.Println("Number is negative")
     	    case num1 > 0 && num1 < 10:
@@ -765,6 +767,7 @@
 - [x] Go循环语句：
 
   - 在实际问题中有大量的具有规律性的重复操作，在程序开发中便需要重复执行某些语句。
+  - 在Go语言中只有for循环一种循环结构。
 
 - [x] for循环：重复执行语句块
 
