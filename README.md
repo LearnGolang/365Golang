@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年10月05日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年10月06日。
 
 项目处于未完成阶段。不定期推倒重来，暂时取消更新的最新说明。
 
@@ -2450,11 +2450,88 @@
 ### 第四章：Go语言算法
 
 <details>
+<summary>Day000: 算法-Go排序算法</summary>
+
+- [ ] 本节说明：
+
+- [x] 排序算法介绍：
+
+  - 递归函数、递归算法、
+  
+- [ ] Go排序算法：
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
 <summary>Day000: 算法-Go递归算法</summary>
 
 - [ ] 本节说明：
 
-- [x] Go递归介绍：
+- [x] 递归算法介绍：
+
+  - 递归函数、递归算法、
+  
+- [ ] Go递归算法：
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go分治算法</summary>
+
+- [ ] 本节说明：
+
+- [x] 分治算法介绍：
+
+  - 递归函数、递归算法、
+  
+- [ ] Go分治算法：
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go动态规划</summary>
+
+- [ ] 本节说明：
+
+- [x] 动态规划算法介绍：
+
+  - 递归函数、递归算法、
+  
+- [ ] Go动态规划算法：
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go贪心算法</summary>
+
+- [ ] 本节说明：
+
+- [x] 贪心算法介绍：
+
+  - 递归函数、递归算法
+  
+- [ ] Go贪心算法：
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go回溯算法</summary>
+
+- [ ] 本节说明：
+
+- [ ] 回溯算法介绍：
+
+- [x] Go回溯算法：
 
   - 递归函数、递归算法、
   
@@ -2462,34 +2539,93 @@
   
   </details>
 <details>
+<summary>Day000: 算法-Go搜索算法</summary>
+
+- [ ] 本节说明：
+
+- [ ] 搜索算法介绍：
+
+- [x] Go搜索算法：
+
+  - 递归函数、递归算法、
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go随机算法</summary>
+
+- [ ] 本节说明：
+
+- [ ] 随机算法：
+
+- [x] Go随机算法：
+
+  - 递归函数、递归算法、
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go图论算法</summary>
+
+- [ ] 本节说明：
+
+- [ ] 图论算法介绍：
+
+- [x] Go图论算法：
+
+  - 递归函数、递归算法、
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go数论算法</summary>
+
+- [ ] 本节说明：
+
+- [ ] 数论算法介绍：
+
+- [x] Go数论算法：
+
+  - 递归函数、递归算法、
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
+<summary>Day000: 算法-Go完全算法</summary>
+
+- [ ] 本节说明：
+
+- [ ] 完全算法介绍：
+
+- [x] Go完全算法：
+
+  - 递归函数、递归算法、
+  
+- [ ] 本节案例：
+  
+  </details>
+
+<details>
 <summary>Day000: 算法-Go漏桶算法</summary>
 
-- [ ] 本节说明：本节介绍Go中时间和日期的包。
+- [ ] 本节说明：本节介绍漏桶算法的相关内容。
 
-- [x] Go语言介绍：
+- [ ] 漏桶算法介绍：
+
+- [x] Go漏桶算法：
 
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
 - [ ] [漏桶算法参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.15.md)
 
-- [ ] 本节案例：
-
-  
-
-  </details>
-<details>
-<summary>Day000: 算法-Go语言算法</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
 - [ ] 本节案例：
 
   
@@ -2625,6 +2761,24 @@
   
   </details>
 
+<details>
+<summary>Day000: 扫描-Go代码审计</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  </details>
 ### 第六章：Go网络爬虫
 
 <details>
@@ -2743,6 +2897,7 @@
 
 ## 0x03-参考资源
 
-- https://www.runoob.com/go/go-tutorial.html
-- https://github.com/ffhelicopter/Go42
-- https://github.com/unknwon/the-way-to-go_ZH_CN
+- [x] https://www.runoob.com/go/go-tutorial.html
+- [x] https://github.com/ffhelicopter/Go42
+- [x] https://github.com/unknwon/the-way-to-go_ZH_CN
+- [ ] https://github.com/iswbm/GolangCodingTime
