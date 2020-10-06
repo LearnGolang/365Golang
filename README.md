@@ -2241,10 +2241,125 @@
 
 - [x] 本节说明：本节介绍Go语言处理文本格式的相关内容。
 
-- [x] Go语言介绍：
+- [x] Go文本处理：也就是处理TXT格式的文件。
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - 文本处理在Go开发中用到的比较多，
   
+- [x] 按行读取文本文件：
+
+  - io/ioutil
+
+  - 案例一：按行读取之按行打印内容
+
+    ```go
+    package main
+    
+    import (
+        "fmt"
+        "os"
+    )
+    
+    func main() {
+        userFile := "asatxie.txt"
+        fl, err := os.Open(userFile)        
+        if err != nil {
+            fmt.Println(userFile, err)
+            return
+        }
+        defer fl.Close()
+        buf := make([]byte, 1024)
+        for {
+            n, _ := fl.Read(buf)
+            if 0 == n {
+                break
+            }
+            os.Stdout.Write(buf[:n])
+        }
+    }
+    ```
+
+  - 案例二：按行读取之按行打印内容
+
+    ```go
+    package main
+    
+    import (
+    	"bufio"
+    	"fmt"
+    	"io"
+    	"os"
+    	"strings"
+    )
+    
+    func main() {
+    	fileName := "ip.txt"
+    	file, err := os.OpenFile(fileName, os.O_RDWR, 0666)
+    	if err != nil {
+    		fmt.Println("Open file error!", err)
+    		return
+    	}
+    	defer file.Close()
+    
+    	stat, err := file.Stat()
+    	if err != nil {
+    		panic(err)
+    	}
+    
+    	var size = stat.Size()
+    	fmt.Println("file size=", size)
+    
+    	buf := bufio.NewReader(file)
+    	for {
+    		line, err := buf.ReadString('\n')
+    		line = strings.TrimSpace(line)
+            // 实际编程中处理line即可
+    		fmt.Println(line)
+    		if err != nil {
+    			if err == io.EOF {
+    				fmt.Println("File read ok!")
+    				break
+    			} else {
+    				fmt.Println("Read file error!", err)
+    				return
+    			}
+    		}
+    	}
+    }
+    
+    ```
+
+- [ ] 把文本文件作为参数：
+
+- [ ] 把结果写入到文本文件中：
+
+  - 案例一：
+
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"os"
+    )
+    
+    func main() {
+    	userFile := "astaxie.txt"
+    	fout, err := os.Create(userFile)
+    	if err != nil {
+    		fmt.Println(userFile, err)
+    		return
+    	}
+    	defer fout.Close()
+    	for i := 0; i < 10; i++ {
+    		fout.WriteString("Just a test!\r\n")
+    		fout.Write([]byte("Just a test!\r\n"))
+    	}
+    }
+    
+    ```
+
+    
+
 - [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)
 
 - [ ] 本节案例：
