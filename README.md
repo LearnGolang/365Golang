@@ -2749,7 +2749,29 @@
 ### 第五章：Go安全开发
 
 <details>
-<summary>Day000: 扫描-Go目录扫描</summary>
+<summary>Day000:安全-Go域名扫描</summary>
+
+- [x] 本节说明：本节介绍通过Go语言进行子域名发现的相关内容。
+
+- [x] 子域名发现方法：二级三级域名的发现无外乎下面的这几种方法。
+
+  - 搜索引擎搜索：通过搜索引擎搜索子域名是一种比较好的域名收集方法。
+  - 子域名爆破法：通过子域名爆破收集子域名也是很好的方法。
+  
+- [ ] 子域名爆破原理：
+
+  - 
+  
+- [ ] 子域名字典整理：
+  
+- [ ] 项目成品：
+  
+  - [SubDomainG](https://github.com/0e0w/SubDomainG)：未开源
+  
+  </details>
+
+<details>
+<summary>Day000: 安全-Go目录扫描</summary>
 
 - [ ] 本节说明：
 
@@ -2767,7 +2789,7 @@
   
   </details>
 <details>
-<summary>Day000: 扫描-Go端口扫描</summary>
+<summary>Day000: 安全-Go端口扫描</summary>
 
 - [ ] 本节说明：
 
@@ -2785,7 +2807,7 @@
   
   </details>
 <details>
-<summary>Day000: 扫描-Go密码爆破</summary>
+<summary>Day000: 安全-Go密码爆破</summary>
 
 - [ ] 本节说明：
 
@@ -2803,7 +2825,7 @@
   
   </details>
 <details>
-<summary>Day000: 扫描-Go域名扫描</summary>
+<summary>Day000: 安全-Go漏洞扫描</summary>
 
 - [ ] 本节说明：
 
@@ -2821,7 +2843,7 @@
   
   </details>
 <details>
-<summary>Day000: 扫描-Go漏洞扫描</summary>
+<summary>Day000: 安全-Go隧道代理</summary>
 
 - [ ] 本节说明：
 
@@ -2839,25 +2861,7 @@
   
   </details>
 <details>
-<summary>Day000: 扫描-Go隧道代理</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day000: 扫描-Go病毒免杀</summary>
+<summary>Day000: 安全-Go病毒免杀</summary>
 
 - [ ] 本节说明：
 
@@ -2876,7 +2880,7 @@
   </details>
 
 <details>
-<summary>Day000: 扫描-Go代码审计</summary>
+<summary>Day000: 安全-Go代码审计</summary>
 
 - [ ] 本节说明：
 
