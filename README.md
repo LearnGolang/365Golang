@@ -446,37 +446,37 @@
   - iota 可理解为 const 语句块中的行索引。
 
   - iota 可以被用作枚举值。第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1。
-  
+
      ```go
      const (
          a = iota
          b = iota
          c = iota
-  )
+     )
      ```
 
      第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：
-  
+
      ```go
      const (
          a = iota
          b
          c
-   )
+      )
      ```
 
      如果对b重新赋值之后，a, b, c分别为0, 8, 8，新的常量b声明后，iota 不再向下赋值，后面常量如果没有赋值，则继承上一个常量值。
-  
+
      ```go
      const (
          a = iota
          b = 8
          c
-   )
+      )
      ```
 
      使用位左移与 iota 计数配合可优雅地实现存储单位的常量枚举：
-  
+
      ```go
      type ByteSize float64
      const (
