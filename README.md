@@ -487,8 +487,8 @@
          TB
      )
      ```
-     
-     </details>
+
+  </details>
 <details>
 <summary>Day006: 语句-Go运算符号</summary>
 
