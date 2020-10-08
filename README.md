@@ -229,40 +229,37 @@
     - 常量：
     - 语句：
     - 语法：
+  
 - [x] Go语言名称：
 
   - 程序一般由关键字、常量、变量、运算符、类型和函数组成。 程序中可能会使用到这些分隔符：括号 ()，中括号 [] 和大括号 {}。 程序中可能会使用到这些标点符号：.、,、;、: 和 …。
   - 在变量与运算符间加入空格，程序看起来更加美观。
-
-
   - 标识符：用来命名变量、类型等程序实体。一个标识符就是一个或是多个字母( A ~ Z 和 a ~ z)数字(0~9)、下划线_组成的序列，但是第一个字符必须是字母或下划线而不能是数字。
 
-  - 关键字：Go语言中有25个关键字或保留字。只能用在语法允许的地方，不能作为名称使用。
+- [x] 关键字：关键字是一些特殊的用来帮助编译器理解和解析源代码的单词。Go语言中有25个关键字或保留字。只能用在语法允许的地方，不能作为名称使用。
 
-    | break    | default     | func   | interface | select |
-    | -------- | ----------- | ------ | --------- | ------ |
-    | case     | defer       | go     | map       | struct |
-    | chan     | else        | goto   | package   | swith  |
-    | const    | fallthrough | if     | range     | type   |
-    | continue | for         | import | return    | var    |
+    - 声明代码元素：const、func、import、package、type、var
+    - 组合类型表示：chan、interface、map、struct
+    - 流程控制语句：break、case、continue、default、else、fallthrough、for、goto、if、switch、select、range、return
+    - 特殊的关键字：defer、go。也可以看作是流程控制关键字， 但它们有一些特殊的作用。
 
-   - 预定义标识符：三十几个内置的预申明的常量、类型和函数。
+- [x] 预定义标识符：三十几个内置的预申明的常量、类型和函数。
 
      - 常量：true、flase、iota、nil
      - 类型：int、int8、int16、int32、int64、uint、uint8、uint16、uint32、uint64、uintptr、float32、float64、complex128、complex64、bool、byte、rune、string、error
      - 函数：make、len、cap、new、append、copy、close、delete、complex、real、imag、panic、recover
 
 - [x] 声明：
-  
+
    - 声明是给一个程序实体命名，并设定其部分或全部属性。
    - 有4个主要的声明：
      - 变量（var）
      - 常量（const）
      - 类型（type）
      - 函数（func）
-   
+
    - 函数的声明包含一个名字、一个参数列表、一个可选的返回值列表以及函数体。
-   
+
 - [x] 本节案例：
 
    ```go
