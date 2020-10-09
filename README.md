@@ -14,7 +14,7 @@
 
 项目处于未完成阶段。不定期推倒重来，暂时取消更新的最新说明。
 
-~~已经更新至第一章Day016: 函数-Go语言函数~~
+~~已经更新至第一章Day017: 函数-Go语言函数~~
 
 本项目暂时计划共九章：
 
@@ -493,7 +493,26 @@
 
   </details>
 <details>
-<summary>Day006: 语句-Go运算符号</summary>
+<summary>Day006- 语法-Go语言语法</summary>
+
+- [x] 本节说明：本节介绍表达式、语句和简单语句的相关内容。
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  
+  
+  
+  </details>
+<details>
+<summary>Day007: 语句-Go运算符号</summary>
 
 - [x] 本节说明：本节介绍Go运算符相关内容。
 
@@ -593,10 +612,9 @@
 - [ ] 本节案例：
 
   
-
   </details>
 <details>
-<summary>Day007: 语句-Go条件判断</summary>
+<summary>Day008: 语句-Go条件判断</summary>
 
 - [x] 本节说明：本节介绍Go语言条件判断语句的相关内容。
 
@@ -764,7 +782,7 @@
   
   </details>
 <details>
-<summary>Day008: 语句-Go循环语句</summary>
+<summary>Day009: 语句-Go循环语句</summary>
 
 - [x] 本节说明：本节介绍Go语言循环语句的相关内容。
 
@@ -1004,7 +1022,7 @@
   
   </details> 
 <details>
-<summary>Day009: 数据-Go基本数据</summary>
+<summary>Day010: 数据-Go基本数据</summary>
 
 - [x] 本节说明：本节介绍Go语言的一些基本数据类型。
 
@@ -1164,7 +1182,7 @@
 
   </details>
 <details>
-<summary>Day010: 数据-Go语言数组</summary>
+<summary>Day011: 数据-Go语言数组</summary>
 
 - [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
 
@@ -1231,7 +1249,7 @@
   </details>
 
 <details>
-<summary>Day011: 数据-Go语言切片</summary>
+<summary>Day012: 数据-Go语言切片</summary>
 
 - [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
 
@@ -1313,7 +1331,7 @@
   </details>
 
 <details>
-<summary>Day012: 数据-Go语言集合</summary>
+<summary>Day013: 数据-Go语言集合</summary>
 
 - [x] 本节说明：本节介绍集合Go语言集合(Map)的相关内容。
 
@@ -1412,7 +1430,7 @@
   
   </details>
 <details>
-<summary>Day013: 数据-Go语言结构</summary>
+<summary>Day014: 数据-Go语言结构</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 
@@ -1551,7 +1569,7 @@
   </details> 
 
 <details>
-<summary>Day014: 数据-Go语言接口</summary>
+<summary>Day015: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 
@@ -1661,7 +1679,7 @@
   </details>
 
 <details>
-<summary>Day015: 数据-Go语言反射</summary>
+<summary>Day016: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 
@@ -1675,7 +1693,7 @@
   </details>
 
 <details>
-<summary>Day016: 函数-Go语言函数</summary>
+<summary>Day017: 函数-Go语言函数</summary>
 
 - [x] 本节说明：本节介绍Go语言函数相关内容。
 
@@ -1930,7 +1948,7 @@
   </details>
 
 <details>
-<summary>Day017: 函数-Go内置函数</summary>
+<summary>Day018: 函数-Go内置函数</summary>
 
 - [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
@@ -1949,7 +1967,7 @@
   
   </details>
 <details>
-<summary>Day018: 函数-Go语言方法</summary>
+<summary>Day019: 函数-Go语言方法</summary>
 
 - [x] 本节说明：本节介绍Go语言方法相关内容。
 
@@ -1968,7 +1986,7 @@
   
   </details>
 <details>
-<summary>Day019: 错误-Go错误处理</summary>
+<summary>Day020: 错误-Go错误处理</summary>
 
 - [x] 本节说明：本节介绍Go语言中的错误处理。
 
@@ -2000,7 +2018,7 @@
   </details>
 
 <details>
-<summary>Day020: 并发-Go语言协程</summary>
+<summary>Day021: 并发-Go语言协程</summary>
 
 - [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
@@ -2020,7 +2038,7 @@
 
   </details>
 <details>
-<summary>Day021: 并发-Go语言通道</summary>
+<summary>Day022: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 - [x] 通道channel介绍：
@@ -2381,6 +2399,17 @@
     	}
     }
     
+    ```
+
+  - 案例二：将值传递给domain即可
+
+    ```go
+    fileName := "is.txt"
+    fd, _ := os.OpenFile(fileName, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0644)
+    s := strings.Join([]string{domain, "\t", "\n"}, "")
+    buf := []byte(s)
+    fd.Write(buf)
+    fd.Close()
     ```
 
 - [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)
