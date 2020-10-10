@@ -2139,13 +2139,46 @@
 <summary>Day022: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
+
 - [x] 通道channel介绍：
 
   - Go语言奉行通过通信来共享内存，而不是共享内存来通信。所以，channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
   - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
+  - 通道可以想像成Go语言协程之间通信的管道。如同管道中的水会从一端流到另一端，通过使用信道，数据也可以从一端发送，在另一端接收。
+  
 - [ ] 通道操作符：<-
-  - 同一个操作符 <- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么
-- [ ] 本节参考：[通道参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)、[通道参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.2.md)
+  
+  - 同一个操作符 <- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么。
+  
+- [ ] 死锁：
+
+- [ ] 绝望：
+
+- [ ] 通道案例：
+
+  - 案例一：
+
+    ```go
+    package main
+     
+    import (  
+        "fmt"
+    )
+     
+    func hello(done chan bool) {  
+        fmt.Println("Hello world goroutine")
+        done <- true
+    }
+    func main() {  
+        done := make(chan bool)
+        go hello(done)
+        <-done
+        fmt.Println("main function")
+    }
+    ```
+
+- [ ] 本节参考：[通道参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)、[通道参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.2.md)、[通道参考3](https://blog.csdn.net/ytd7777/article/details/85004371)
+
 - [ ] 本节案例：
 
 
