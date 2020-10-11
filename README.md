@@ -8,8 +8,6 @@
 
 本项目大量的参考借鉴甚至复制了其他类似项目。感谢这些作者们，感谢Gopher。
 
-特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)
-
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
 本项目创建于2020年9月1日，最近的一次更新日期为2020年10月11日。
@@ -3308,13 +3306,14 @@
   
 - [ ] 本节案例：
   
-  
   </details>
 
 ## 0x03-参考资源
 
+特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)
+
 - [x] https://www.runoob.com/go/go-tutorial.html
 - [x] https://github.com/ffhelicopter/Go42
 - [x] https://github.com/unknwon/the-way-to-go_ZH_CN
+- [x] https://github.com/golang101/golang101
 - [ ] https://github.com/iswbm/GolangCodingTime
-- [ ] https://github.com/golang101/golang101
