@@ -8,6 +8,8 @@
 
 本项目大量的参考借鉴甚至复制了其他类似项目。感谢这些作者们，感谢Gopher。
 
+特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)
+
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
 本项目创建于2020年9月1日，最近的一次更新日期为2020年10月11日。
@@ -1070,7 +1072,7 @@
 <details>
 <summary>Day010: 数据-Go基本数据</summary>
 
-- [x] 本节说明：本节介绍Go语言的内置基本数据类型。
+- [x] 本节说明：本节介绍Go语言的基本数据类型。
 
 - [x] 基本数据类型：
 
@@ -1211,22 +1213,12 @@
     %T  //数据类型
     ```
 
-  - 数据类型转换：
-    - int(a)
-
-- [ ] 类型别名：
-
-  - 给一个类型另取一个别名：
-
-    ```go
-    type bigint int64
-    var a bigint
-    ```
+  - 数据类型转换：int(a)
 
 - [x] 组合类型分类：
 
   - 指针类型 - 类C指针。
-- 结构体类型 - 类C结构体。
+  - 结构体类型 - 类C结构体。
   - 函数类型 - 函数类型在Go中是一种一等公民类别。
   - 容器类型，包括:
     - 数组类型 - 定长容器类型。
@@ -1265,7 +1257,94 @@
   <-chan T
   ```
   
+- [ ] 类型的种类：
+
+  - 每种上面提到的基本类型和组合类型都对应着一个类型种类（kind）。除了这些种类，今后将要介绍的非类型安全指针类型属于另外一个新的类型种类。
+- 所以，目前（Go 1.15），Go有26个类型种类。
   
+- [ ] 语法-类型定义：
+
+  - 在Go语言中，我们可以用type关键字来定义新的类型。
+
+  - 一些类型定义的例子：
+  
+    ```go
+    // 下面这些新定义的类型和它们的源类型都是基本类型。
+    type (
+    	MyInt int
+    	Age   int
+    	Text  string
+    )
+    
+    // 下面这些新定义的类型和它们的源类型都是组合类型。
+    type IntPtr *int
+    type Book struct{author, title string; pages int}
+    type Convert func(in0 int, in1 bool)(out0 int, out1 string)
+    type StringArray [5]string
+    type StringSlice []string
+    
+    func f() {
+    	// 这三个新定义的类型名称只能在此函数内使用。
+    	type PersonAge map[string]int
+    	type MessageQueue chan string
+    	type Reader interface{Read([]byte) int}
+    }
+    ```
+  
+- [ ] 类型别名声明：
+
+  - 给一个类型另取一个别名：
+
+    ```go
+    type bigint int64
+    var a bigint
+    ```
+  
+    ```go
+    type (
+    	Name = string
+    	Age  = int
+    )
+    
+    type table = map[string]int
+    type Table = map[Name]Age
+    ```
+  
+- [ ] 定义类型和非定义类型：
+
+- [ ] 有名类型和无名类型：
+
+- [ ] 底层类型：
+
+  - 在Go语言中，每个类型都有一个底层类型。
+
+  - 一个内置类型的底层类型为它自己。
+  
+  - unsafe标准库包中定义的Pointer类型的底层类型是它自己。
+  
+  - 一个非定义类型（必为一个组合类型）的底层类型为它自己。
+  
+  - 在一个类型声明中，新声明的类型和源类型共享底层类型。
+  
+  - 一个例子：
+  
+    ```go
+    // 这四个类型的底层类型均为内置类型int。
+    type (
+    	MyInt int
+    	Age   MyInt
+    )
+    
+    // 下面这三个新声明的类型的底层类型各不相同。
+    type (
+    	IntSlice   []int   // 底层类型为[]int
+    	MyIntSlice []MyInt // 底层类型为[]MyInt
+    	AgeSlice   []Age   // 底层类型为[]Age
+    )
+    
+    // 类型[]Age、Ages和AgeSlice的底层类型均为[]Age。
+    type Ages AgeSlice
+    ```
   
 - [x] 本节案例：
 
