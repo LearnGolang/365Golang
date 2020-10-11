@@ -1833,13 +1833,14 @@
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 
-- [x] struct介绍：
+- [x] 结构体struct介绍：
 
   - Go语言通过类型别名（alias types）和结构体的形式支持用户自定义类型，或者叫定制类型。
   - 一个带属性的结构体试图表示一个现实世界中的实体。
   - 结构体是由一系列具有相同类型或不同类型的数据构成的数据集合。结构体中可以定义不同类型的数据。
   - 结构体是复合类型（composite types），它由一系列属性组成，每个属性都有自己的类型和值的，结构体通过属性把数据聚集在一起。结构体也是值类型，因此可以通过new函数来创建。
   - 组成结构体类型的那些数据称为 字段（fields）。每个字段都有一个类型和一个名字；在一个结构体中，字段名字必须是唯一的。
+  - Go语言结构体不支持字段联合（union）。
   - 方法（Method）可以访问这些数据，就好像它们是这个独立实体的一部分。
 
 - [x] 定义结构体：
@@ -1847,10 +1848,10 @@
   - 结构体定义需要使用 type 和 struct 语句。结构体中有一个或多个成员。type 语句设定了结构体的名称。结构体的格式如下：
 
     ```go
-    type identifier struct {
-        field1 type1
-        field2 type2
-        ...
+    struct {
+    	title, author string
+    	pages         int
+        X, Y   		  bool
     }
     ```
     
@@ -1868,7 +1869,7 @@
     s.b = 8
     ```
 
-  - 一个例子：
+  - 一些结构体例子：
 
     ```go
     package main
@@ -1892,6 +1893,46 @@
         fmt.Println(ms)
     }
     ```
+    
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    type Book struct {
+    	title, author string
+    	pages         int
+    }
+    
+    func main() {
+    	book := Book{"Go语言笔记", "0e0w", 365}
+    	fmt.Println(book)
+    
+    	// 使用带字段名的组合字面量来表示结构体值。
+    	book = Book{author: "0e0w", pages: 365, title: "Go语言笔记"}
+    	book = Book{}
+    	book = Book{author: "0e0w"}
+    
+    	// 使用选择器来访问和修改字段值。
+    	var book2 Book // <=> book2 := Book{}
+    	book2.author = "Tapir"
+    	book2.pages = 300
+    	fmt.Println(book.pages) // 300
+    }
+    
+    func f() {
+    	book1 := Book{pages: 300}
+    	book2 := Book{"Go语言笔记", "0e0w", 365}
+    
+    	book2 = book1
+    	// 上面这行和下面这三行是等价的。
+    	book2.title = book1.title
+    	book2.author = book1.author
+    	book2.pages = book1.pages
+    }
+    ```
 
 - [x] 访问结构体成员：
 
@@ -1901,7 +1942,7 @@
     结构体.成员名
     ```
 
-- [ ] 结构体特性：
+- [x] 结构体特性：
 
   - 结构体的内存布局：Go 语言中，结构体和它所包含的数据在内存中是以连续块的形式存在的，即使结构体中嵌套有其他的结构体，这在性能上带来了很大的优势。
 
@@ -1911,7 +1952,7 @@
 
   - 带标签的结构体：结构体中的字段除了有名字和类型外，还可以有一个可选的标签（tag）。它是一个附属于字段的字符串，可以是文档或其他的重要标记。标签的内容不可以在一般的编程中使用，只有 reflect 包能获取它。
 
-- [ ] 本节参考：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_18_struct.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.1.md)
+- [ ] 结构体参考：[结构体参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_18_struct.md)、[结构体参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.1.md)、[结构体参考3](https://gfw.go101.org/article/struct.html)
   
 - [x] 本节案例：
   
@@ -2048,7 +2089,7 @@
   - 一个指针值不能被赋值给其它任意类型的指针值。
   - 上述Go语言指针的限制是可以被打破的。unsafe标准库包中提供的非类型安全指针（unsafe.Pointer）机制可以被用来打破上述Go语言指针的安全限制。
   
-- [ ] 指针参考：[指针参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)、[指针参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.9.md)
+- [ ] 指针参考：[指针参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)、[指针参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.9.md)、[指针参考3](https://gfw.go101.org/article/pointer.html)
   
   
   
