@@ -1065,10 +1065,10 @@
     如果 return 语句使用在 main 函数中，表示终止 main 函数，也就是终止程序的运行。
 
 - [ ] 本节案例： 
-  
-  
+    
   
   </details> 
+
 <details>
 <summary>Day010: 数据-Go基本数据</summary>
 
@@ -1340,10 +1340,246 @@
 - [x] 本节案例：
 
   
+  </details>
+
+<details>
+<summary>Day011: 函数-Go语言函数</summary>
+
+- [x] 本节说明：本节介绍Go语言函数相关内容。
+
+- [x] Go函数介绍：
+
+  - 函数是基本的代码块，用于执行一个任务。Go 语言最少有个 main() 函数。
+  - Go语言是编译型语言，函数编写的顺序是无关紧要的；鉴于可读性的需求，最好把 main() 函数写在文件的前面，其他函数按照一定逻辑顺序进行编写（例如函数被调用的顺序）。
+  - Go语言标准库提供了多种内置函数。例如，len() 函数可以接受不同类型参数并返回该类型的长度。如果我们传入的是字符串则返回字符串的长度，如果传入的是数组，则返回数组中包含的元素个数。
+  - main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）。main 函数既没有参数，也没有返回类型（与 C 家族中的其它语言恰好相反）。如果为 main 函数添加了参数或者返回类型，将会引发构建错误。
+  - 目前Go语言没有泛型（generic）的概念，也就是说它不支持那种支持多种类型的函数。
+  
+- [x] Go语言里面有三种类型的函数：
+
+  - 普通的带有名字的函数。
+  - 匿名函数或者lambda函数。
+  
+  - 方法（Methods）。
+  
+- [x] 函数定义：
+  - 函数声明告诉了编译器函数的名称，返回类型，和参数。
+  - Go语言函数不支持输入参数默认值。每个返回结果的默认值是它的类型的零值。
+  - 任何一个函数都不能被声明在另一个函数体内。 虽然匿名函数可以定义在函数 体内，但匿名函数定义不属于函数声明。
+  - Go语言函数基本组成：关键字func、函数名、参数列表、返回值、函数体和返回语句。语法如下：
+    ```GO
+    func 函数名(参数) 返回类型{
+        函数体
+    }
+    ```
+
+  - 无参数无返回的函数
+
+    ```go
+    func MyFunc(){
+    	
+    }
+    ```
+
+  - 有参数无返回的函数
+
+    ```go
+    func main() {
+    	Myfunc("url", "t")
+    }
+    
+    func Myfunc(aa, bb string) {
+    	fmt.Println(aa)
+    	fmt.Println(bb)
+    }
+    ```
+
+    不定参数类型：不定参数只能是形参中的最好一个参数。
+
+    ```go
+    func Myfunc(args ...int) {
+    	fmt.Println(aa)
+    	fmt.Println(bb)
+    }
+    ```
+
+  - 无参数有返回的函数：有返回值的函数需要通过return返回。
+
+    ```go
+    func MyFunc() int {
+    
+    }
+    ```
+
+  - 有参数有返回的函数
+
+    ```go
+    func main() {
+    	max, min := MaxAndMin(10, 20)
+    	fmt.Println(max, min)
+    }
+    
+    func MaxAndMin(a, b int) (max, min int) {
+    	if a > b {
+    		max = a
+    		min = b
+    	} else {
+    		max = b
+    		min = a
+    	}
+    	return
+    }
+    ```
+
+- [x] 函数调用：
+  - 一个声明的函数可以通过它的名称和一个实参列表来调用。
+  - 一个函数的声明可以出现在它的调用之前，也可以出现在它的调用之后。
+  - 一个函数调用可以被延迟执行或者在另一个协程（goroutine）中执行。
+  - 当创建函数时，你定义了函数需要做什么，通过调用该函数来执行指定任务。
+  - 函数调用流程：先调用的函数后返回。先进后出。
+  - 调用函数，向函数传递参数，并返回值。
+
+    ```go
+    pack1.Function(arg1, arg2, …, argn)
+    ```
+    
+    上面的代码中Function 是 pack1 包里面的一个函数，括号里的是被调用函数的实参（argument）：这些值被传递给被调用函数的形参。
+    
+    ```go
+    package main
+    
+    func main() {
+        greeting()
+    }
+    
+    func greeting() {
+        println("aa")
+    }
+    ```
+    
+  - 函数可以将其他函数调用作为它的参数，只要这个被调用函数的返回值个数、返回值类型和返回值的顺序与调用函数所需求的实参是一致的
+  - 函数也可以以申明的方式被使用，作为一个函数类型，就像：
+
+    ```go
+  type binOp func(int, int) int
+    ```
+
+    这里不需要函数体 {}。
+  - 函数是一等值（first-class value）：它们可以赋值给变量，就像 add := binOp 一样。
+
+- [x] 函数参数：
+  - 函数定义时，它的形参一般是有名字的，不过我们也可以定义没有形参名的函数，只有相应的形参类型，就像这样：func f(int, int, float64)。
+  - 函数如果使用参数，该变量可称为函数的形参。
+  - 形参就像定义在函数体内的局部变量。
+  - 没有参数的函数通常被称为 niladic 函数（niladic function），就像 main.main()。
+  - 调用函数，可以通过两种方式来传递参数：
+      - 按值传递(call by value)：值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
+      - 按引用传递(call by reference)：引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+        fmt.Printf("Multiply 2 * 5 * 6 = %d\n", MultiPly3Nums(2, 5, 6))
+        // var i1 int = MultiPly3Nums(2, 5, 6)
+        // fmt.Printf("MultiPly 2 * 5 * 6 = %d\n", i1)
+    }
+    
+    func MultiPly3Nums(a int, b int, c int) int {
+        // var product int = a * b * c
+        // return product
+        return a * b * c
+    }
+    ```
+
+- [x] 函数返回值：
+  - 尽量使用命名返回值：会使代码更清晰、更简短，同时更加容易读懂。
+  - 一个例子：
+
+    ```go
+    package main
+    import "fmt"
+    func swap(x, y string) (string, string) {
+       return y, x
+    }
+    func main() {
+       a, b := swap("Google", "Runoob")
+       fmt.Println(a, b)
+    }
+    ```
+
+- [ ] 延迟函数调用：
+  - 在Go语言中，一个函数调用可以跟在一个defer关键字后面，形成一个延迟函数调用。 
+- 和协程调用类似，被延迟的函数调用的所有返回值必须全部被舍弃。
+  - 当一个函数调用被延迟后，它不会立即被执行。它将被推入由当前协程维护的一个延迟调用堆栈。  
+  - 延迟调用例子：
+  
+    ```go
+    defer fmt.Println("3")
+    defer fmt.Println("2")
+    fmt.Println("1")
+    // 打印 1 2 3
+    ```
+  
+- [x] 回调函数：
+
+  - 函数可以作为其它函数的参数进行传递，然后在其它函数内调用执行，一般称之为回调。
+
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    func main() {
+    	callback(1, Add)
+    }
+    
+    func Add(a, b int) {
+    	fmt.Printf("The sum of %d and %d is: %d\n", a, b, a+b)
+    }
+    
+    func callback(y int, f func(int, int)) {
+    	f(y, 2) // this becomes Add(1, 2)
+    }
+    ```
+
+- [ ] 递归函数：
+  - 函数自己调用自己。
+- [x] 匿名函数：
+  - 当我们不希望给函数起名字的时候，可以使用匿名函数，例如：func(x, y int) int { return x + y }。
+  - 关键字 defer经常配合匿名函数使用，它可以用于改变函数的命名返回值。
+  - 匿名函数同样被称之为闭包（函数式语言的术语）：它们被允许调用定义在其它环境下的变量。
+  - 包可使得某个函数捕捉到一些外部状态，例如：函数被创建时的状态。
+  - Go中的所有的自定义函数（包括声明的函数和匿名函数）都可以被视为闭包。一个闭包继承了函数所声明时的作用域。这种状态（作用域内的变量）都被共享到闭包的环境中，因此这些变量可以在闭包中被操作，直到被销毁。
+  - 一个匿名函数在定义后可以被立即调用。
+  - 闭包经常被用作包装函数：它们会预先定义好 1 个或多个参数以用于包装。
+
+    ```go
+    func() {
+    	sum := 0
+    	for i := 1; i <= 1e6; i++ {
+    		sum += i
+    	}
+    }()
+    ```
+
+- [x] 函数用法：
+  - 函数作为另外一个函数的实参：函数定义后可作为另外一个函数的实参数传入。
+  - 闭包：闭包是匿名函数，可在动态编程中使用。
+  - 方法：方法就是一个包含了接受者的函数
+
+- [ ] 本节案例：
+
+  
 
   </details>
+
 <details>
-<summary>Day011: 数据-Go语言数组</summary>
+<summary>Day012: 数据-Go语言数组</summary>
 
 - [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
 
@@ -1410,7 +1646,7 @@
   </details>
 
 <details>
-<summary>Day012: 数据-Go语言切片</summary>
+<summary>Day013: 数据-Go语言切片</summary>
 
 - [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
 
@@ -1493,7 +1729,7 @@
 
 <details>
 
-<summary>Day013: 数据-Go语言集合</summary>
+<summary>Day014: 数据-Go语言集合</summary>
 
 - [x] 本节说明：本节介绍集合Go语言集合(Map)的相关内容。
 
@@ -1593,7 +1829,7 @@
   </details>
 
 <details>
-<summary>Day014: 数据-Go语言结构</summary>
+<summary>Day015: 数据-Go语言结构</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 
@@ -1732,7 +1968,7 @@
   </details> 
 
 <details>
-<summary>Day000: 数据-Go指针内存</summary>
+<summary>Day016: 数据-Go语言指针</summary>
 
 - [x] 本节说明：本节介绍Go语言指针内存相关内容。
 
@@ -1748,11 +1984,10 @@
   
 - [ ] 本节案例：
   
-  
   </details>
 
 <details>
-<summary>Day015: 数据-Go语言接口</summary>
+<summary>Day017: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 
@@ -1862,7 +2097,7 @@
   </details>
 
 <details>
-<summary>Day016: 数据-Go语言反射</summary>
+<summary>Day018: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 
@@ -1876,278 +2111,8 @@
   </details>
 
 <details>
-<summary>Day017: 函数-Go语言函数</summary>
 
-- [x] 本节说明：本节介绍Go语言函数相关内容。
-
-- [x] Go函数介绍：
-
-  - 函数是基本的代码块，用于执行一个任务。Go 语言最少有个 main() 函数。
-  - Go语言是编译型语言，函数编写的顺序是无关紧要的；鉴于可读性的需求，最好把 main() 函数写在文件的前面，其他函数按照一定逻辑顺序进行编写（例如函数被调用的顺序）。
-  - Go语言标准库提供了多种内置函数。例如，len() 函数可以接受不同类型参数并返回该类型的长度。如果我们传入的是字符串则返回字符串的长度，如果传入的是数组，则返回数组中包含的元素个数。
-  - main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）。main 函数既没有参数，也没有返回类型（与 C 家族中的其它语言恰好相反）。如果为 main 函数添加了参数或者返回类型，将会引发构建错误。
-  - 目前Go语言没有泛型（generic）的概念，也就是说它不支持那种支持多种类型的函数。
-  
-- [x] Go语言里面有三种类型的函数：
-
-  - 普通的带有名字的函数。
-  - 匿名函数或者lambda函数。
-  
-  - 方法（Methods）。
-  
-- [x] 函数定义：
-
-  - 函数声明告诉了编译器函数的名称，返回类型，和参数。
-
-  - Go语言函数不支持输入参数默认值。每个返回结果的默认值是它的类型的零值。
-
-  - 任何一个函数都不能被声明在另一个函数体内。 虽然匿名函数可以定义在函数 体内，但匿名函数定义不属于函数声明。
-
-  - Go语言函数基本组成：关键字func、函数名、参数列表、返回值、函数体和返回语句。语法如下：
-
-    ```GO
-    func 函数名(参数) 返回类型{
-        函数体
-    }
-    ```
-
-  - 无参数无返回的函数
-
-    ```go
-    func MyFunc(){
-    	
-    }
-    ```
-
-  - 有参数无返回的函数
-
-    ```go
-    func main() {
-    	Myfunc("url", "t")
-    }
-    
-    func Myfunc(aa, bb string) {
-    	fmt.Println(aa)
-    	fmt.Println(bb)
-    }
-    ```
-
-    不定参数类型：不定参数只能是形参中的最好一个参数。
-
-    ```go
-    func Myfunc(args ...int) {
-    	fmt.Println(aa)
-    	fmt.Println(bb)
-    }
-    ```
-
-  - 无参数有返回的函数：有返回值的函数需要通过return返回。
-
-    ```go
-    func MyFunc() int {
-    
-    }
-    ```
-
-  - 有参数有返回的函数
-
-    ```go
-    func main() {
-    	max, min := MaxAndMin(10, 20)
-    	fmt.Println(max, min)
-    }
-    
-    func MaxAndMin(a, b int) (max, min int) {
-    	if a > b {
-    		max = a
-    		min = b
-    	} else {
-    		max = b
-    		min = a
-    	}
-    	return
-    }
-    ```
-
-- [x] 函数调用：
-
-  - 一个声明的函数可以通过它的名称和一个实参列表来调用。
-
-  - 一个函数的声明可以出现在它的调用之前，也可以出现在它的调用之后。
-
-  - 一个函数调用可以被延迟执行或者在另一个协程（goroutine）中执行。
-
-  - 当创建函数时，你定义了函数需要做什么，通过调用该函数来执行指定任务。
-
-  - 函数调用流程：先调用的函数后返回。先进后出。
-
-  - 调用函数，向函数传递参数，并返回值。
-
-    ```go
-    pack1.Function(arg1, arg2, …, argn)
-    ```
-    
-    上面的代码中Function 是 pack1 包里面的一个函数，括号里的是被调用函数的实参（argument）：这些值被传递给被调用函数的形参。
-    
-    ```go
-    package main
-    
-    func main() {
-        greeting()
-    }
-    
-    func greeting() {
-        println("aa")
-    }
-    ```
-    
-  - 函数可以将其他函数调用作为它的参数，只要这个被调用函数的返回值个数、返回值类型和返回值的顺序与调用函数所需求的实参是一致的
-
-  - 函数也可以以申明的方式被使用，作为一个函数类型，就像：
-
-    ```go
-  type binOp func(int, int) int
-    ```
-
-    这里不需要函数体 {}。
-
-  - 函数是一等值（first-class value）：它们可以赋值给变量，就像 add := binOp 一样。
-
-- [x] 函数参数：
-
-  - 函数定义时，它的形参一般是有名字的，不过我们也可以定义没有形参名的函数，只有相应的形参类型，就像这样：func f(int, int, float64)。
-
-  - 函数如果使用参数，该变量可称为函数的形参。
-
-  - 形参就像定义在函数体内的局部变量。
-
-  - 没有参数的函数通常被称为 niladic 函数（niladic function），就像 main.main()。
-
-  - 调用函数，可以通过两种方式来传递参数：
-
-      - 按值传递(call by value)：值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
-
-      - 按引用传递(call by reference)：引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
-
-    ```go
-    package main
-    
-    import "fmt"
-    
-    func main() {
-        fmt.Printf("Multiply 2 * 5 * 6 = %d\n", MultiPly3Nums(2, 5, 6))
-        // var i1 int = MultiPly3Nums(2, 5, 6)
-        // fmt.Printf("MultiPly 2 * 5 * 6 = %d\n", i1)
-    }
-    
-    func MultiPly3Nums(a int, b int, c int) int {
-        // var product int = a * b * c
-        // return product
-        return a * b * c
-    }
-    ```
-
-- [x] 函数返回值：
-
-  - 尽量使用命名返回值：会使代码更清晰、更简短，同时更加容易读懂。
-
-  - 一个例子：
-
-    ```go
-    package main
-    import "fmt"
-    func swap(x, y string) (string, string) {
-       return y, x
-    }
-    func main() {
-       a, b := swap("Google", "Runoob")
-       fmt.Println(a, b)
-    }
-    ```
-
-- [ ] 延迟函数调用：
-
-  - 在Go语言中，一个函数调用可以跟在一个defer关键字后面，形成一个延迟函数调用。 
-- 和协程调用类似，被延迟的函数调用的所有返回值必须全部被舍弃。
-  - 当一个函数调用被延迟后，它不会立即被执行。它将被推入由当前协程维护的一个延迟调用堆栈。
-  
-  - 延迟调用例子：
-  
-    ```go
-    defer fmt.Println("3")
-    defer fmt.Println("2")
-    fmt.Println("1")
-    // 打印 1 2 3
-    ```
-  
-- [x] 回调函数：
-
-  - 函数可以作为其它函数的参数进行传递，然后在其它函数内调用执行，一般称之为回调。
-
-    ```go
-    package main
-    
-    import (
-    	"fmt"
-    )
-    
-    func main() {
-    	callback(1, Add)
-    }
-    
-    func Add(a, b int) {
-    	fmt.Printf("The sum of %d and %d is: %d\n", a, b, a+b)
-    }
-    
-    func callback(y int, f func(int, int)) {
-    	f(y, 2) // this becomes Add(1, 2)
-    }
-    ```
-
-- [ ] 递归函数：
-
-  - 函数自己调用自己。
-
-- [x] 匿名函数：
-
-  - 当我们不希望给函数起名字的时候，可以使用匿名函数，例如：func(x, y int) int { return x + y }。
-
-  - 关键字 defer经常配合匿名函数使用，它可以用于改变函数的命名返回值。
-
-  - 匿名函数同样被称之为闭包（函数式语言的术语）：它们被允许调用定义在其它环境下的变量。
-
-  - 包可使得某个函数捕捉到一些外部状态，例如：函数被创建时的状态。
-
-  - Go中的所有的自定义函数（包括声明的函数和匿名函数）都可以被视为闭包。一个闭包继承了函数所声明时的作用域。这种状态（作用域内的变量）都被共享到闭包的环境中，因此这些变量可以在闭包中被操作，直到被销毁。
-
-  - 一个匿名函数在定义后可以被立即调用。
-
-  - 闭包经常被用作包装函数：它们会预先定义好 1 个或多个参数以用于包装。
-
-    ```go
-    func() {
-    	sum := 0
-    	for i := 1; i <= 1e6; i++ {
-    		sum += i
-    	}
-    }()
-    ```
-
-- [x] 函数用法：
-
-  - 函数作为另外一个函数的实参：函数定义后可作为另外一个函数的实参数传入。
-  - 闭包：闭包是匿名函数，可在动态编程中使用。
-  - 方法：方法就是一个包含了接受者的函数
-
-- [ ] 本节案例：
-
-  
-
-  </details>
-
-<details>
-
-<summary>Day018: 函数-Go内置函数</summary>
+<summary>Day019: 函数-Go内置函数</summary>
 
 - [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
@@ -2167,7 +2132,7 @@
   </details>
 
 <details>
-<summary>Day019: 函数-Go语言方法</summary>
+<summary>Day020: 函数-Go语言方法</summary>
 
 - [x] 本节说明：本节介绍Go语言方法相关内容。
 
@@ -2187,7 +2152,7 @@
   </details>
 
 <details>
-<summary>Day020: 错误-Go错误处理</summary>
+<summary>Day021: 错误-Go错误处理</summary>
 
 - [x] 本节说明：本节介绍Go语言中的错误处理。
 
@@ -2219,7 +2184,7 @@
   </details>
 
 <details>
-<summary>Day021: 并发-Go语言协程</summary>
+<summary>Day022: 并发-Go语言协程</summary>
 
 - [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
@@ -2278,7 +2243,7 @@
 
   </details>
 <details>
-<summary>Day022: 并发-Go语言通道</summary>
+<summary>Day023: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 
