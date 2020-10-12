@@ -1580,7 +1580,21 @@
   </details>
 
 <details>
-<summary>Day012: 数据-Go语言数组</summary>
+<summary>Day012: 数据-Go语言容器</summary>
+
+- [ ] 本节说明：
+- [x] Go语言介绍：
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+- [x] Go语言命令：
+  - go run hello.go //编译运行hello.go  
+- [ ] 本节案例：
+
+  
+
+  </details>
+
+<details>
+<summary>Day013: 数据-Go语言数组</summary>
 
 - [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
 
@@ -1647,16 +1661,16 @@
   </details>
 
 <details>
-<summary>Day013: 数据-Go语言切片</summary>
+<summary>Day014: 数据-Go语言切片</summary>
 
 - [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
 
-- [x] Slice介绍：
+- [x] 切片Slice介绍：
 
-  - Go 语言切片是对数组的抽象。
+  - Go语言切片是对数组的抽象。
   - 切片是对底层数组一个连续片段的引用，所以切片是一个引用类型。
   - 切片提供对该数组中编号的元素序列的访问。未初始化切片的值为nil。
-  - Go 数组的长度不可改变，但切片好比动态数组，可以追加元素，在追加时可能使切片的容量增大。
+  - Go语言数组的长度不可改变，但切片好比动态数组，可以追加元素，在追加时可能使切片的容量增大。
   - 因为切片是引用，不需要使用额外的内存且比使用数组更有效率，所以在Go代码中切片比数组更常用。
   
 - [x] 定义切片：
@@ -1720,7 +1734,7 @@
 
 - [ ] 空(nil)切片：
 
-- [ ] [参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md)
+- [ ] 切片参考：[参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)、[切片参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md)
 
 - [ ] 本节案例：
 
@@ -1728,12 +1742,13 @@
 
   </details>
 <details>
-<summary>Day014: 数据-Go语言集合</summary>
+<summary>Day015: 数据-Go语言映射</summary>
 
-- [x] 本节说明：本节介绍集合Go语言集合(Map)的相关内容。
+- [x] 本节说明：本节介绍集合Go语言映射(Map)的相关内容。
 
-- [x] Map介绍：
+- [x] 映射Map介绍：
 
+  - Go语言中的Map类型也称之为映射、字典、集合。
   - Map 是一种元素对（pair）的无序集合，pair 的一个元素是 key，对应的另一个元素是 value，Map结构也称为关联数组或字典。
   - Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。
   - Map 是一种集合，所以我们可以像迭代数组和切片那样迭代它。不过，Map 是无序的，我们无法决定它的返回顺序，这是因为 Map 是使用 hash 表来实现的。
@@ -1828,7 +1843,7 @@
   </details>
 
 <details>
-<summary>Day015: 数据-Go语言结构</summary>
+<summary>Day016: 数据-Go语言结构</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 - [x] 结构体struct介绍：
@@ -1993,7 +2008,7 @@
   </details> 
 
 <details>
-<summary>Day016: 数据-Go语言指针</summary>
+<summary>Day017: 数据-Go语言指针</summary>
 
 - [x] 本节说明：本节介绍Go语言指针内存相关内容。
 
@@ -2082,24 +2097,16 @@
   </details>
 
 <details>
-<summary>Day017: 数据-Go语言接口</summary>
+<summary>Day018: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
-
 - [x] 接口interface介绍：
-
-  - Go语言有非常灵活的接口概念，通过它可以实现很多面向对象的特性。接口提供了一种方式来说明对象的行为：如果谁能搞定这件事，它就可以用在这儿。
-  
-  - Go语言接口定义了一组方法（方法集），但是这些方法不包含（实现）代码：它们没有被实现（它们是抽象的）。接口里也不能包含变量。
-  
-  - Go 语言中的所有类型包括自定义类型都实现了interface{}接口，所有的类型如string、 int、 int64甚至是自定义的结构体类型都拥有interface{}空接口，这一点interface{}和Java中的Object类比较相似。
-  
-  - 空接口interface{}可以被当做任意类型的数值。
-  
-  - Go语言中的接口都很简短，通常它们会包含0个、最多3个方法。
-  
-  - 使用接口使代码更具有普适性。
-  
+  - Go语言有非常灵活的接口概念，通过它可以实现很多面向对象的特性。接口提供了一种方式来说明对象的行为：如果谁能搞定这件事，它就可以用在这儿。 
+  - Go语言接口定义了一组方法（方法集），但是这些方法不包含（实现）代码：它们没有被实现（它们是抽象的）。接口里也不能包含变量。  
+  - Go 语言中的所有类型包括自定义类型都实现了interface{}接口，所有的类型如string、 int、 int64甚至是自定义的结构体类型都拥有interface{}空接口，这一点interface{}和Java中的Object类比较相似。  
+  - 空接口interface{}可以被当做任意类型的数值。  
+  - Go语言中的接口都很简短，通常它们会包含0个、最多3个方法。  
+  - 使用接口使代码更具有普适性。  
   - 接口类型的未初始化变量的值为nil。
   
     ```go
@@ -2109,7 +2116,6 @@
     ```
   
 - [x] 接口interface定义：
-
   - 接口是一组抽象方法的集合，它必须由其他非接口类型实现，不能自我实现。Go 语言通过它可以实现很多面向对象的特性。通过如下格式定义接口：
   
     ```go
@@ -2192,14 +2198,11 @@
   </details>
 
 <details>
-<summary>Day018: 数据-Go语言反射</summary>
+<summary>Day019: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
-
 - [ ] 反射reflect介绍：
-
-  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。这是元编程的一种形式。
-  
+  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。这是元编程的一种形式。  
 - [ ] 本节案例：
 
   
@@ -2207,7 +2210,7 @@
 
 <details>
 
-<summary>Day019: 函数-Go内置函数</summary>
+<summary>Day020: 函数-Go内置函数</summary>
 
 - [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
@@ -2227,7 +2230,7 @@
   </details>
 
 <details>
-<summary>Day020: 函数-Go语言方法</summary>
+<summary>Day021: 函数-Go语言方法</summary>
 
 - [x] 本节说明：本节介绍Go语言方法相关内容。
 
@@ -2247,7 +2250,7 @@
   </details>
 
 <details>
-<summary>Day021: 错误-Go错误处理</summary>
+<summary>Day022: 错误-Go错误处理</summary>
 
 - [x] 本节说明：本节介绍Go语言中的错误处理。
 
@@ -2279,7 +2282,7 @@
   </details>
 
 <details>
-<summary>Day022: 并发-Go语言协程</summary>
+<summary>Day023: 并发-Go语言协程</summary>
 
 - [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
@@ -2338,7 +2341,7 @@
 
   </details>
 <details>
-<summary>Day023: 并发-Go语言通道</summary>
+<summary>Day024: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 
@@ -2346,18 +2349,12 @@
 
   - Go语言奉行通过通信来共享内存，而不是共享内存来通信。所以，channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
   - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
-  - 通道可以想像成Go语言协程之间通信的管道。如同管道中的水会从一端流到另一端，通过使用信道，数据也可以从一端发送，在另一端接收。
-  
-- [ ] 通道操作符：<-
-  
-  - 同一个操作符 <- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么。
-  
+  - 通道可以想像成Go语言协程之间通信的管道。如同管道中的水会从一端流到另一端，通过使用信道，数据也可以从一端发送，在另一端接收。  
+- [ ] 通道操作符：<-  
+  - 同一个操作符 <- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么。  
 - [ ] 死锁：
-
 - [ ] 绝望：
-
 - [ ] 通道案例：
-
   - 案例一：
 
     ```go
