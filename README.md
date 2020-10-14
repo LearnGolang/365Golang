@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年10月13日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年10月14日。
 
 项目处于未完成阶段。不定期推倒重来，暂时取消更新的最新说明。
 
@@ -2423,19 +2423,65 @@
 <summary>Day024: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
-
 - [x] 通道channel介绍：
-
-  - Go语言奉行通过通信来共享内存，而不是共享内存来通信。所以，channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
+  - Go语言设计团队的首任负责人Rob Pike对并发编程的一个建议是：**不要让计算通过共享内存来通讯，而应该让它们通过通讯来共享内存**。 通道就是这种哲学的一个设计结果。在Go语言中，可以认为一个计算就是一个协程。channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
+  - 通过共享内存来通讯和通过通讯来共享内存是并发编程中的两种编程风格。
+  - 一个通道可以看作是在一个程序内部的一个先进先出（FIFO：first in first out）数据队列。 一些协程可以向此通道发送数据，另外一些协程可以从此通道接收数据。
+  - 通道是Go语言中的一等公民类型，是Go语言的招牌特性之一。 和协程一起使用，这两个招牌特性使得使用Go进行并发编程变得方便和有趣，降低了并发编程的难度。通道的主要作用是用来实现并发同步。
   - 通道是进程内的通信方式，因此通过通道传递对象的行为与函数调用时参数传递行为比较一致，比如也可以传递指针等。
   - 通道可以想像成Go语言协程之间通信的管道。如同管道中的水会从一端流到另一端，通过使用信道，数据也可以从一端发送，在另一端接收。  
-- [ ] 通道操作符：<-  
+  - 通道的一个问题是通道的编程体验常常很有趣以至于程序员们经常在并非是通道的最佳应用场景中仍坚持使用通道。
   
+- [ ] 通道类型和值：
+  - 和数组、切片以及映射类型一样，每个通道类型也有一个元素类型。 一个通道只能传送它的（通道类型的）元素类型的值。
+  - 通道可以是双向的，也可以是单向的。
+    1、字面形式`chan T`表示一个元素类型为`T`的双向通道类型。 编译器允许从此类型的值中接收和向此类型的值中发送数据。 
+    2、字面形式`chan<- T`表示一个元素类型为`T`的单向发送通道类型。 编译器不允许从此类型的值中接收数据。
+    3、字面形式`<-chan T`表示一个元素类型为`T`的单向接收通道类型。 编译器不允许向此类型的值中发送数据。
+  - 一个非零通道值必须通过内置的make函数来创建。 比如make(chan int, 10)将创建一个元素类型为int的通道值。 第二个参数指定了欲创建的通道的容量。此第二个实参是可选的，它的默认值为0。
+
+- [ ] 通道值的比较：  
+  
+  - 所有通道类型均为可比较类型。比较这两个通道的结果为布尔值。  
+- [ ] 通道操作：
   - 同一个操作符 <- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么。  
+  - Go语言中有五种通道相关的操作。假设一个通道为ch，下面列出了这五种操作的语法或者函数调用：
+    1、调用内置函数close来关闭一个通道：
+
+    ```go
+    close(ch)
+    ```
+    2、向通道ch发送一个值v。ch不能为单向接收通道。<-称为数据发送操作符。
+    ```go
+    ch <- v
+    ```
+    3、从通道ch接收一个值。
+    ```go
+    <-ch
+    ```
+    4、查询一个通道的容量。
+    ```go
+    cap(ch)
+    ```
+    5、查询一个通道的长度。
+    ```go
+    len(ch)
+    ```
+  - 通道可以分为三类：
+    1、零值（nil）通道。
+    2、非零值但已关闭的通道。
+    3、非零值并且尚未关闭的通道。
+
+  |   操作   | 一个零值nil通道 | 一个非零值但已关闭的通道 | 一个非零值且尚未关闭的通道 |
+  | :------: | :-------------: | :----------------------: | :------------------------: |
+  |   关闭   |    产生恐慌     |         产生恐慌         |        成功关闭(C)         |
+  | 发送数据 |    永久阻塞     |         产生恐慌         |    阻塞或者成功发送(B)     |
+  | 接收数据 |    永久阻塞     |       永不阻塞(D)        |    阻塞或者成功接收(A)     |
+
 - [ ] 死锁：
-- [ ] 绝望：
+- [ ] 恐慌绝望：
 - [ ] 通道案例：
-  - 案例一：
+  - 通道案例一：
 
     ```go
     package main
@@ -2456,7 +2502,95 @@
     }
     ```
 
-- [ ] 本节参考：[通道参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)、[通道参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.2.md)、[通道参考3](https://blog.csdn.net/ytd7777/article/details/85004371)
+  - 通道案例二：
+  
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"time"
+    )
+    
+    func main() {
+    	c := make(chan int) // 一个非缓冲通道
+    	go func(ch chan<- int, x int) {
+    		time.Sleep(time.Second)
+    		// <-ch    // 此操作编译不通过
+    		ch <- x*x  // 阻塞在此，直到发送的值被接收
+    	}(c, 3)
+    	done := make(chan struct{})
+    	go func(ch <-chan int) {
+    		n := <-ch      // 阻塞在此，直到有值发送到c
+    		fmt.Println(n) // 9
+    		// ch <- 123   // 此操作编译不通过
+    		time.Sleep(time.Second)
+    		done <- struct{}{}
+    	}(c)
+    	<-done // 阻塞在此，直到有值发送到done
+    	fmt.Println("bye")
+    }
+    ```
+  
+  - 通道案例三：
+  
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+    	c := make(chan int, 2) // 一个容量为2的缓冲通道
+    	c <- 3
+    	c <- 5
+    	close(c)
+    	fmt.Println(len(c), cap(c)) // 2 2
+    	x, ok := <-c
+    	fmt.Println(x, ok) // 3 true
+    	fmt.Println(len(c), cap(c)) // 1 2
+    	x, ok = <-c
+    	fmt.Println(x, ok) // 5 true
+    	fmt.Println(len(c), cap(c)) // 0 2
+    	x, ok = <-c
+    	fmt.Println(x, ok) // 0 false
+    	x, ok = <-c
+    	fmt.Println(x, ok) // 0 false
+    	fmt.Println(len(c), cap(c)) // 0 2
+    	close(c) // 此行将产生一个恐慌
+    	c <- 7   // 如果上一行不存在，此行也将产生一个恐慌。
+    }
+    ```
+  
+  - 通道案例四：
+  
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"time"
+    )
+    
+    func main() {
+    	var ball = make(chan string)
+    	kickBall := func(playerName string) {
+    		for {
+    			fmt.Print(<-ball, "传球", "\n")
+    			time.Sleep(time.Second)
+    			ball <- playerName
+    		}
+    	}
+    	go kickBall("张三")
+    	go kickBall("李四")
+    	go kickBall("王二麻子")
+    	go kickBall("刘大")
+    	ball <- "裁判"   // 开球
+    	var c chan bool // 一个零值nil通道
+    	<-c             // 永久阻塞在此
+    }
+    ```
+  
+- [ ] 本节参考：[通道参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md)、[通道参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.2.md)、[通道参考3](https://blog.csdn.net/ytd7777/article/details/85004371)、[通道参考4](https://gfw.go101.org/article/channel.html)
 
 - [ ] 本节案例：
 
