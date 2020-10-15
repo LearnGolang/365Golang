@@ -3364,7 +3364,7 @@
 ### 第五章：Go安全开发
 
 <details>
-<summary>Day000:安全-Go域名扫描</summary>
+<summary>Day000: 安全-Go域名扫描</summary>
 
 - [x] 本节说明：本节介绍通过Go语言进行子域名发现的相关内容。
 
