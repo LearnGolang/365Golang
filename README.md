@@ -2660,7 +2660,7 @@
   
   </details>
 <details>
-<summary>Day028: 基础-Go垃圾回收</summary>
+<summary>Day028: 进阶-Go垃圾回收</summary>
 
 - [ ] 本节说明：
 
@@ -2676,7 +2676,6 @@
 
 - [ ] 本节案例：
 
-  
   </details>
 <details>
 <summary>Day029: 函数-Go内置函数</summary>
