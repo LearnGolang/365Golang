@@ -2193,7 +2193,64 @@
   
   </details>
 <details>
-<summary>Day019: 并发-Go语言通道</summary>
+<summary>Day019: 并发-Go语言协程</summary>
+
+- [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
+
+- [x] 协程goroutine介绍：
+
+  - Go语言原生支持应用之间的通信（网络，客户端和服务端，分布式计算）和程序的并发。
+    - 不要通过共享内存来通信，而通过通信来共享内存。 
+    - Go语言协程比其他语言协程更强大，也很容易从协程的逻辑复用到Go协程。
+    - 在Go语言中，协程是创建计算的唯一途径。
+    - Go语言不支持创建系统线程，协程是一个Go程序内部唯一的并发实现方式。
+  
+- [ ] 协程goroutine用法：
+
+  - 使用go关键字。
+  - 启动一个新的协程时，协程的调用会立即返回。与函数不同，程序控制不会去等待 Go 协程执行完毕。在调用 Go 协程之后，程序控制会立即返回到代码的下一行，忽略该协程的任何返回值。
+  - 如果希望运行其他 Go 协程，Go 主协程必须继续运行着。如果 Go 主协程终止，则程序终止，于是其他 Go 协程也不会继续运行。
+
+- [x] 协程goroutine案例：
+
+  - 案例一：使用延时来返回协程的返回值
+
+    ```
+    func main() {	
+    	start := time.Now()
+    	go tester()
+    	time.Sleep(1 * time.Millisecond)
+    	end := time.Now()
+    	delta := end.Sub(start)
+    	g.Println(delta)
+    }
+    
+    func tester() {
+    	i := 0
+    HERE:
+    	g.Println(i)
+    	i++
+    	if i == 10 {
+    		return
+    	}
+    	goto HERE
+    }
+    ```
+
+- [ ] 恐慌：一些致命性错误不属于恐慌。对于官方标准编译器来说，很多致命性错误（比如堆栈溢出和内存不足）不能被恢复。它们一旦产生，程序将崩溃。
+
+  - 产生一个恐慌
+  - 消除一个恐慌
+
+- [ ] 恢复：
+
+- [x] 参考链接：[协程参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md)、[协程参考2](https://gfw.go101.org/article/control-flows-more.html)
+
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day020: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 - [x] 通道channel介绍：
@@ -2370,33 +2427,7 @@
 
   </details>
 <details>
-<summary>Day020: 函数-Go语言方法</summary>
-
-- [x] 本节说明：本节介绍Go语言方法相关内容。
-
-- [x] Go语言方法介绍：
-
-  - Go语言支持一些面向对象编程特性，方法是这些所支持的特性之一。
-  - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
-  - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
-  - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
-  - 一个类型加上它的方法等价于面向对象中的一个类。
-  
-- [ ] 方法声明：
-  
-  - 在Go语言中，我们可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：
-    - `T`必须是一个定义类型；
-    - `T`必须和此方法声明定义在同一个代码包中；
-    - `T`不能是一个指针类型；
-    - `T`不能是一个接口类型。
-  
-- [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
-  
-- [ ] 本节案例：
-  
-  </details>
-<details>
-<summary>Day021: 数据-Go语言接口</summary>
+<summary>Day022: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 - [x] 接口interface介绍：
@@ -2494,7 +2525,48 @@
   
   </details>
 <details>
-<summary>Day022: 基础-Go语言泛型</summary>
+<summary>Day021: 对象-Go语言方法</summary>
+
+- [x] 本节说明：本节介绍Go语言方法相关内容。
+
+- [x] Go语言方法介绍：
+
+  - Go语言支持一些面向对象编程特性，方法是这些所支持的特性之一。
+  - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
+  - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
+  - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
+  - 一个类型加上它的方法等价于面向对象中的一个类。
+  
+- [ ] 方法声明：
+  
+  - 在Go语言中，我们可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：
+    - `T`必须是一个定义类型；
+    - `T`必须和此方法声明定义在同一个代码包中；
+    - `T`不能是一个指针类型；
+    - `T`不能是一个接口类型。
+  
+- [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
+  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day026: 对象-Go面向对象</summary>
+
+- [x] 本节说明：本节介绍Go语言面向对象的相关内容。
+
+- [ ] Go面向对象：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [ ] [面向对象参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.13.md)
+
+- [ ] 本节案例：
+
+  
+  </details>
+<details>
+<summary>Day023: 泛型-Go语言泛型</summary>
 
 - [ ] 本节说明：
 
@@ -2512,7 +2584,7 @@
 
   </details>
 <details>
-<summary>Day023: 数据-Go语言反射</summary>
+<summary>Day024: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 - [ ] 反射reflect介绍：
@@ -2522,7 +2594,7 @@
 
   </details>
 <details>
-<summary>Day023: 错误-Go错误处理</summary>
+<summary>Day025: 错误-Go错误处理</summary>
 
 - [x] 本节说明：本节介绍Go语言中的错误处理。
 
@@ -2550,81 +2622,6 @@
 - [ ] [错误参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.1.md)
 
 - [ ] 本节案例：
-
-  </details>
-
-<details>
-
-<summary>Day024: 并发-Go语言协程</summary>
-
-- [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
-
-- [x] 协程goroutine介绍：
-
-  - Go语言原生支持应用之间的通信（网络，客户端和服务端，分布式计算）和程序的并发。
-    - 不要通过共享内存来通信，而通过通信来共享内存。 
-    - Go语言协程比其他语言协程更强大，也很容易从协程的逻辑复用到Go协程。
-    - 在Go语言中，协程是创建计算的唯一途径。
-    - Go语言不支持创建系统线程，协程是一个Go程序内部唯一的并发实现方式。
-  
-- [ ] 协程goroutine用法：
-
-  - 使用go关键字。
-  - 启动一个新的协程时，协程的调用会立即返回。与函数不同，程序控制不会去等待 Go 协程执行完毕。在调用 Go 协程之后，程序控制会立即返回到代码的下一行，忽略该协程的任何返回值。
-  - 如果希望运行其他 Go 协程，Go 主协程必须继续运行着。如果 Go 主协程终止，则程序终止，于是其他 Go 协程也不会继续运行。
-
-- [x] 协程goroutine案例：
-
-  - 案例一：使用延时来返回协程的返回值
-
-    ```
-    func main() {	
-    	start := time.Now()
-    	go tester()
-    	time.Sleep(1 * time.Millisecond)
-    	end := time.Now()
-    	delta := end.Sub(start)
-    	g.Println(delta)
-    }
-    
-    func tester() {
-    	i := 0
-    HERE:
-    	g.Println(i)
-    	i++
-    	if i == 10 {
-    		return
-    	}
-    	goto HERE
-    }
-    ```
-
-- [ ] 恐慌：一些致命性错误不属于恐慌。对于官方标准编译器来说，很多致命性错误（比如堆栈溢出和内存不足）不能被恢复。它们一旦产生，程序将崩溃。
-
-  - 产生一个恐慌
-  - 消除一个恐慌
-
-- [ ] 恢复：
-
-- [x] 参考链接：[协程参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md)、[协程参考2](https://gfw.go101.org/article/control-flows-more.html)
-
-- [ ] 本节案例：
-  
-  </details>
-<details>
-<summary>Day025: 进阶-Go面向对象</summary>
-
-- [x] 本节说明：本节介绍Go语言面向对象的相关内容。
-
-- [ ] Go面向对象：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [ ] [面向对象参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.13.md)
-
-- [ ] 本节案例：
-
-  
 
   </details>
 <details>
