@@ -1739,8 +1739,6 @@
 
 - [x] 本节案例：
 
-  
-
   </details>
 
 <details>
@@ -1822,8 +1820,6 @@
 - [ ] 切片参考：[参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)、[切片参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md)
 
 - [ ] 本节案例：
-
-  
 
   </details>
 <details>
@@ -1925,9 +1921,7 @@
 - [ ] 本节案例：
   
   
-  
   </details>
-
 <details>
 <summary>Day016: 数据-Go语言结构</summary>
 
@@ -2611,7 +2605,6 @@
 
 
   </details>
-### 第二章：Go语言进阶
 
 <details>
 <summary>Day000: 进阶-Go面向对象</summary>
