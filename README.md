@@ -2107,7 +2107,7 @@
 ### 第二章：Go语言进阶
 
 <details>
-<summary>Day017: 数据-Go语言指针</summary>
+<summary>Day018: 数据-Go语言指针</summary>
 
 - [x] 本节说明：本节介绍Go语言指针内存相关内容。
 
@@ -2191,10 +2191,9 @@
   
 - [ ] 指针参考：[指针参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_24_pointer.md)、[指针参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.9.md)、[指针参考3](https://gfw.go101.org/article/pointer.html)
   
-  
   </details>
 <details>
-<summary>Day024: 并发-Go语言通道</summary>
+<summary>Day019: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 - [x] 通道channel介绍：
@@ -2371,7 +2370,33 @@
 
   </details>
 <details>
-<summary>Day018: 数据-Go语言接口</summary>
+<summary>Day020: 函数-Go语言方法</summary>
+
+- [x] 本节说明：本节介绍Go语言方法相关内容。
+
+- [x] Go语言方法介绍：
+
+  - Go语言支持一些面向对象编程特性，方法是这些所支持的特性之一。
+  - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
+  - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
+  - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
+  - 一个类型加上它的方法等价于面向对象中的一个类。
+  
+- [ ] 方法声明：
+  
+  - 在Go语言中，我们可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：
+    - `T`必须是一个定义类型；
+    - `T`必须和此方法声明定义在同一个代码包中；
+    - `T`不能是一个指针类型；
+    - `T`不能是一个接口类型。
+  
+- [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
+  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day021: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 - [x] 接口interface介绍：
@@ -2469,7 +2494,25 @@
   
   </details>
 <details>
-<summary>Day019: 数据-Go语言反射</summary>
+<summary>Day022: 基础-Go语言泛型</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day023: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 - [ ] 反射reflect介绍：
@@ -2478,55 +2521,8 @@
 - [ ] 本节案例：
 
   </details>
-
 <details>
-<summary>Day020: 函数-Go内置函数</summary>
-
-- [x] 本节说明：本节介绍Go语言内置函数的相关内容。
-
-- [x] Go内置函数介绍：
-
-  - 不引入任何库包而调用一个内置函数。
-  - 不需要进行导入操作就可以使用的内置函数。它们有时可以针对不同的类型进行操作，例如：len、cap 和 append，或必须用于系统级的操作，例如：panic。因此，它们需要直接获得编译器的支持。
-  - 内置函数和自定义函数有很多差别。其中一个差别是很多内置函数支持泛型参数，但自定义函数不支持。
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-  
-  
-  </details>
-
-<details>
-<summary>Day021: 函数-Go语言方法</summary>
-
-- [x] 本节说明：本节介绍Go语言方法相关内容。
-
-- [x] Go语言方法介绍：
-
-  - Go语言支持一些面向对象编程特性，方法是这些所支持的特性之一。
-  - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
-  - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
-  - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
-  - 一个类型加上它的方法等价于面向对象中的一个类。
-  
-- [ ] 方法声明：
-  
-  - 在Go语言中，我们可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：
-    - `T`必须是一个定义类型；
-    - `T`必须和此方法声明定义在同一个代码包中；
-    - `T`不能是一个指针类型；
-    - `T`不能是一个接口类型。
-  
-- [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
-  
-- [ ] 本节案例：
-  
-  </details>
-<details>
-<summary>Day022: 错误-Go错误处理</summary>
+<summary>Day023: 错误-Go错误处理</summary>
 
 - [x] 本节说明：本节介绍Go语言中的错误处理。
 
@@ -2559,7 +2555,7 @@
 
 <details>
 
-<summary>Day023: 并发-Go语言协程</summary>
+<summary>Day024: 并发-Go语言协程</summary>
 
 - [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
@@ -2616,7 +2612,7 @@
   
   </details>
 <details>
-<summary>Day000: 进阶-Go面向对象</summary>
+<summary>Day025: 进阶-Go面向对象</summary>
 
 - [x] 本节说明：本节介绍Go语言面向对象的相关内容。
 
@@ -2632,7 +2628,7 @@
 
   </details>
 <details>
-<summary>Day000: 进阶-Go同步与锁</summary>
+<summary>Day026: 进阶-Go同步与锁</summary>
 
 - [ ] 本节说明：
 
@@ -2650,7 +2646,7 @@
 
   </details>
 <details>
-<summary>Day000: 进阶-Go反序列化</summary>
+<summary>Day027: 进阶-Go反序列化</summary>
 
 - [ ] 本节说明：
 
@@ -2667,7 +2663,7 @@
   
   </details>
 <details>
-<summary>Day000: 基础-Go垃圾回收</summary>
+<summary>Day028: 基础-Go垃圾回收</summary>
 
 - [ ] 本节说明：
 
@@ -2686,22 +2682,23 @@
   
   </details>
 <details>
-<summary>Day000: 基础-Go语言泛型</summary>
+<summary>Day024: 函数-Go内置函数</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
-- [x] Go语言介绍：
+- [x] Go内置函数介绍：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - 不引入任何库包而调用一个内置函数。
+  - 不需要进行导入操作就可以使用的内置函数。它们有时可以针对不同的类型进行操作，例如：len、cap 和 append，或必须用于系统级的操作，例如：panic。因此，它们需要直接获得编译器的支持。
+  - 内置函数和自定义函数有很多差别。其中一个差别是很多内置函数支持泛型参数，但自定义函数不支持。
   
 - [x] Go语言命令：
 
   - go run hello.go //编译运行hello.go
   
 - [ ] 本节案例：
-
   
-
+  
   </details>
 <details>
 <summary>Day000: 基础-Go语言进阶</summary>
