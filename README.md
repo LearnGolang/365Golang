@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年10月18日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年10月25日。
 
 项目处于未完成阶段。不定期推倒重来，暂时取消更新的最新说明。
 
@@ -68,8 +68,11 @@
   - [官网下载](https://golang.org/dl/)之后直接按照安装说明安装即可。在Ubuntu虚拟机里面开发使用Go语言：
 
     ```
-    wget https://golang.google.cn/dl/go1.15.2.linux-amd64.tar.gz
-    tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
+    wget https://golang.google.cn/dl/go1.15.3.linux-amd64.tar.gz
+    tar -C /usr/local -xzf go1.15.3.linux-amd64.tar.gz
+    vi ~/.bashrc
+    export PATH=/usr/local/go/bin:$PATH
+    source .bashrc
     ```
 
 - [x] Go环境变量：
@@ -1759,6 +1762,8 @@
 
     ```go
     var 切片变量名 []type // 声明一个未指定大小的数组来定义切片
+    var silice = []int{2,4,6}
+    var silice = []string{"aaa","bbb","ccc"}
     ```
 
     ```go
@@ -1842,6 +1847,7 @@
     ```go
     var map1 map[keytype]valuetype
     var map1 map[string]int
+    map1 = map[string]int{"one": 1, "two": 2}
     ```
     
   - 可以使用内建函数 make 也可以使用 map 关键字来定义 Map。
@@ -2269,7 +2275,7 @@
   
   - 使用 Sorter 接口排序
   
-- [ ] 参考链接：[接口参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)、[接口参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.1.md)
+- [ ] 参考链接：[接口参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)、[接口参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.1.md)、[接口参考3](https://gfw.go101.org/article/interface.html)
   
 - [ ] 本节案例：
   
@@ -2315,12 +2321,21 @@
 
 - [x] Go语言方法介绍：
 
+  - Go语言支持一些面向对象编程特性，方法是这些所支持的特性之一。
   - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
   - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
   - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
   - 一个类型加上它的方法等价于面向对象中的一个类。
   
-- [ ] 参考链接：[参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)
+- [ ] 方法声明：
+  
+  - 在Go语言中，我们可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：
+    - `T`必须是一个定义类型；
+    - `T`必须和此方法声明定义在同一个代码包中；
+    - `T`不能是一个指针类型；
+    - `T`不能是一个接口类型。
+  
+- [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
   
 - [ ] 本节案例：
   
@@ -2424,7 +2439,7 @@
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 - [x] 通道channel介绍：
-  - Go语言设计团队的首任负责人Rob Pike对并发编程的一个建议是：**不要让计算通过共享内存来通讯，而应该让它们通过通讯来共享内存**。 通道就是这种哲学的一个设计结果。在Go语言中，可以认为一个计算就是一个协程。channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
+  - Go语言设计团队的首任负责人Rob Pike对并发编程的一个建议是：**不要让计算通过共享内存来通讯，而应该通过通讯来共享内存**。 通道就是这种哲学的一个设计结果。在Go语言中，可以认为一个计算就是一个协程。channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
   - 通过共享内存来通讯和通过通讯来共享内存是并发编程中的两种编程风格。
   - 一个通道可以看作是在一个程序内部的一个先进先出（FIFO：first in first out）数据队列。 一些协程可以向此通道发送数据，另外一些协程可以从此通道接收数据。
   - 通道是Go语言中的一等公民类型，是Go语言的招牌特性之一。 和协程一起使用，这两个招牌特性使得使用Go进行并发编程变得方便和有趣，降低了并发编程的难度。通道的主要作用是用来实现并发同步。
