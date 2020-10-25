@@ -2275,10 +2275,7 @@
   
 - [ ] 本节案例：
   
-  
-  
   </details>
-
 <details>
 <summary>Day019: 数据-Go语言反射</summary>
 
@@ -2335,10 +2332,7 @@
   
 - [ ] 本节案例：
   
-  
-  
   </details>
-
 <details>
 <summary>Day022: 错误-Go错误处理</summary>
 
@@ -2372,6 +2366,7 @@
   </details>
 
 <details>
+
 <summary>Day023: 并发-Go语言协程</summary>
 
 - [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
@@ -2426,9 +2421,7 @@
 - [x] 参考链接：[协程参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md)、[协程参考2](https://gfw.go101.org/article/control-flows-more.html)
 
 - [ ] 本节案例：
-
   
-
   </details>
 <details>
 <summary>Day024: 并发-Go语言通道</summary>
@@ -2643,24 +2636,6 @@
 
   </details>
 <details>
-<summary>Day000: 进阶-Go语言反射</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-
-  </details>
-<details>
 <summary>Day000: 进阶-Go反序列化</summary>
 
 - [ ] 本节说明：
@@ -2676,7 +2651,6 @@
 - [ ] 本节案例：
 
   
-
   </details>
 <details>
 <summary>Day000: 基础-Go垃圾回收</summary>
@@ -2696,7 +2670,6 @@
 - [ ] 本节案例：
 
   
-
   </details>
 <details>
 <summary>Day000: 基础-Go语言泛型</summary>
