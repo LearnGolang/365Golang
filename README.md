@@ -2193,7 +2193,115 @@
   
   </details>
 <details>
-<summary>Day019: 并发-Go语言协程</summary>
+<summary>Day019: 数据-Go语言接口</summary>
+
+- [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
+- [x] 接口interface介绍：
+  - Go语言有非常灵活的接口概念，通过它可以实现很多面向对象的特性。接口提供了一种方式来说明对象的行为：如果谁能搞定这件事，它就可以用在这儿。 
+  - Go语言接口定义了一组方法（方法集），但是这些方法不包含（实现）代码：它们没有被实现（它们是抽象的）。接口里也不能包含变量。  
+  - Go 语言中的所有类型包括自定义类型都实现了interface{}接口，所有的类型如string、 int、 int64甚至是自定义的结构体类型都拥有interface{}空接口，这一点interface{}和Java中的Object类比较相似。  
+  - 空接口interface{}可以被当做任意类型的数值。  
+  - Go语言中的接口都很简短，通常它们会包含0个、最多3个方法。  
+  - 使用接口使代码更具有普适性。  
+  - 接口类型的未初始化变量的值为nil。
+  
+    ```go
+    var i interface{} = 99 // i可以是任何类型
+    i = 44.09
+    i = "All"  // i 可接受任意类型的赋值
+    ```
+  
+- [x] 接口interface定义：
+  - 接口是一组抽象方法的集合，它必须由其他非接口类型实现，不能自我实现。Go 语言通过它可以实现很多面向对象的特性。通过如下格式定义接口：
+  
+    ```go
+    type Namer interface {
+        Method1(param_list) return_type
+        Method2(param_list) return_type
+        ...
+    }
+    ```
+  
+- [x] 一些例子：
+
+  - 示例1：
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    type Shaper interface {
+    	Area() float32
+    }
+    
+    type Square struct {
+    	side float32
+    }
+    
+    func (sq *Square) Area() float32 {
+    	return sq.side * sq.side
+    }
+    
+    func main() {
+    	sq1 := new(Square)
+    	sq1.side = 5
+    
+    	var areaIntf Shaper
+    	areaIntf = sq1
+    	// shorter,without separate declaration:
+    	// areaIntf := Shaper(sq1)
+    	// or even:
+    	// areaIntf := sq1
+    	fmt.Printf("The square has area: %f\n", areaIntf.Area())
+    }
+    ```
+
+  - 示例2：接口嵌套接口
+
+    一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
+
+    接口File包含了ReadWrite和Lock的所有方法，它还额外有一个Close()方法。
+
+    ```go
+    type ReadWrite interface {
+        Read(b Buffer) bool
+        Write(b Buffer) bool
+    }
+    
+    type Lock interface {
+        Lock()
+        Unlock()
+    }
+    
+    type File interface {
+        ReadWrite
+        Lock
+        Close()
+    }
+    ```
+
+- [ ] 接口排序：
+  
+  - 使用 Sorter 接口排序
+  
+- [ ] 参考链接：[接口参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)、[接口参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.1.md)、[接口参考3](https://gfw.go101.org/article/interface.html)
+  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day020: 数据-Go语言反射</summary>
+
+- [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
+- [ ] 反射reflect介绍：
+  
+  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。这是元编程的一种形式。  
+- [ ] 本节案例：
+
+  </details>
+<details>
+<summary>Day021: 并发-Go语言协程</summary>
 
 - [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
@@ -2250,7 +2358,7 @@
   
   </details>
 <details>
-<summary>Day020: 并发-Go语言通道</summary>
+<summary>Day022: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 - [x] 通道channel介绍：
@@ -2427,105 +2535,7 @@
 
   </details>
 <details>
-<summary>Day022: 数据-Go语言接口</summary>
-
-- [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
-- [x] 接口interface介绍：
-  - Go语言有非常灵活的接口概念，通过它可以实现很多面向对象的特性。接口提供了一种方式来说明对象的行为：如果谁能搞定这件事，它就可以用在这儿。 
-  - Go语言接口定义了一组方法（方法集），但是这些方法不包含（实现）代码：它们没有被实现（它们是抽象的）。接口里也不能包含变量。  
-  - Go 语言中的所有类型包括自定义类型都实现了interface{}接口，所有的类型如string、 int、 int64甚至是自定义的结构体类型都拥有interface{}空接口，这一点interface{}和Java中的Object类比较相似。  
-  - 空接口interface{}可以被当做任意类型的数值。  
-  - Go语言中的接口都很简短，通常它们会包含0个、最多3个方法。  
-  - 使用接口使代码更具有普适性。  
-  - 接口类型的未初始化变量的值为nil。
-  
-    ```go
-    var i interface{} = 99 // i可以是任何类型
-    i = 44.09
-    i = "All"  // i 可接受任意类型的赋值
-    ```
-  
-- [x] 接口interface定义：
-  - 接口是一组抽象方法的集合，它必须由其他非接口类型实现，不能自我实现。Go 语言通过它可以实现很多面向对象的特性。通过如下格式定义接口：
-  
-    ```go
-    type Namer interface {
-        Method1(param_list) return_type
-        Method2(param_list) return_type
-        ...
-    }
-    ```
-  
-- [x] 一些例子：
-
-  - 示例1：
-
-    ```go
-    package main
-    
-    import "fmt"
-    
-    type Shaper interface {
-    	Area() float32
-    }
-    
-    type Square struct {
-    	side float32
-    }
-    
-    func (sq *Square) Area() float32 {
-    	return sq.side * sq.side
-    }
-    
-    func main() {
-    	sq1 := new(Square)
-    	sq1.side = 5
-    
-    	var areaIntf Shaper
-    	areaIntf = sq1
-    	// shorter,without separate declaration:
-    	// areaIntf := Shaper(sq1)
-    	// or even:
-    	// areaIntf := sq1
-    	fmt.Printf("The square has area: %f\n", areaIntf.Area())
-    }
-    ```
-
-  - 示例2：接口嵌套接口
-
-    一个接口可以包含一个或多个其他的接口，但是在接口内不能嵌入结构体，也不能嵌入接口自身，否则编译会出错。
-
-    接口File包含了ReadWrite和Lock的所有方法，它还额外有一个Close()方法。
-
-    ```go
-    type ReadWrite interface {
-        Read(b Buffer) bool
-        Write(b Buffer) bool
-    }
-    
-    type Lock interface {
-        Lock()
-        Unlock()
-    }
-    
-    type File interface {
-        ReadWrite
-        Lock
-        Close()
-    }
-    ```
-
-- [ ] 接口排序：
-  
-  - 使用 Sorter 接口排序
-  
-- [ ] 参考链接：[接口参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_19_interface.md)、[接口参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.1.md)、[接口参考3](https://gfw.go101.org/article/interface.html)
-  
-- [ ] 本节案例：
-  
-  </details>
-<details>
-<summary>Day021: 对象-Go语言方法</summary>
+<summary>Day023: 对象-Go语言方法</summary>
 
 - [x] 本节说明：本节介绍Go语言方法相关内容。
 
@@ -2566,7 +2576,7 @@
   
   </details>
 <details>
-<summary>Day023: 泛型-Go语言泛型</summary>
+<summary>Day024: 泛型-Go语言泛型</summary>
 
 - [ ] 本节说明：
 
@@ -2581,16 +2591,6 @@
 - [ ] 本节案例：
 
   
-
-  </details>
-<details>
-<summary>Day024: 数据-Go语言反射</summary>
-
-- [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
-- [ ] 反射reflect介绍：
-  
-  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。这是元编程的一种形式。  
-- [ ] 本节案例：
 
   </details>
 <details>
@@ -2679,7 +2679,7 @@
   
   </details>
 <details>
-<summary>Day024: 函数-Go内置函数</summary>
+<summary>Day029: 函数-Go内置函数</summary>
 
 - [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
