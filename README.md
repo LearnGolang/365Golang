@@ -2697,7 +2697,7 @@
   
   </details>
 <details>
-<summary>Day000: 基础-Go语言进阶</summary>
+<summary>Day000: 进阶-Go语言进阶</summary>
 
 - [ ] 本节说明：
 
