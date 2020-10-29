@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年10月27日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年10月29日。
 
 项目处于未完成阶段。不定期推倒重来，暂时取消更新的最新说明。
 
@@ -2361,6 +2361,7 @@
 <summary>Day022: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
+
 - [x] 通道channel介绍：
   - Go语言设计团队的首任负责人Rob Pike对并发编程的一个建议是：**不要让计算通过共享内存来通讯，而应该通过通讯来共享内存**。 通道就是这种哲学的一个设计结果。在Go语言中，可以认为一个计算就是一个协程。channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。
   - 通过共享内存来通讯和通过通讯来共享内存是并发编程中的两种编程风格。
@@ -2381,6 +2382,7 @@
 - [ ] 通道值的比较：  
   
   - 所有通道类型均为可比较类型。比较这两个通道的结果为布尔值。  
+  
 - [ ] 通道操作：
   - 同一个操作符 <- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么。  
   - Go语言中有五种通道相关的操作。假设一个通道为ch，下面列出了这五种操作的语法或者函数调用：
@@ -2417,7 +2419,9 @@
   | 接收数据 |    永久阻塞     |       永不阻塞(D)        |    阻塞或者成功接收(A)     |
 
 - [ ] 死锁：
+
 - [ ] 恐慌绝望：
+
 - [ ] 通道案例：
   - 通道案例一：
 
@@ -2525,6 +2529,40 @@
     	ball <- "裁判"   // 开球
     	var c chan bool // 一个零值nil通道
     	<-c             // 永久阻塞在此
+    }
+    ```
+  
+  - 通道案例五：
+  
+    ```go
+    // chanmain
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    func main() {
+    	done := make(chan bool)
+    	data := make(chan int)
+    	go xfz(data, done)
+    	go scz(data)
+    	<-done
+    
+    }
+    
+    func xfz(data chan int, done chan bool) {
+    	for x := range data {
+    		fmt.Println("recv:", x)
+    	}
+    	done <- true
+    }
+    
+    func scz(data chan int) {
+    	for i := 0; i < 100; i++ {
+    		data <- i
+    	}
+    	close(data)
     }
     ```
   
