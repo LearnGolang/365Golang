@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年10月29日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年11月02日。
 
 项目处于未完成阶段。不定期推倒重来，暂时取消更新的最新说明。
 
@@ -39,8 +39,8 @@
 
 - [x] Go语言介绍：
 
-  - Go语言是一门编译型的开源的程序设计语言。因为开源，所以编译器、库和工具的源代码可以免费获得。通过Go语言可以容易的构造出简单、可靠且高效的软件。 
-  - Go语言是由[Robert Griesemer](https://github.com/griesemer)、[Rob Pike](https://github.com/robpike)、[Ken Thompson](https://baike.baidu.com/item/Ken%20Thompson/3441433)在2007年末主持开发，后来加入了[Ian Lance Taylor](https://github.com/ianlancetaylor/)、[Russ Cox](https://github.com/rsc)等。Go语言最终在2009年11月开源，并在2012年发布了Go1稳定版本。
+  - Go语言是一门编译型的开源的程序设计语言。通过Go语言可以容易的构造出简单、可靠且高效的软件。 因为开源，所以编译器、库和工具的源代码可以免费获得。
+  - Go语言是由[Robert Griesemer](https://github.com/griesemer)、[Rob Pike](https://github.com/robpike)、[Ken Thompson](https://baike.baidu.com/item/Ken%20Thompson/3441433)在2007年末主持开发，后来加入了[Ian Lance Taylor](https://github.com/ianlancetaylor/)、[Russ Cox](https://github.com/rsc)等。在2009年11月开源发布，并在2012年发布了Go1稳定版本。
   - Go语言没有构造或析构函数、没有运算符重载、没有形参默认值、没有异常、没有宏、没有函数注解、没有线程局部存储。暂时没有泛型。
   - Go 语言不是面向对象编程语言：没有类继承，甚至没有类。
   - Go语言以一种不同寻常的方式来诠释面向对象程序设计。
@@ -50,22 +50,24 @@
 
   - 快速编译，高效执行，易于开发。
   - 对于网络通信、并发和并行编程有很好的支持，可以更好地利用大量的分布式和多核的计算机。
-  - Go语言通过 goroutine 这种轻量级线程的概念来实现这个目标，然后通过 channel 来实现各个 goroutine 之间的通信。他们实现了分段栈增长和 goroutine 在线程基础上多路复用技术的自动化。
-  - Go 语言从本质上（程序和结构方面）来实现并发编程。
-  - 作为强类型语言，隐式的类型转换是不被允许的。一条原则：让所有的东西都是显式的。
+  - Go语言通过 goroutine 这种轻量级线程的概念来实现这个目标，然后通过 channel 来实现各个 goroutine 之间的通信。它们实现了分段栈增长和 goroutine 在线程基础上多路复用技术的自动化。
+  - Go语言从本质上（程序和结构方面）来实现并发编程。
+  - Go语言作为强类型语言，隐式的类型转换是不被允许的。一条原则：让所有的东西都是显式的。
   - Go语言本身是由C语言开发的，而不是Go语言（Go1.5开始自举）。
   - Go语言的二进制文件体积是最大的（每个可执行文件都包含 runtime）。
   - Go语言做为一门静态语言，但却和很多动态脚本语言一样得灵活。
 
-- [x] Go语言官网：有大量的教程和代码想项目案例。
+- [x] Go语言资源：有大量的教程和代码想项目案例。
+
+  - [LearnGolang](https://github.com/0e0w/LearnGolang)
+
 
   - https://golang.org
   - https://github.com/golang
-  - [LearnGolang](https://github.com/0e0w/LearnGolang)
 
 - [x] Go语言安装：
 
-  - [官网下载](https://golang.org/dl/)之后直接按照安装说明安装即可。在Ubuntu虚拟机里面开发使用Go语言：
+  - [官网下载](https://golang.org/dl/)后，直接按照安装说明安装即可。在Ubuntu虚拟机里面开发使用Go语言：
 
     ```
     wget https://golang.google.cn/dl/go1.15.3.linux-amd64.tar.gz
