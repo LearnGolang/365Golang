@@ -1373,6 +1373,7 @@
     func 函数名(参数) 返回类型{
       函数体
     }
+    ```
   ```
   
   - 无参数无返回的函数：
@@ -1380,8 +1381,8 @@
     ```go
     func MyFunc(){
     }
-    ```
-    
+  ```
+  
   - 有参数无返回的函数：
   
     ```go
@@ -3666,7 +3667,7 @@
 
 ## 0x03-参考资源
 
-特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)
+特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)
 
 - [x] https://www.runoob.com/go/go-tutorial.html
 - [x] https://github.com/ffhelicopter/Go42
