@@ -1363,53 +1363,57 @@
   
 - [x] 函数声明定义：
   - 函数声明告诉了编译器，函数的名称，返回类型，和参数。
+  
   - Go语言函数不支持输入参数默认值。每个返回结果的默认值是它的类型的零值。
+  
   - 任何一个函数都不能被声明在另一个函数体内。 虽然匿名函数可以定义在函数体内，但匿名函数定义不属于函数声明。
+  
   - Go语言函数基本组成：关键字func、函数名、参数列表、返回值、函数体和返回语句。语法如下：
     ```GO
     func 函数名(参数) 返回类型{
-        函数体
+      函数体
     }
-    ```
-
+  ```
+  
   - 无参数无返回的函数：
-
+  
     ```go
     func MyFunc(){
     }
     ```
-  
-- 有参数无返回的函数：
-  
-  ```go
-    func main() {
-    	Myfunc("url", "t")
-    }
     
-    func Myfunc(aa, bb string) {
-    	fmt.Println(aa)
-    	fmt.Println(bb)
-    }
-  ```
+  - 有参数无返回的函数：
   
-  不定参数类型：不定参数只能是形参中的最后一个参数。
+    ```go
+      func main() {
+      	Myfunc("url", "t")
+      }
+      
+      func Myfunc(aa, bb string) {
+      	fmt.Println(aa)
+      	fmt.Println(bb)
+      }
+    ```
   
-  ```go
-    func Myfunc(args ...int) {
-    	fmt.Println(aa)
-    	fmt.Println(bb)
-    }
-  ```
+  - 不定参数类型：不定参数只能是形参中的最后一个参数。
   
-- 无参数有返回的函数：有返回值的函数需要通过return返回。
+    ```go
+      func Myfunc(args ...int) {
+      	fmt.Println(aa)
+      	fmt.Println(bb)
+      }
+    ```
   
-  ```go
-    func MyFunc() int {
-    }
-  ```
+  
+  - 无参数有返回的函数：有返回值的函数需要通过return返回。
+    
+    ```go
+      func MyFunc() int {
+      }
+    ```
   
   - 有参数有返回的函数：
-
+  
     ```go
   func main() {
     	max, min := MaxAndMin(10, 20)
@@ -2087,11 +2091,12 @@
 <details>
 <summary>Day017: 基础-Go基础总结</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节是Go语言基础学习之后的总结。
 
-- [x] Go语言介绍：
+- [x] Go基础总结：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - 在学习Go语言基础之后，基本可以编写一些简单的程序代码。
+  - 但即使是基础内容，若不加以练习，对程序的实现依然无法很好的理解。也很难写出优秀的程序。
   
 - [x] Go语言命令：
 
@@ -2292,9 +2297,17 @@
 <summary>Day020: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
-- [ ] 反射reflect介绍：
+
+- [ ] 反射概念介绍：
   
-  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。这是元编程的一种形式。  
+  - 在计算机科学中，反射是指计算机程序在运行时（Run time）可以访问、检测和修改它本身状态或行为的一种能力。用比喻来说，反射就是程序在运行的时候能够“观察”并且修改自己的行为。
+  
+- [ ] Go语言反射介绍：
+  
+  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。是元编程的一种形式。  
+  
+- [ ] [反射参考1](http://c.biancheng.net/golang/reflect/)、[反射参考2](https://www.cnblogs.com/qcrao-2018/p/10822655.html)、
+
 - [ ] 本节案例：
 
   </details>
@@ -2963,11 +2976,9 @@
     fd.Close()
     ```
 
-- [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)
+- [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)、[文本处理参考1](http://c.biancheng.net/golang/102/)
 
 - [ ] 本节案例：
-
-  
 
   </details>
 <details>
@@ -3555,8 +3566,6 @@
   
 - [ ] 本节案例：
 
-  
-
   </details>
 
 ### 第七章：GoWeb开发
@@ -3661,4 +3670,4 @@
 - [x] https://github.com/ffhelicopter/Go42
 - [x] https://github.com/unknwon/the-way-to-go_ZH_CN
 - [x] https://github.com/golang101/golang101
-- [ ] https://github.com/iswbm/GolangCodingTime
+- [x] https://github.com/iswbm/GolangCodingTime
