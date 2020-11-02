@@ -2783,6 +2783,57 @@
 
   </details>
 <details>
+<summary>Day000: 库包-Go请求响应</summary>
+
+- [x] 本节说明：本节介绍Go语言中请求响应的内容。
+
+- [x] HTTP请求响应：
+
+  - 在漏洞利用或是在漏洞验证过程中， 经常使用到的一个方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
+  - 本小节内容是漏洞验证中较为重要的部分。
+  
+- [ ] 请求响应包：
+
+  - net/http
+  
+- [x] 请求响应案例：
+
+  - 访问并读取页面：
+  
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"net/http"
+    )
+    
+    var urls = []string{
+    	"http://www.google.com",
+    	"http://golang.org",
+    	"http://blog.golang.org",
+    }
+    
+    func main() {
+    	for _, url := range urls {
+    		resp, err := http.Head(url)
+    		if err != nil {
+    			fmt.Println("Error:", url, err)
+    		}
+    		fmt.Println(url, ": ", resp.Status)
+    	}
+    }
+    ```
+    
+  - 发送get参数请求：
+  - 发送post参数请求：
+  - 发送cookie参数请求：
+  
+- [ ] 本节案例：
+
+  
+  </details>
+<details>
 <summary>Day000: 库包-Go输入输出</summary>
 
 - [x] 本节说明：本节介绍Go语言中输入输出的相关内容。
@@ -2831,12 +2882,11 @@
   
     ```go
     start := time.Now()
-    longCalculation()
     end := time.Now()
     delta := end.Sub(start)
-    fmt.Printf("longCalculation took this amount of time: %s\n", delta)
+    fmt.Printf("all time: %s\n", delta)
     ```
-  
+    
   - 计算日期差值：
   
 - [ ] [时间日期参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)、[时间日期参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.11.md)
@@ -2982,58 +3032,6 @@
 - [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)、[文本处理参考1](http://c.biancheng.net/golang/102/)
 
 - [ ] 本节案例：
-
-  </details>
-<details>
-<summary>Day000: 库包-Go请求响应</summary>
-
-- [x] 本节说明：本节介绍Go语言中请求响应的内容。
-
-- [x] HTTP请求响应：
-
-  - 在漏洞利用或是在漏洞验证过程中， 经常使用到的一个方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
-  - 本小节内容是漏洞验证中较为重要的部分。
-  
-- [ ] 请求响应包：
-
-  - net/http
-  
-- [x] 请求响应案例：
-
-  - 访问并读取页面：
-  
-    ```go
-    package main
-    
-    import (
-    	"fmt"
-    	"net/http"
-    )
-    
-    var urls = []string{
-    	"http://www.google.com",
-    	"http://golang.org",
-    	"http://blog.golang.org",
-    }
-    
-    func main() {
-    	for _, url := range urls {
-    		resp, err := http.Head(url)
-    		if err != nil {
-    			fmt.Println("Error:", url, err)
-    		}
-    		fmt.Println(url, ": ", resp.Status)
-    	}
-    }
-    ```
-    
-  - 发送get参数请求：
-  - 发送post参数请求：
-  - 发送cookie参数请求：
-  
-- [ ] 本节案例：
-
-  
 
   </details>
 <details>
