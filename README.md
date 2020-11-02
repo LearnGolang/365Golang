@@ -409,10 +409,6 @@
 
 - [ ] 本节案例：
 
-  ```
-  
-  ```
-  
   </details>
 <details>
 <summary>Day005: 数据-Go语言常量</summary>
@@ -564,7 +560,7 @@
   | /          | 相除 | B / A 输出结果 2   |
   | %          | 求余 | B % A 输出结果 0   |
   | ++         | 自增 | A++ 输出结果 11    |
-  | --         | 自减 | A-- 输出结果 9     |
+  | --         | 自减 | A--   输出结果 9   |
 
 - [x] 比较运算符：
 
@@ -782,7 +778,7 @@
     }
     ```
 
-- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.3.md)
+- [ ] [switch 参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.3.md)
 
 - [x] select 语句：
 
@@ -808,7 +804,7 @@
 
   注意：Go 没有三目运算符，所以不支持 ?: 形式的条件判断。
 
-- [ ] [参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.1.md)
+- [ ] [select参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.1.md)
   
 - [ ] 本节案例：
   
@@ -822,16 +818,16 @@
 
 - [x] Go循环语句：
 
-  - 在实际问题中有大量的具有规律性的重复操作，在程序开发中便需要重复执行某些语句。
   - 在Go语言中只有for循环一种循环结构。
+  - 在实际问题中有大量的具有规律性的重复操作，在程序开发中便需要重复执行某些语句。
 
-- [x] for循环：重复执行语句块
+- [x] for循环：重复执行语句
 
-  - Go 语言中只有 for 结构可以重复执行某些语句。
+  - Go语言中只有 for 结构可以重复执行某些语句。
 
-  - for 循环是一个循环控制结构，可以执行指定次数的循环。
+  - for循环是一个循环控制结构，可以执行指定次数的循环。
 
-  - Go 语言的 For 循环有 3 种形式，只有其中的一种使用分号。
+  - Go语言的for循环有 3 种形式，只有其中的一种使用分号。
 
   - **基于计数器的迭代**：
 
