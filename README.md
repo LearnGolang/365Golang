@@ -10,11 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年11月02日。
-
-项目处于未完成阶段。不定期推倒重来，暂时取消更新的最新说明。
-
-~~已经更新至第一章Day017: 函数-Go语言函数~~
+本项目创建于2020年9月1日，最近的一次更新日期为2020年11月03日。
 
 本项目暂时计划共九章：
 
@@ -60,10 +56,9 @@
 - [x] Go语言资源：有大量的教程和代码想项目案例。
 
   - [LearnGolang](https://github.com/0e0w/LearnGolang)
-
-
   - https://golang.org
   - https://github.com/golang
+
 
 - [x] Go语言安装：
 
