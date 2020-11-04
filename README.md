@@ -2589,23 +2589,47 @@
 - [x] Go语言方法介绍：
 
   - Go语言支持一些面向对象编程特性，方法是这些所支持的特性之一。
+  - 方法就是一个包含了接受者的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
   - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
   - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
   - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
   - 一个类型加上它的方法等价于面向对象中的一个类。
   
 - [ ] Go语言方法声明：
-  
+
   - Go语言方法的申明和普通函数声明类似，只是在函数名字前多了一个参数。
-  - 在Go语言中，我们可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：
-    - `T`必须是一个定义类型；
-    - `T`必须和此方法声明定义在同一个代码包中；
-    - `T`不能是一个指针类型；
-    - `T`不能是一个接口类型。
-  
+  - 在Go语言中，可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：`T`必须是一个定义类型；`T`必须和此方法声明定义在同一个代码包中；`T`不能是一个指针类型；`T`不能是一个接口类型。
+
+- [ ] Go语言方法案例：
+
+  - 示例一：
+
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    /* 定义结构体 */
+    type Circle struct {
+    	radius float64
+    }
+    
+    func main() {
+    	var c1 Circle
+    	c1.radius = 10.00
+    	fmt.Println("圆的面积 = ", c1.getArea())
+    }
+    
+    //该 method 属于 Circle 类型对象中的方法
+    func (c Circle) getArea() float64 {
+    	//c.radius 即为 Circle 类型对象中的属性
+    	return 3.14 * c.radius * c.radius
+    }
+    ```
+
 - [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
-  
-- [ ] 本节案例：
   
   </details>
 <details>
