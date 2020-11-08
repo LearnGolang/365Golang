@@ -1357,7 +1357,7 @@
   - 方法（Methods）。
   
 - [x] 函数声明定义：
-  - 函数声明告诉了编译器，函数的名称，返回类型，和参数。
+  - 函数声明告诉了编译器，函数的名称，返回类型和参数。
   
   - Go语言函数不支持输入参数默认值。每个返回结果的默认值是它的类型的零值。
   
@@ -2263,23 +2263,23 @@
     
   - 示例2：接口嵌套接口。接口File包含了ReadWrite和Lock的所有方法，它还额外有一个Close()方法。
   
-  ```go
-  type ReadWrite interface {
-      Read(b Buffer) bool
-      Write(b Buffer) bool
-  }
-    
-  type Lock interface {
-        Lock()
-        Unlock()
+    ```go
+    type ReadWrite interface {
+        Read(b Buffer) bool
+        Write(b Buffer) bool
     }
-    
-    type File interface {
-        ReadWrite
-        Lock
-        Close()
-    }
-  ```
+      
+    type Lock interface {
+          Lock()
+          Unlock()
+      }
+      
+      type File interface {
+          ReadWrite
+          Lock
+          Close()
+      }
+    ```
   
 - [ ] 接口排序：
   
