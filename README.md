@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年11月09日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年11月13日。
 
 本项目暂时计划共九章：
 
@@ -1935,8 +1935,8 @@
 
     ```go
     struct {
-    	title, author string
-    	pages         int
+        title, author string
+        pages         int
         X, Y   		  bool
     }
     ```
