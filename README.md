@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年11月6日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年11月17日。
 
 本项目暂时计划共九章：
 
@@ -694,27 +694,6 @@
   - 案例1：
 
     ```go
-  if a := 10; a == 10 {
-    	fmt.Println("10")
-  } else {
-    	fmt.Println("not 10")
-    }
-    ```
-  
-  - 案例2：
-  
-    ```go
-    a := 10 // 初始化赋值语句
-    if a == 10 {
-    	fmt.Println("10")
-  } else {
-    	fmt.Println("not 10")
-  }
-    ```
-  
-  - 案例3：
-  
-    ```go
     if a := 10; a == 10 {
     	fmt.Println("=10")
     } else if a > 10 {
@@ -725,7 +704,28 @@
         fmt.Println("这是不可能的!")
     }
     ```
-  
+
+  - 案例2
+
+    ```go
+    if a := 10; a == 10 {
+    	fmt.Println("10")
+    } else {
+    	fmt.Println("not 10")
+    }
+    ```
+
+  - 案例3
+
+    ```go
+    a := 10 // 初始化赋值语句
+    if a == 10 {
+    	fmt.Println("10")
+    } else {
+    	fmt.Println("not 10")
+    }
+    ```
+
 - [x] switch 语句：
 
   - switch语句是存在多个条件判断的情况下，分别执行其对应的语句。
