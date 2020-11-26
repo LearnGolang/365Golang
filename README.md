@@ -757,7 +757,7 @@
   
   </details>
 <details>
-<summary>Day007: 语法-Go语言语法</summary>
+<summary>Day007: 语法-Go基本语法</summary>
 
 - [x] 本节说明：本节介绍表达式、语句和简单语句的相关内容。
 
@@ -905,7 +905,7 @@
   
   </details>
 <details>
-<summary>Day008: 语句-Go条件判断</summary>
+<summary>Day009: 语句-Go条件判断</summary>
 
 - [x] 本节说明：本节介绍Go语言条件判断语句的相关内容。
 
@@ -1044,11 +1044,8 @@
 - [x] select 语句：
 
   - select 结构，用于 channel 的选择。
-
   - select 是 Go 中的一个控制结构，类似于 switch 语句。每个 case 必须是一个通信操作，要么是发送要么是接收。
-
   - select 随机执行一个可运行的 case。如果没有 case 可运行，它将阻塞，直到有 case 可运行。一个默认的子句应该总是可运行的。
-
   - select没有条件表达式，一直在等待分支进入可运行状态。
 
     ```go
@@ -1072,10 +1069,9 @@
   
   </details>
 <details>
-<summary>Day009: 语句-Go循环语句</summary>
+<summary>Day010: 语句-Go循环语句</summary>
 
 - [x] 本节说明：本节介绍Go语言循环语句的相关内容。
-
 - [x] Go循环语句：
 
   - 在Go语言中只有for循环一种循环结构。
@@ -1084,9 +1080,7 @@
 - [x] for循环：重复执行语句
 
   - Go语言中只有 for 结构可以重复执行某些语句。
-
   - for循环是一个循环控制结构，可以执行指定次数的循环。
-
   - Go语言的for循环有 3 种形式，只有其中的一种使用分号。
 
   - **基于计数器的迭代**：
