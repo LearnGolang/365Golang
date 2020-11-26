@@ -312,7 +312,92 @@
   </details>
 
 <details>
-<summary>Day004: 数据-Go语言变量</summary>
+<summary>Day004: 数据-Go语言常量</summary>
+
+- [x] 本节说明：本节介绍Go语言常量的内容。
+
+- [x] 常量说明：
+
+  - 常量使用关键字 const 定义，用来存储不会改变的数据。
+  - 常量不能被重新赋予任何值。常量名建议使用大写字母。
+  - 存储在常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。
+  - 常量声明中的等号=表示“绑定”而非“赋值”。每个常量描述将一个或多个字面量绑定到各自对应的有名常量上。每个有名常量其实代表着一个字面常量。
+  - 常量可以直接声明在包中（全局常量），也可以声明在函数体中（局部常量）。
+
+- [x] 常量定义：
+
+  - 常量的定义格式：const identifier [type] = value，例如：
+
+    ```go
+    const Pi = 3.14159
+    ```
+    
+  - Go语言常量定义可以指定常量类型，但不是必需的。如果定义常量时没有指定类型，那么它与字面常量一样，是无类型（untyped）的常量。
+    
+  - 一个未指定类型的常量被使用时，会根据其使用环境而推断出它所需要具备的类型。
+    
+    ```go
+    显式类型定义：const b string = "abc"
+    隐式类型定义：const b = "abc"
+    ```
+  - 常量也可以在单行进行多重赋值：
+  
+    ```go
+    const a, b, c = 1, false, "str" //多重赋值
+    ```
+  
+- [x] iota： 特殊常量
+
+  - iota 在 const关键字出现时将被重置为 0，const 中每新增一行常量声明将使 iota 计数一次。
+
+  - iota 可理解为 const 语句块中的行索引。
+
+  - iota 可以被用作枚举值。第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1。
+
+     ```go
+     const (
+         a = iota
+         b = iota
+         c = iota
+     )
+     ```
+
+     第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：
+
+     ```go
+     const (
+         a = iota
+         b
+         c
+      )
+     ```
+
+     如果对b重新赋值之后，a, b, c分别为0, 8, 8，新的常量b声明后，iota 不再向下赋值，后面常量如果没有赋值，则继承上一个常量值。
+
+     ```go
+     const (
+         a = iota
+         b = 8
+         c
+      )
+     ```
+
+     使用位左移与 iota 计数配合可优雅地实现存储单位的常量枚举：
+
+     ```go
+     type ByteSize float64
+     const (
+         _ = iota // 通过赋值给空白标识符来忽略值
+         KB ByteSize = 1<<(10*iota)
+         MB
+         GB
+         TB
+     )
+     ```
+
+  </details>
+<details>
+<summary>Day005: 数据-Go语言变量</summary>
 
 - [x] 本节说明：本节介绍Go语言变量的相关内容。
 
@@ -401,665 +486,7 @@
 
   </details>
 <details>
-<summary>Day005: 数据-Go语言常量</summary>
-
-- [x] 本节说明：本节介绍Go语言常量的内容。
-
-- [x] 常量说明：
-
-  - 常量使用关键字 const 定义，用来存储不会改变的数据。
-  - 常量不能被重新赋予任何值。常量名建议使用大写字母。
-  - 存储在常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。
-  - 常量声明中的等号=表示“绑定”而非“赋值”。每个常量描述将一个或多个字面量绑定到各自对应的有名常量上。每个有名常量其实代表着一个字面常量。
-  - 常量可以直接声明在包中（全局常量），也可以声明在函数体中（局部常量）。
-
-- [x] 常量定义：
-
-  - 常量的定义格式：const identifier [type] = value，例如：
-
-    ```go
-    const Pi = 3.14159
-    ```
-    
-  - Go语言常量定义可以指定常量类型，但不是必需的。如果定义常量时没有指定类型，那么它与字面常量一样，是无类型（untyped）的常量。
-    
-  - 一个未指定类型的常量被使用时，会根据其使用环境而推断出它所需要具备的类型。
-    
-    ```go
-    显式类型定义：const b string = "abc"
-    隐式类型定义：const b = "abc"
-    ```
-  - 常量也可以在单行进行多重赋值：
-  
-    ```go
-    const a, b, c = 1, false, "str" //多重赋值
-    ```
-  
-- [x] iota： 特殊常量
-
-  - iota 在 const关键字出现时将被重置为 0，const 中每新增一行常量声明将使 iota 计数一次。
-
-  - iota 可理解为 const 语句块中的行索引。
-
-  - iota 可以被用作枚举值。第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1。
-
-     ```go
-     const (
-         a = iota
-         b = iota
-         c = iota
-     )
-     ```
-
-     第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：
-
-     ```go
-     const (
-         a = iota
-         b
-         c
-      )
-     ```
-
-     如果对b重新赋值之后，a, b, c分别为0, 8, 8，新的常量b声明后，iota 不再向下赋值，后面常量如果没有赋值，则继承上一个常量值。
-
-     ```go
-     const (
-         a = iota
-         b = 8
-         c
-      )
-     ```
-
-     使用位左移与 iota 计数配合可优雅地实现存储单位的常量枚举：
-
-     ```go
-     type ByteSize float64
-     const (
-         _ = iota // 通过赋值给空白标识符来忽略值
-         KB ByteSize = 1<<(10*iota)
-         MB
-         GB
-         TB
-     )
-     ```
-
-  </details>
-<details>
-<summary>Day006: 语法-Go语言语法</summary>
-
-- [x] 本节说明：本节介绍表达式、语句和简单语句的相关内容。
-
-- [x] Go语言语法介绍：
-
-  - 一个表达式表示一个值，而一条语句表示一个操作。 
-  - 和很多其它流行语言一样，Go也支持break、continue和goto等跳转语句。 另外，Go 还支持一个特有的fallthrough跳转语句。
-  
-- [x] 简单语句类型：
-
-  - 变量短声明语句。
-  - 纯赋值语句，包括x op= y这种运算形式。
-  - 有返回结果的函数或方法调用，以及通道的接收数据操作。 
-  - 通道的发送数据操作。
-  - 空语句。
-  - 自增（x++）和自减（x--）语句。
-  
-- [ ] 非简单语句类型：
-  
-  - 标准变量声明语句。
-  - 常量声明语句。
-  - 类型声明语句。
-  - 包引入语句。
-  - 显式代码块。
-  - 函数声明。 
-  - 流程控制跳转语句。
-  - 函数返回（return）语句。
-  - 延迟函数调用和协程创建语句。
-  
-- [ ] 三种基本的流程控制：
-  
-  - if-else条件分支代码块。
-  - switch-case多条件分支代码块
-  - for循环代码块。
-  
-- [ ] 特定类型相关的流程控制代码块：
-  
-  - 容器类型相关的for-range循环代码块。
-  - 接口类型相关的type-switch多条件分支代码块。
-  - 通道类型相关的select-case多分支代码块。
-  
-- [ ] 本节案例
-  
-  </details>
-<details>
-<summary>Day007: 语句-Go运算符号</summary>
-
-- [x] 本节说明：本节介绍Go运算符相关内容。
-
-- [x] Go运算符：
-
-  - Go语言不需要在语句或声明后面是有分号结尾。
-  
-- [x] 算术运算符：
-
-  | 算术运算符 | 描述 | 实例               |
-  | :--------- | :--- | :----------------- |
-  | +          | 相加 | A + B 输出结果 30  |
-  | -          | 相减 | A - B 输出结果 -10 |
-  | *          | 相乘 | A * B 输出结果 200 |
-  | /          | 相除 | B / A 输出结果 2   |
-  | %          | 求余 | B % A 输出结果 0   |
-  | ++         | 自增 | A++ 输出结果 11    |
-  | --         | 自减 | A--   输出结果 9   |
-
-- [x] 比较运算符：
-
-  | 运算符 |                             描述                             | 实例              |
-  | :----- | :----------------------------------------------------------: | :---------------- |
-  | ==    |    检查两个值是否相等，如果相等返回 True 否则返回 False。    | (A == B) 为 False |
-  | !=     |  检查两个值是否不相等，如果不相等返回 True 否则返回 False。  | (A != B) 为 True  |
-  | >      |  检查左边值是否大于右边值，如果是返回 True 否则返回 False。  | (A > B) 为 False  |
-  | <      |  检查左边值是否小于右边值，如果是返回 True 否则返回 False。  | (A < B) 为 True   |
-  | >=    | 检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。 | (A >= B) 为 False |
-  | <=     | 检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。 | (A <= B) 为 True |
-  
-- [x] 逻辑运算符：
-
-  - Go支持两种布尔二元运算符和一种布尔一元运算符。
-  
-  | 运算符 |  描述  |        实例        |
-  | :----: | :----: | :----------------: |
-  |   &&   | 逻辑与 | (A && B) 为 False  |
-  |  \|\|  | 逻辑或 | (A \|\| B) 为 True |
-  |   !    | 逻辑非 | !(A && B) 为 True  |
-  
-- [x] 位运算符：
-
-  位运算符对整数在内存中的二进制位进行操作。 下表列出了位运算符 &，|，和 ^ 的计算：
-  
-  | p    | q    | p & q | p \| q | p ^ q |
-  | :---  | :--- | :---- | :----- | :---: |
-  | 0    | 0    | 0     | 0      |   0   |
-  | 0    | 1    | 0     | 1      |   1   |
-  | 1    | 1    | 1     | 1      |   0   |
-  | 1    | 0    | 0     | 1      |   1   |
-  
-  | 运算符 |                    描述                    |                  实例                  |
-  | :----: | :----------------------------------------: | :------------------------------------: |
-  |   &    | 其功能是参与运算的两数各对应的二进位相与。 | (A & B) 结果为 12, 二进制为 0000 1100  |
-  |   \|   |  其功能是参与运算的两数各对应的二进位相或  | (A \| B) 结果为 61, 二进制为 0011 1101 |
-  |   ^    | 二进位相异或，两对应的二进位相异时结果为1  | (A ^ B) 结果为 49, 二进制为 0011 0001  |
-  |   <<   |                                            | A << 2 结果为 240 ，二进制为 1111 0000 |
-  |   >>   |                                            |       A >> 2 结果为 15 ，二进制        |
-  
-- [x] 赋值运算符：
-
-  | 运算符 |       描述       |                 实例                  |
-  | :----: | :--------------: | :-----------------------------------: |
-  |   =    | 简单的赋值运算符 | C = A + B 将 A + B 表达式结果赋值给 C |
-  |   +=   |   相加后再赋值   |         C += A 等于 C = C + A         |
-  |   -=   |   相减后再赋值   |         C -= A 等于 C = C - A         |
-  |   *=   |   相乘后再赋值   |         C *= A 等于 C = C * A         |
-  |   /=   |   相除后再赋值   |         C /= A 等于 C = C / A         |
-  |   %=   |   求余后再赋值   |         C %= A 等于 C = C % A         |
-  |  <<=   |    左移后赋值    |        C <<= 2 等于 C = C << 2        |
-  |  >>=   |    右移后赋值    |        C >>= 2 等于 C = C >> 2        |
-  |   &=   |   按位与后赋值   |         C &= 2 等于 C = C & 2         |
-  |   ^=   |  按位异或后赋值  |         C ^= 2 等于 C = C ^ 2         |
-  |  \|=   |   按位或后赋值   |        C \|= 2 等于 C = C \| 2        |
-  
-- [x] 其他运算符：
-
-  | 运算符 | 描述             |            实例            |
-  | :----- | :--------------- | :------------------------: |
-  | &      | 返回变量存储地址 | &a; 将给出变量的实际地址。 |
-  | *      | 指针变量。       |     *a; 是一个指针变量     |
-  
-- [x] 运算符优先级：
-  
-  | 优先级 |      运算符      |
-  | :----: | :--------------: |
-  |   5    | * / % << >> & &^ |
-  |   4    |     + - \| ^     |
-  |   3    | == != < <= > >=  |
-  |   2    |        &&        |
-  |   1    |       \|\|       |
-  
-- [ ] 几个特殊运算符：
-
-  - 位清除 &^：将指定位置上的值设置为 0。将运算符左边数据相异的位保留，相同位清零 ：
-
-- [ ] 本节案例：
-
-  
-  </details>
-<details>
-<summary>Day008: 语句-Go条件判断</summary>
-
-- [x] 本节说明：本节介绍Go语言条件判断语句的相关内容。
-
-- [x] 条件判断语句介绍：
-
-  - 条件语句需要指定一个或多个条件，通过测试条件是否为 true 来决定是否执行指定语句，当条件为 false 的情况在执行另外的语句。
-  
-- [x] if语句：
-
-  - if 语句用于测试某个条件（布尔型或逻辑型）的语句。由一个布尔表达式或关系运算符后紧跟一个或多个语句组成。
-
-    ```go
-    if 布尔表达式 {
-       /* 在布尔表达式为 true 时执行 */
-    }
-    ```
-
-- [x] if...else 语句：
-
-  - if 语句后可以使用可选的else语句, else语句中的表达式在布尔表达式为 false 时执行。
-
-    ```go
-    if 布尔表达式 {
-       /* 在布尔表达式为 true 时执行 */
-    } else {
-      /* 在布尔表达式为 false 时执行 */
-    }
-    ```
-
-- [x] if 嵌套语句：
-
-  - 你可以在 if 或 else if 语句中嵌入一个或多个 if 或 else if 语句。
-
-    ```go
-    if 布尔表达式 1 {
-       /* 在布尔表达式 1 为 true 时执行 */
-       if 布尔表达式 2 {
-          /* 在布尔表达式 2 为 true 时执行 */
-       }
-    }
-    ```
-
-  - 三层嵌套。
-
-    ```go
-    if condition1 {
-    	// do something	
-    } else if condition2 {
-    	// do something else	
-    } else {
-    	// catch-all or default
-    }
-    ```
-
-- [x] if条件判断语句案例：
-
-  - 案例1：
-
-    ```go
-    if a := 10; a == 10 {
-    	fmt.Println("=10")
-    } else if a > 10 {
-    	fmt.Println(">10")
-    } else if a < 10 {
-    	fmt.Println("<10")
-    } else {
-        fmt.Println("这是不可能的!")
-    }
-    ```
-
-  - 案例2
-
-    ```go
-    if a := 10; a == 10 {
-    	fmt.Println("10")
-    } else {
-    	fmt.Println("not 10")
-    }
-    ```
-
-  - 案例3
-
-    ```go
-    a := 10 // 初始化赋值语句
-    if a == 10 {
-    	fmt.Println("10")
-    } else {
-    	fmt.Println("not 10")
-    }
-    ```
-
-- [x] switch 语句：
-
-  - switch语句是存在多个条件判断的情况下，分别执行其对应的语句。
-
-  - switch语句默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case。
-
-  - 如果我们需要执行后面的 case，可以使用 fallthrough 。
-
-  - switch后面可以写变量本身。和case后面的变量进行比较之后进行执行对应语句。
-
-    ```go
-    switch var1 { 
-        case val1:
-            ...
-        case val2:
-            ...
-        default:
-            ...
-    }
-    ```
-
-  - 任何支持进行相等判断的类型都可以作为测试表达式的条件，包括 int、string、指针等。
-
-    ```go
-    package main
-    
-    import "fmt"
-    
-    func main() {
-    	var num1 int = 7
-    
-    	switch { //无条件执行
-    	    case num1 < 0:
-    		    fmt.Println("Number is negative")
-    	    case num1 > 0 && num1 < 10:
-    		    fmt.Println("Number is between 0 and 10")
-    	    default:
-    		    fmt.Println("Number is 10 or greater")
-    	}
-    }
-    ```
-
-- [ ] [switch 参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.3.md)
-
-- [x] select 语句：
-
-  - select 结构，用于 channel 的选择。
-
-  - select 是 Go 中的一个控制结构，类似于 switch 语句。每个 case 必须是一个通信操作，要么是发送要么是接收。
-
-  - select 随机执行一个可运行的 case。如果没有 case 可运行，它将阻塞，直到有 case 可运行。一个默认的子句应该总是可运行的。
-
-  - select没有条件表达式，一直在等待分支进入可运行状态。
-
-    ```go
-    select {
-        case communication clause  :
-           statement(s);      
-        case communication clause  :
-           statement(s);
-        /* 你可以定义任意数量的 case */
-        default : /* 可选 */
-           statement(s);
-    }
-    ```
-
-  注意：Go 没有三目运算符，所以不支持 ?: 形式的条件判断。
-
-- [ ] [select参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.1.md)
-  
-- [ ] 本节案例：
-  
-  
-  
-  </details>
-<details>
-<summary>Day009: 语句-Go循环语句</summary>
-
-- [x] 本节说明：本节介绍Go语言循环语句的相关内容。
-
-- [x] Go循环语句：
-
-  - 在Go语言中只有for循环一种循环结构。
-  - 在实际问题中有大量的具有规律性的重复操作，在程序开发中便需要重复执行某些语句。
-
-- [x] for循环：重复执行语句
-
-  - Go语言中只有 for 结构可以重复执行某些语句。
-
-  - for循环是一个循环控制结构，可以执行指定次数的循环。
-
-  - Go语言的for循环有 3 种形式，只有其中的一种使用分号。
-
-  - **基于计数器的迭代**：
-
-    ```go
-    for  初始化条件; 判断条件; 条件变化 {}
-    for init; condition; post { }
-    // init： 一般为赋值表达式，给控制变量赋初值；
-    // condition： 关系表达式或逻辑表达式，循环控制条件；
-    // post： 一般为赋值表达式，给控制变量增量或减量。
-    // 在循环中同时使用多个计数器：
-    for i, j := 0, N; i < j; i, j = i+1, j-1 {}
-    ```
-
-    ```go
-    package main
-    
-    import "fmt"
-    
-    func main() {
-    	for i := 0; i < 5; i++ {
-    		fmt.Printf("This is the %d iteration\n", i)
-    	}
-    }
-    ```
-
-  - **基于条件判断的迭代**：
-
-    ```go
-    package main
-    
-    import "fmt"
-    
-    func main() {
-    	var i int = 5
-    
-    	for i >= 0 {
-    		i = i - 1
-    		fmt.Printf("The variable i is now: %d\n", i)
-    	}
-    }
-    ```
-
-  - **无限循环：**
-
-    条件语句是可以被省略的，如 i:=0; ; i++ 或 for { } 或 for ;; { }（;; 会在使用 gofmt 时被移除）：这些循环的本质就是无限循环。最后一个形式可以被改写为 for true { }，但一般情况下都会直接写
-
-    ```go
-    for { }
-    ```
-
-    ```go
-    for t, err = p.Token(); err == nil; t, err = p.Token() {
-    	...
-    }
-    ```
-
-    ```go
-    package main
-    
-    import "fmt"
-    
-    func main() {
-            sum := 0
-            for {
-                sum++ // 无限循环下去
-            }
-            fmt.Println(sum) // 无法输出
-    }
-    ```
-
-  - **for-range 结构：**
-
-    for 循环的 range 格式可以对 slice、map、数组、字符串等进行迭代循环。
-
-    在循环中可以同时使用多个计数器：
-
-    ```go
-    for key, value := range oldMap {
-        newMap[key] = value
-    }
-    ```
-
-    ```go
-    package main
-    import "fmt"
-    
-    func main() {
-            strings := []string{"google", "runoob"}
-            for i, s := range strings {
-                    fmt.Println(i, s)
-            }
-            numbers := [6]int{1, 2, 3, 5}
-            for i,x:= range numbers {
-                    fmt.Printf("第 %d 位 x 的值 = %d\n", i,x)
-            }  
-    }
-    ```
-
-- [x] 循环嵌套：在循环内使用循环。
-
-  - 使用方法：
-
-    ```go
-    for [condition |  ( init; condition; increment ) | Range]
-    {
-       for [condition |  ( init; condition; increment ) | Range]
-       {
-          statement(s);
-       }
-       statement(s);
-    }
-    ```
-
-  - 使用循环嵌套来输出 2 到 100 间的素数：
-
-    ```go
-    package main
-    import "fmt"
-    func main() {
-       /* 定义局部变量 */
-       var i, j int
-       for i=2; i < 100; i++ {
-          for j=2; j <= (i/j); j++ {
-             if(i%j==0) {
-                break; // 如果发现因子，则不是素数
-             }
-          }
-          if(j > (i/j)) {
-             fmt.Printf("%d  是素数\n", i);
-          }
-       }  
-    }
-    ```
-
-- [x] 循环控制语句：
-
-  - break 语句：
-
-    break可用于for、switch、select语句中。
-
-    用于循环语句中跳出循环，并开始执行循环之后的语句。
-
-    break 在 switch（开关语句）中在执行一条 case 后跳出语句的作用。
-
-    在多重循环中，可以用标号 label 标出想 break 的循环。
-
-    ```go
-    break
-    ```
-
-    ```go
-    for {
-    	i = i - 1
-    	fmt.Printf("The variable i is now: %d\n", i)
-    	if i < 0 {
-    		break
-    	}
-    }
-    ```
-
-    ```go
-    i := 0
-    for { // for循环条件永真，会一直循环
-    	if i >= 10 { // if条件判断i是否大于10
-    	break // if大于10的话就break跳出for循环
-    	}
-    	i++ // i+1
-    	g.Println(i) // 打印i
-    }
-    ```
-
-  - continue语句：
-
-    continue只能用于for循环。跳过当前循环执行下一次循环语句。
-
-    for 循环中，执行 continue 语句会触发 for 增量语句的执行。
-
-    在多重循环中，可以用标号 label 标出想 continue 的循环。
-
-    ```go
-    continue
-    ```
-
-    ```go
-    package main
-    
-    func main() {
-    	for i := 0; i < 10; i++ {
-    		if i == 5 { // 判断i等于5时跳出for循环
-    			continue
-    		}
-    		print(i)
-    		print(" ")
-    	}
-    }
-    ```
-
-  - goto 语句：
-
-    Go语言的 goto 语句可以无条件地转移到过程中指定的行。
-
-    goto语句可以用在任何地方，但是不能跨函数使用。
-
-    goto 语句通常与条件语句配合使用。可用来实现条件转移， 构成循环，跳出循环体等功能。
-
-    但是，在结构化程序设计中一般不主张使用 goto 语句， 以免造成程序流程的混乱，使理解和调试程序都产生困难。
-    
-    ```go
-    goto End  //goto是关键字，End是用户起的名字，叫做标签
-    .......
-    End:
-  	fmt.Print("aaa")
-    ```
-    
-    ```go
-    package main
-    
-    func main() {
-    	i:=0
-    	HERE:
-    		print(i)
-    		i++
-    		if i==5 {
-    			return // 跳出函数
-    		}
-    		goto HERE
-    }
-    ```
-
-  - return语句：
-
-    如果 return 语句使用在普通的 函数 中，则表示跳出该函数，不再执行函数中 return 后面的代码，可以理解成终止函数。
-
-    如果 return 语句使用在 main 函数中，表示终止 main 函数，也就是终止程序的运行。
-
-- [ ] 本节案例： 
-  
-  
-  </details> 
-
-<details>
-<summary>Day010: 数据-Go基本数据</summary>
+<summary>Day006: 数据-Go基本数据</summary>
 
 - [x] 本节说明：本节介绍Go语言的基本数据类型。
 
@@ -1329,7 +756,577 @@
 
   
   </details>
+<details>
+<summary>Day007: 语法-Go语言语法</summary>
 
+- [x] 本节说明：本节介绍表达式、语句和简单语句的相关内容。
+
+- [x] Go语言语法介绍：
+
+  - 一个表达式表示一个值，而一条语句表示一个操作。 
+  - 和很多其它流行语言一样，Go也支持break、continue和goto等跳转语句。 另外，Go 还支持一个特有的fallthrough跳转语句。
+  
+- [x] 简单语句类型：
+
+  - 变量短声明语句。
+  - 纯赋值语句，包括x op= y这种运算形式。
+  - 有返回结果的函数或方法调用，以及通道的接收数据操作。 
+  - 通道的发送数据操作。
+  - 空语句。
+  - 自增（x++）和自减（x--）语句。
+  
+- [ ] 非简单语句类型：
+  
+  - 标准变量声明语句。
+  - 常量声明语句。
+  - 类型声明语句。
+  - 包引入语句。
+  - 显式代码块。
+  - 函数声明。 
+  - 流程控制跳转语句。
+  - 函数返回（return）语句。
+  - 延迟函数调用和协程创建语句。
+  
+- [ ] 三种基本的流程控制：
+  
+  - if-else条件分支代码块。
+  - switch-case多条件分支代码块
+  - for循环代码块。
+  
+- [ ] 特定类型相关的流程控制代码块：
+  
+  - 容器类型相关的for-range循环代码块。
+  - 接口类型相关的type-switch多条件分支代码块。
+  - 通道类型相关的select-case多分支代码块。
+  
+- [ ] 本节案例
+  
+  </details>
+<details>
+<summary>Day008: 语句-Go运算符号</summary>
+
+- [x] 本节说明：本节介绍Go运算符相关内容。
+
+- [x] Go运算符：
+
+  - Go语言不需要在语句或声明后面是有分号结尾。
+  
+- [x] 算术运算符：
+
+  | 算术运算符 | 描述 | 实例               |
+  | :--------- | :--- | :----------------- |
+  | +          | 相加 | A + B 输出结果 30  |
+  | -          | 相减 | A - B 输出结果 -10 |
+  | *          | 相乘 | A * B 输出结果 200 |
+  | /          | 相除 | B / A 输出结果 2   |
+  | %          | 求余 | B % A 输出结果 0   |
+  | ++         | 自增 | A++ 输出结果 11    |
+  | --         | 自减 | A--   输出结果 9   |
+
+- [x] 比较运算符：
+
+  | 运算符 |                             描述                             | 实例              |
+  | :----- | :----------------------------------------------------------: | :---------------- |
+  | ==    |    检查两个值是否相等，如果相等返回 True 否则返回 False。    | (A == B) 为 False |
+  | !=     |  检查两个值是否不相等，如果不相等返回 True 否则返回 False。  | (A != B) 为 True  |
+  | >      |  检查左边值是否大于右边值，如果是返回 True 否则返回 False。  | (A > B) 为 False  |
+  | <      |  检查左边值是否小于右边值，如果是返回 True 否则返回 False。  | (A < B) 为 True   |
+  | >=    | 检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。 | (A >= B) 为 False |
+  | <=     | 检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。 | (A <= B) 为 True |
+  
+- [x] 逻辑运算符：
+
+  - Go支持两种布尔二元运算符和一种布尔一元运算符。
+  
+  | 运算符 |  描述  |        实例        |
+  | :----: | :----: | :----------------: |
+  |   &&   | 逻辑与 | (A && B) 为 False  |
+  |  \|\|  | 逻辑或 | (A \|\| B) 为 True |
+  |   !    | 逻辑非 | !(A && B) 为 True  |
+  
+- [x] 位运算符：
+
+  位运算符对整数在内存中的二进制位进行操作。 下表列出了位运算符 &，|，和 ^ 的计算：
+  
+  | p    | q    | p & q | p \| q | p ^ q |
+  | :---  | :--- | :---- | :----- | :---: |
+  | 0    | 0    | 0     | 0      |   0   |
+  | 0    | 1    | 0     | 1      |   1   |
+  | 1    | 1    | 1     | 1      |   0   |
+  | 1    | 0    | 0     | 1      |   1   |
+  
+  | 运算符 |                    描述                    |                  实例                  |
+  | :----: | :----------------------------------------: | :------------------------------------: |
+  |   &    | 其功能是参与运算的两数各对应的二进位相与。 | (A & B) 结果为 12, 二进制为 0000 1100  |
+  |   \|   |  其功能是参与运算的两数各对应的二进位相或  | (A \| B) 结果为 61, 二进制为 0011 1101 |
+  |   ^    | 二进位相异或，两对应的二进位相异时结果为1  | (A ^ B) 结果为 49, 二进制为 0011 0001  |
+  |   <<   |                                            | A << 2 结果为 240 ，二进制为 1111 0000 |
+  |   >>   |                                            |       A >> 2 结果为 15 ，二进制        |
+  
+- [x] 赋值运算符：
+
+  | 运算符 |       描述       |                 实例                  |
+  | :----: | :--------------: | :-----------------------------------: |
+  |   =    | 简单的赋值运算符 | C = A + B 将 A + B 表达式结果赋值给 C |
+  |   +=   |   相加后再赋值   |         C += A 等于 C = C + A         |
+  |   -=   |   相减后再赋值   |         C -= A 等于 C = C - A         |
+  |   *=   |   相乘后再赋值   |         C *= A 等于 C = C * A         |
+  |   /=   |   相除后再赋值   |         C /= A 等于 C = C / A         |
+  |   %=   |   求余后再赋值   |         C %= A 等于 C = C % A         |
+  |  <<=   |    左移后赋值    |        C <<= 2 等于 C = C << 2        |
+  |  >>=   |    右移后赋值    |        C >>= 2 等于 C = C >> 2        |
+  |   &=   |   按位与后赋值   |         C &= 2 等于 C = C & 2         |
+  |   ^=   |  按位异或后赋值  |         C ^= 2 等于 C = C ^ 2         |
+  |  \|=   |   按位或后赋值   |        C \|= 2 等于 C = C \| 2        |
+  
+- [x] 其他运算符：
+
+  | 运算符 | 描述             |            实例            |
+  | :----- | :--------------- | :------------------------: |
+  | &      | 返回变量存储地址 | &a; 将给出变量的实际地址。 |
+  | *      | 指针变量。       |     *a; 是一个指针变量     |
+  
+- [x] 运算符优先级：
+  
+  | 优先级 |      运算符      |
+  | :----: | :--------------: |
+  |   5    | * / % << >> & &^ |
+  |   4    |     + - \| ^     |
+  |   3    | == != < <= > >=  |
+  |   2    |        &&        |
+  |   1    |       \|\|       |
+  
+- [ ] 几个特殊运算符：
+
+  - 位清除 &^：将指定位置上的值设置为 0。将运算符左边数据相异的位保留，相同位清零 ：
+
+- [ ] 本节案例：
+
+  
+  </details>
+<details>
+<summary>Day008: 语句-Go条件判断</summary>
+
+- [x] 本节说明：本节介绍Go语言条件判断语句的相关内容。
+
+- [x] 条件判断语句介绍：
+
+  - 条件语句需要指定一个或多个条件，通过测试条件是否为 true 来决定是否执行指定语句，当条件为 false 的情况在执行另外的语句。
+  
+- [x] if语句：
+
+  - if 语句用于测试某个条件（布尔型或逻辑型）的语句。由一个布尔表达式或关系运算符后紧跟一个或多个语句组成。
+
+    ```go
+    if 布尔表达式 {
+       /* 在布尔表达式为 true 时执行 */
+    }
+    ```
+
+- [x] if...else 语句：
+
+  - if 语句后可以使用可选的else语句, else语句中的表达式在布尔表达式为 false 时执行。
+
+    ```go
+    if 布尔表达式 {
+       /* 在布尔表达式为 true 时执行 */
+    } else {
+      /* 在布尔表达式为 false 时执行 */
+    }
+    ```
+
+- [x] if 嵌套语句：
+
+  - 你可以在 if 或 else if 语句中嵌入一个或多个 if 或 else if 语句。
+
+    ```go
+    if 布尔表达式 1 {
+       /* 在布尔表达式 1 为 true 时执行 */
+       if 布尔表达式 2 {
+          /* 在布尔表达式 2 为 true 时执行 */
+       }
+    }
+    ```
+
+  - 三层嵌套。
+
+    ```go
+    if condition1 {
+    	// do something	
+    } else if condition2 {
+    	// do something else	
+    } else {
+    	// catch-all or default
+    }
+    ```
+
+- [x] if条件判断语句案例：
+
+  - 案例1：
+
+    ```go
+    if a := 10; a == 10 {
+    	fmt.Println("=10")
+    } else if a > 10 {
+    	fmt.Println(">10")
+    } else if a < 10 {
+    	fmt.Println("<10")
+    } else {
+        fmt.Println("这是不可能的!")
+    }
+    ```
+
+  - 案例2
+
+    ```go
+    if a := 10; a == 10 {
+    	fmt.Println("10")
+    } else {
+    	fmt.Println("not 10")
+    }
+    ```
+
+  - 案例3
+
+    ```go
+    a := 10 // 初始化赋值语句
+    if a == 10 {
+    	fmt.Println("10")
+    } else {
+    	fmt.Println("not 10")
+    }
+    ```
+
+- [x] switch 语句：
+
+  - switch语句是存在多个条件判断的情况下，分别执行其对应的语句。
+
+  - switch语句默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case。
+
+  - 如果我们需要执行后面的 case，可以使用 fallthrough 。
+
+  - switch后面可以写变量本身。和case后面的变量进行比较之后进行执行对应语句。
+
+    ```go
+    switch var1 { 
+        case val1:
+            ...
+        case val2:
+            ...
+        default:
+            ...
+    }
+    ```
+
+  - 任何支持进行相等判断的类型都可以作为测试表达式的条件，包括 int、string、指针等。
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+    	var num1 int = 7
+    
+    	switch { //无条件执行
+    	    case num1 < 0:
+    		    fmt.Println("Number is negative")
+    	    case num1 > 0 && num1 < 10:
+    		    fmt.Println("Number is between 0 and 10")
+    	    default:
+    		    fmt.Println("Number is 10 or greater")
+    	}
+    }
+    ```
+
+- [ ] [switch 参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.3.md)
+
+- [x] select 语句：
+
+  - select 结构，用于 channel 的选择。
+
+  - select 是 Go 中的一个控制结构，类似于 switch 语句。每个 case 必须是一个通信操作，要么是发送要么是接收。
+
+  - select 随机执行一个可运行的 case。如果没有 case 可运行，它将阻塞，直到有 case 可运行。一个默认的子句应该总是可运行的。
+
+  - select没有条件表达式，一直在等待分支进入可运行状态。
+
+    ```go
+    select {
+        case communication clause  :
+           statement(s);      
+        case communication clause  :
+           statement(s);
+        /* 你可以定义任意数量的 case */
+        default : /* 可选 */
+           statement(s);
+    }
+    ```
+
+  注意：Go 没有三目运算符，所以不支持 ?: 形式的条件判断。
+
+- [ ] [select参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/05.1.md)
+  
+- [ ] 本节案例：
+  
+  
+  </details>
+<details>
+<summary>Day009: 语句-Go循环语句</summary>
+
+- [x] 本节说明：本节介绍Go语言循环语句的相关内容。
+
+- [x] Go循环语句：
+
+  - 在Go语言中只有for循环一种循环结构。
+  - 在实际问题中有大量的具有规律性的重复操作，在程序开发中便需要重复执行某些语句。
+
+- [x] for循环：重复执行语句
+
+  - Go语言中只有 for 结构可以重复执行某些语句。
+
+  - for循环是一个循环控制结构，可以执行指定次数的循环。
+
+  - Go语言的for循环有 3 种形式，只有其中的一种使用分号。
+
+  - **基于计数器的迭代**：
+
+    ```go
+    for  初始化条件; 判断条件; 条件变化 {}
+    for init; condition; post { }
+    // init： 一般为赋值表达式，给控制变量赋初值；
+    // condition： 关系表达式或逻辑表达式，循环控制条件；
+    // post： 一般为赋值表达式，给控制变量增量或减量。
+    // 在循环中同时使用多个计数器：
+    for i, j := 0, N; i < j; i, j = i+1, j-1 {}
+    ```
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+    	for i := 0; i < 5; i++ {
+    		fmt.Printf("This is the %d iteration\n", i)
+    	}
+    }
+    ```
+
+  - **基于条件判断的迭代**：
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+    	var i int = 5
+    
+    	for i >= 0 {
+    		i = i - 1
+    		fmt.Printf("The variable i is now: %d\n", i)
+    	}
+    }
+    ```
+
+  - **无限循环：**
+
+    条件语句是可以被省略的，如 i:=0; ; i++ 或 for { } 或 for ;; { }（;; 会在使用 gofmt 时被移除）：这些循环的本质就是无限循环。最后一个形式可以被改写为 for true { }，但一般情况下都会直接写
+
+    ```go
+    for { }
+    ```
+
+    ```go
+    for t, err = p.Token(); err == nil; t, err = p.Token() {
+    	...
+    }
+    ```
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main() {
+            sum := 0
+            for {
+                sum++ // 无限循环下去
+            }
+            fmt.Println(sum) // 无法输出
+    }
+    ```
+
+  - **for-range 结构：**
+
+    for 循环的 range 格式可以对 slice、map、数组、字符串等进行迭代循环。
+
+    在循环中可以同时使用多个计数器：
+
+    ```go
+    for key, value := range oldMap {
+        newMap[key] = value
+    }
+    ```
+
+    ```go
+    package main
+    import "fmt"
+    
+    func main() {
+            strings := []string{"google", "runoob"}
+            for i, s := range strings {
+                    fmt.Println(i, s)
+            }
+            numbers := [6]int{1, 2, 3, 5}
+            for i,x:= range numbers {
+                    fmt.Printf("第 %d 位 x 的值 = %d\n", i,x)
+            }  
+    }
+    ```
+
+- [x] 循环嵌套：在循环内使用循环。
+
+  - 使用方法：
+
+    ```go
+    for [condition |  ( init; condition; increment ) | Range]
+    {
+       for [condition |  ( init; condition; increment ) | Range]
+       {
+          statement(s);
+       }
+       statement(s);
+    }
+    ```
+
+  - 使用循环嵌套来输出 2 到 100 间的素数：
+
+    ```go
+    package main
+    import "fmt"
+    func main() {
+       /* 定义局部变量 */
+       var i, j int
+       for i=2; i < 100; i++ {
+          for j=2; j <= (i/j); j++ {
+             if(i%j==0) {
+                break; // 如果发现因子，则不是素数
+             }
+          }
+          if(j > (i/j)) {
+             fmt.Printf("%d  是素数\n", i);
+          }
+       }  
+    }
+    ```
+
+- [x] 循环控制语句：
+
+  - break 语句：
+
+    break可用于for、switch、select语句中。
+
+    用于循环语句中跳出循环，并开始执行循环之后的语句。
+
+    break 在 switch（开关语句）中在执行一条 case 后跳出语句的作用。
+
+    在多重循环中，可以用标号 label 标出想 break 的循环。
+
+    ```go
+    break
+    ```
+
+    ```go
+    for {
+    	i = i - 1
+    	fmt.Printf("The variable i is now: %d\n", i)
+    	if i < 0 {
+    		break
+    	}
+    }
+    ```
+
+    ```go
+    i := 0
+    for { // for循环条件永真，会一直循环
+    	if i >= 10 { // if条件判断i是否大于10
+    	break // if大于10的话就break跳出for循环
+    	}
+    	i++ // i+1
+    	g.Println(i) // 打印i
+    }
+    ```
+
+  - continue语句：
+
+    continue只能用于for循环。跳过当前循环执行下一次循环语句。
+
+    for 循环中，执行 continue 语句会触发 for 增量语句的执行。
+
+    在多重循环中，可以用标号 label 标出想 continue 的循环。
+
+    ```go
+    continue
+    ```
+
+    ```go
+    package main
+    
+    func main() {
+    	for i := 0; i < 10; i++ {
+    		if i == 5 { // 判断i等于5时跳出for循环
+    			continue
+    		}
+    		print(i)
+    		print(" ")
+    	}
+    }
+    ```
+
+  - goto 语句：
+
+    Go语言的 goto 语句可以无条件地转移到过程中指定的行。
+
+    goto语句可以用在任何地方，但是不能跨函数使用。
+
+    goto 语句通常与条件语句配合使用。可用来实现条件转移， 构成循环，跳出循环体等功能。
+
+    但是，在结构化程序设计中一般不主张使用 goto 语句， 以免造成程序流程的混乱，使理解和调试程序都产生困难。
+    
+    ```go
+    goto End  //goto是关键字，End是用户起的名字，叫做标签
+    .......
+    End:
+  	fmt.Print("aaa")
+    ```
+    
+    ```go
+    package main
+    
+    func main() {
+    	i:=0
+    	HERE:
+    		print(i)
+    		i++
+    		if i==5 {
+    			return // 跳出函数
+    		}
+    		goto HERE
+    }
+    ```
+
+  - return语句：
+
+    如果 return 语句使用在普通的 函数 中，则表示跳出该函数，不再执行函数中 return 后面的代码，可以理解成终止函数。
+
+    如果 return 语句使用在 main 函数中，表示终止 main 函数，也就是终止程序的运行。
+
+- [ ] 本节案例： 
+  
+  
+  </details> 
 <details>
 <summary>Day011: 函数-Go语言函数</summary>
 
