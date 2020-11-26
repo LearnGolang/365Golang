@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2020年11月17日。
+本项目创建于2020年9月1日，最近的一次更新日期为2020年11月26日。
 
 本项目暂时计划共九章：
 
@@ -2099,7 +2099,94 @@
 ### 第二章：Go语言进阶
 
 <details>
-<summary>Day018: 数据-Go语言指针</summary>
+<summary>Day018: 方法-Go语言方法</summary>
+
+- [x] 本节说明：本节介绍Go语言方法相关内容。
+
+- [x] Go语言方法介绍：
+
+  - 方法是包含了接收者的函数。接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
+  - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
+  - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
+  - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
+  - 一个类型加上它的方法等价于面向对象中的一个类。
+  - Go语言支持一些面向对象编程特性，方法是这些所支持的一个特性。
+
+- [ ] Go语言方法声明：
+
+  - Go语言方法的申明和普通函数声明类似，在函数名前放一个变量，即是一个方法。这个附加的参数会将该函数附加到这种类型上，即相当于为这种类型定义了一个独占的方法。这个参数是接受者。
+  - 在Go语言中，可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：`T`必须是一个定义类型；`T`必须和此方法声明定义在同一个代码包中；`T`不能是一个指针类型；`T`不能是一个接口类型。
+
+- [ ] Go语言方法接受者：
+
+  - 值接收者
+  - 指针接收者
+
+- [ ] Go语言方法案例：
+
+  - 示例一：函数和方法的使用对比
+
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"math"
+    )
+    
+    type Point struct{ X, Y float64 }
+    
+    // traditional function
+    func Distance(p, q Point) float64 {
+    	return math.Hypot(q.X-p.X, q.Y-p.Y)
+    }
+    
+    // same thing, but as a method of the Point type
+    func (p Point) Distance(q Point) float64 {
+    	return math.Hypot(q.X-p.X, q.Y-p.Y)
+    }
+    
+    func main() {
+    	p := Point{1, 2}
+    	q := Point{4, 6}
+    	fmt.Println(Distance(p, q)) // "5", function call
+    	fmt.Println(p.Distance(q))  // "5", method call
+    }
+    
+    ```
+
+  - 示例二：
+
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    /* 定义结构体 */
+    type Circle struct {
+    	radius float64
+    }
+    
+    func main() {
+    	var c1 Circle
+    	c1.radius = 10.00
+    	fmt.Println("圆的面积 = ", c1.getArea())
+    }
+    
+    //该 method 属于 Circle 类型对象中的方法
+    func (c Circle) getArea() float64 {
+    	//c.radius 即为 Circle 类型对象中的属性
+    	return 3.14 * c.radius * c.radius
+    }
+    ```
+
+- [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
+  
+  </details>
+<details>
+<summary>Day019: 数据-Go语言指针</summary>
 
 - [x] 本节说明：本节介绍Go语言指针内存相关内容。
 
@@ -2185,7 +2272,7 @@
   
   </details>
 <details>
-<summary>Day019: 数据-Go语言接口</summary>
+<summary>Day020: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 - [x] Go语言接口介绍：
@@ -2287,7 +2374,7 @@
   </details>
   
 <details>
-<summary>Day020: 数据-Go语言反射</summary>
+<summary>Day021: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 
@@ -2305,7 +2392,7 @@
 
   </details>
 <details>
-<summary>Day021: 并发-Go语言协程</summary>
+<summary>Day022: 并发-Go语言协程</summary>
 
 - [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
@@ -2362,7 +2449,25 @@
   
   </details>
 <details>
-<summary>Day022: 并发-Go语言通道</summary>
+<summary>Day023: 进阶-Go同步与锁</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  
+
+  </details>
+<details>
+<summary>Day024: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 
@@ -2577,94 +2682,7 @@
 
   </details>
 <details>
-<summary>Day023: 对象-Go语言方法</summary>
-
-- [x] 本节说明：本节介绍Go语言方法相关内容。
-
-- [x] Go语言方法介绍：
-
-  - 方法是包含了接收者的函数。接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
-  - 在Go语言中，结构体就像是类的一种简化形式，Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。
-  - 接收者类型可以是（几乎）任何类型，不仅仅是结构体类型。任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现。
-  - 接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。
-  - 一个类型加上它的方法等价于面向对象中的一个类。
-  - Go语言支持一些面向对象编程特性，方法是这些所支持的一个特性。
-
-- [ ] Go语言方法声明：
-
-  - Go语言方法的申明和普通函数声明类似，在函数名前放一个变量，即是一个方法。这个附加的参数会将该函数附加到这种类型上，即相当于为这种类型定义了一个独占的方法。这个参数是接受者。
-  - 在Go语言中，可以为类型T和*T显式地声明一个方法，其中类型T必须满足四个条件：`T`必须是一个定义类型；`T`必须和此方法声明定义在同一个代码包中；`T`不能是一个指针类型；`T`不能是一个接口类型。
-
-- [ ] Go语言方法接受者：
-
-  - 值接收者
-  - 指针接收者
-
-- [ ] Go语言方法案例：
-
-  - 示例一：函数和方法的使用对比
-
-    ```go
-    package main
-    
-    import (
-    	"fmt"
-    	"math"
-    )
-    
-    type Point struct{ X, Y float64 }
-    
-    // traditional function
-    func Distance(p, q Point) float64 {
-    	return math.Hypot(q.X-p.X, q.Y-p.Y)
-    }
-    
-    // same thing, but as a method of the Point type
-    func (p Point) Distance(q Point) float64 {
-    	return math.Hypot(q.X-p.X, q.Y-p.Y)
-    }
-    
-    func main() {
-    	p := Point{1, 2}
-    	q := Point{4, 6}
-    	fmt.Println(Distance(p, q)) // "5", function call
-    	fmt.Println(p.Distance(q))  // "5", method call
-    }
-    
-    ```
-
-  - 示例二：
-
-    ```go
-    package main
-    
-    import (
-    	"fmt"
-    )
-    
-    /* 定义结构体 */
-    type Circle struct {
-    	radius float64
-    }
-    
-    func main() {
-    	var c1 Circle
-    	c1.radius = 10.00
-    	fmt.Println("圆的面积 = ", c1.getArea())
-    }
-    
-    //该 method 属于 Circle 类型对象中的方法
-    func (c Circle) getArea() float64 {
-    	//c.radius 即为 Circle 类型对象中的属性
-    	return 3.14 * c.radius * c.radius
-    }
-    ```
-
-- [ ] 参考链接：[方法参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_20_method.md)、[方法参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md)、[方法参考3](https://gfw.go101.org/article/method.html)
-  
-  </details>
-<details>
-<summary>Day026: 对象-Go面向对象</summary>
+<summary>Day025: 对象-Go面向对象</summary>
 
 - [x] 本节说明：本节介绍Go语言面向对象的相关内容。
 
@@ -2679,7 +2697,7 @@
   
   </details>
 <details>
-<summary>Day024: 泛型-Go语言泛型</summary>
+<summary>Day026: 泛型-Go语言泛型</summary>
 
 - [ ] 本节说明：
 
@@ -2695,7 +2713,7 @@
 
   </details>
 <details>
-<summary>Day025: 错误-Go错误处理</summary>
+<summary>Day027: 错误-Go错误处理</summary>
 
 - [x] 本节说明：本节介绍Go语言中的错误处理。
 
@@ -2726,25 +2744,7 @@
 
   </details>
 <details>
-<summary>Day026: 进阶-Go同步与锁</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
-
-  </details>
-<details>
-<summary>Day027: 进阶-Go反序列化</summary>
+<summary>Day028: 进阶-Go反序列化</summary>
 
 - [ ] 本节说明：
 
@@ -2761,7 +2761,7 @@
   
   </details>
 <details>
-<summary>Day028: 进阶-Go垃圾回收</summary>
+<summary>Day029: 进阶-Go垃圾回收</summary>
 
 - [ ] 本节说明：
 
@@ -2779,7 +2779,7 @@
 
   </details>
 <details>
-<summary>Day029: 函数-Go内置函数</summary>
+<summary>Day030: 函数-Go内置函数</summary>
 
 - [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
@@ -3716,10 +3716,11 @@
 
 ## 0x03-参考资源
 
-特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)
+特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)、[韩茹](https://github.com/rubyhan1314)
 
 - [x] https://www.runoob.com/go/go-tutorial.html
 - [x] https://github.com/ffhelicopter/Go42
 - [x] https://github.com/unknwon/the-way-to-go_ZH_CN
 - [x] https://github.com/golang101/golang101
 - [x] https://github.com/iswbm/GolangCodingTime
+- [x] https://space.bilibili.com/353694001
