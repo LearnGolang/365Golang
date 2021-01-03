@@ -1355,15 +1355,16 @@
       函数体
     }
     ```
-  - 无参数无返回的函数：
-
+    
+- 无参数无返回的函数：
+  
     ```go
     func MyFunc(){
     }
     ```
     
-  - 有参数无返回的函数：
-
+- 有参数无返回的函数：
+  
     ```go
       func main() {
       	Myfunc("url", "t")
@@ -1373,10 +1374,10 @@
       	fmt.Println(aa)
       	fmt.Println(bb)
       }
-    ```
-
-  - 不定参数类型：不定参数只能是形参中的最后一个参数。
-
+  ```
+  
+- 不定参数类型：不定参数只能是形参中的最后一个参数。
+  
     ```go
       func Myfunc(args ...int) {
       	fmt.Println(aa)
@@ -1386,31 +1387,31 @@
     
     - 无参数有返回的函数：有返回值的函数需要通过return返回。
   
-  ```go
-    func MyFunc() int {
-    }
-  ```
+      ```go
+        func MyFunc() int {
+        }
+      ```
   
-  - 有参数有返回的函数：
-
-    ```go
-    func main() {
-    	max, min := MaxAndMin(10, 20)
-    	fmt.Println(max, min)
-    }
-    
-    func MaxAndMin(a, b int) (max, min int) {
-    	if a > b {
-    		max = a
-    		min = b
-    	} else {
-    		max = b
-    		min = a
-    	}
-    	return
-    }
-    ```
-
+    - 有参数有返回的函数：
+  
+      ```go
+      func main() {
+      	max, min := MaxAndMin(10, 20)
+      	fmt.Println(max, min)
+      }
+      
+      func MaxAndMin(a, b int) (max, min int) {
+      	if a > b {
+      		max = a
+      		min = b
+      	} else {
+      		max = b
+      		min = a
+      	}
+      	return
+      }
+      ```
+  
 - [x] 函数调用：
 
   - 已经声明的函数可以通过它的名称和一个实参列表来调用。
