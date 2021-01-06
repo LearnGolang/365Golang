@@ -2196,6 +2196,7 @@
 - [x] 本节说明：本节介绍Go语言指针内存相关内容。
 
 - [x] Go语言指针介绍：
+  - 指针是存储另一个变量的内存地址的变量。
   - 虽然Go语言吸收融合了很多其语言中的各种特性，但是Go语言主要被归入C语言家族。其中一个重要的原因是Go语言和C语言一样，也支持指针。但Go语言中的指针相比C语言指针有很多限制。
   - 指针是Go语言中的一种类型分类（kind）。一个指针是某个指针类型的一个值。一个指针可以存储一个内存地址。我们经常称一个指针为一个内存地址，一个内存地址为一个指针。 一个指针中存储的内存地址为另外一个值的地址。  
   - 一个指针值存储着另一个值的地址，除非此指针值是一个nil空指针。我们可以说此指针引用着另外一个值，或者说另外一个值正被此指针所引用。
@@ -2818,7 +2819,6 @@
 - [ ] 本节案例：
 
   
-
   </details>
 
 ### 第三章：Go标准库包
@@ -2837,6 +2837,34 @@
 
 - [ ] 本节案例：
 
+  </details>
+<details>
+<summary>Day000: 库包-Go时间日期</summary>
+
+- [ ] 本节说明：本节介绍Go语言中时间和日期的相关内容。
+
+- [ ] Go语言时间操作：
+
+- [ ] Go语言日期操作：
+
+- [x] 一些具体使用的例子。
+
+  - 计算函数执行时间：
+  
+    ```go
+    start := time.Now()
+    end := time.Now()
+    delta := end.Sub(start)
+    fmt.Printf("all time: %s\n", delta)
+    ```
+    
+  - 计算日期差值：
+  
+- [ ] [时间日期参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)、[时间日期参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.11.md)
+
+- [ ] 本节案例：
+
+  
   </details>
 <details>
 <summary>Day000: 库包-Go请求响应</summary>
@@ -2922,35 +2950,6 @@
 - [ ] 本节案例：
 
   
-  </details>
-<details>
-<summary>Day000: 库包-Go时间日期</summary>
-
-- [ ] 本节说明：本节介绍Go语言中时间和日期的相关内容。
-
-- [ ] Go语言时间操作：
-
-- [ ] Go语言日期操作：
-
-- [x] 一些具体使用的例子。
-
-  - 计算函数执行时间：
-  
-    ```go
-    start := time.Now()
-    end := time.Now()
-    delta := end.Sub(start)
-    fmt.Printf("all time: %s\n", delta)
-    ```
-    
-  - 计算日期差值：
-  
-- [ ] [时间日期参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)、[时间日期参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.11.md)
-
-- [ ] 本节案例：
-
-  
-
   </details>
 <details>
 <summary>Day000: 库包-Go文本处理</summary>
