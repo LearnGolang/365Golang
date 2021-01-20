@@ -10,7 +10,7 @@
 
 关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
 
-本项目创建于2020年9月1日，最近的一次更新日期为2021年1月3日。
+本项目创建于2020年9月1日，最近的一次更新日期为2021年1月20日。
 
 本项目暂时计划共九章：
 
@@ -65,8 +65,8 @@
   - [官网下载](https://golang.org/dl/)后，直接按照安装说明安装即可。在Ubuntu虚拟机里面开发使用Go语言：
 
     ```
-    wget https://golang.google.cn/dl/go1.15.3.linux-amd64.tar.gz
-    tar -C /usr/local -xzf go1.15.3.linux-amd64.tar.gz
+    wget https://golang.google.cn/dl/go1.15.7.linux-amd64.tar.gz
+    tar -C /usr/local -xzf go1.15.7.linux-amd64.tar.gz
     vi ~/.bashrc
     export PATH=/usr/local/go/bin:$PATH
     source .bashrc
