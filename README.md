@@ -1,12 +1,10 @@
-# 《365天深入理解Golang》
+# 《365天深入理解Go语言》
 
 ## 0x01-项目说明 
 
-这是一份自己准备花365天时间深入理解Golang之后送给[自己](https://github.com/0e0w)的礼物。本项目记录这365天内的学习收获。本人编程零基础，只略懂一些Python。因此本项目部分章节可能很基础，请见谅。本项目大量的参考借鉴甚至复制了其他类似项目。感谢这些作者们，感谢Gopher。项目还未完成，正在更新整理中。
+这是一份自己准备用365天深入理解Go语言之后送给[自己](https://github.com/0e0w)的礼物。本项目记录这365天内的学习收获。本人编程零基础，只略懂一些Python。因此本项目部分章节可能很基础，请见谅。项目中大量的参考借鉴甚至复制了其他类似项目。感谢这些作者们，感谢Gopher。项目还未完成，持续更新整理中。
 
-关于Go的其他资源，参考此项目：[https://github.com/0e0w/LearnGolang](https://github.com/0e0w/LearnGolang)
-
-本项目创建于2020年9月1日，最近的一次更新日期为2021年2月1日。
+本项目创建于2020年9月1日，最近的一次更新日期为2021年2月7日。
 
 本项目暂时计划共九章：
 
@@ -16,7 +14,7 @@
 - [第四章：Go语言算法](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
 - [第五章：Go安全开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91)
 - [第六章：Go网络爬虫](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB)
-- [第七章：GoWeb开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0goweb%E5%BC%80%E5%8F%91)
+- [第七章：Go网站开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91)
 - [第八章：Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AB%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
 - [第九章：Go逆向工程](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B9%9D%E7%AB%A0go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
 
@@ -3620,7 +3618,7 @@
 
   </details>
 
-### 第七章：GoWeb开发
+### 第七章：Go网站开发
 
 <details>
 <summary>Day000: 基础-Go语言并发</summary>
@@ -3718,6 +3716,7 @@
 
 特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)、[韩茹](https://github.com/rubyhan1314)
 
+- [ ] https://github.com/0e0w/LearnGolang
 - [x] https://www.runoob.com/go/go-tutorial.html
 - [x] https://github.com/ffhelicopter/Go42
 - [x] https://github.com/unknwon/the-way-to-go_ZH_CN
