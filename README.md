@@ -470,7 +470,7 @@
 
   </details>
 <details>
-<summary>Day006: 数据-Go基本数据</summary>
+<summary>Day004: 数据-Go基本数据</summary>
 
 - [x] 本节说明：本节介绍Go语言的基本数据类型。
 
@@ -740,6 +740,416 @@
 
   
   </details>
+<details>
+<summary>Day013: 数据-Go语言数组</summary>
+
+- [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
+
+- [x] 数组Array介绍：
+
+  - 数组是具有相同类型的一组已知编号且长度固定的数据项序列。一个数组可以由零个或多个元素组成。
+  - 数组类型可以是任意的原始类型例如整型、字符串或者自定义类型。
+  - 数组长度必须是一个常量表达式，并且必须是一个非负整数。
+  - 以 [] 符号标识的数组类型几乎在所有的编程语言中都是一个基本主力。因为数组的长度是固定的，所以在Go语言中很少直接使用数组。
+  - 数组长度也是数组类型的一部分，所以[5]int和[10]int是属于不同类型的。
+  
+- [x] 声明数组：
+
+  - Go 语言数组声明需要指定元素类型及元素个数，语法格式如下：
+
+    ```go
+    var 数组变量名 [元素数量]Type
+    var a [3]int             // 定义三个整数的数组
+    ```
+  
+  - Go 语言中的数组是一种值类型，所以可以通过 new() 来创建：
+  
+    ```go
+    var arr1 = new([5]int)
+    ```
+  
+- [x] 初始化数组：
+
+  - 初始化数组中 {} 中的元素个数不能大于 [] 中的数字。
+
+- [x] 访问数组元素：
+
+  - 数组元素可以通过索引（位置）来读取。格式为数组名后加中括号，中括号中为索引的值。
+
+    ```go
+    var team [3]string
+    team[0] = "hammer"
+    team[1] = "soldier"
+    team[2] = "mum"
+    for k, v := range team {
+        fmt.Println(k, v)
+    }
+    ```
+
+- [x] 多维数组：
+
+  - 数数组通常是一维的，但是可以用来组装成多维数组例如：
+
+    ```
+    [3][5]int
+    [2][2][2]float64
+    ```
+
+- [x] 将数组传递给函数：
+
+  - 把一个大数组传递给函数会消耗很多内存。有两种方法可以避免这种现象：
+    - 传递数组的指针
+    - 使用数组的切片
+
+- [x] 本节案例：
+
+  </details>
+
+<details>
+<summary>Day014: 数据-Go语言切片</summary>
+
+- [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
+
+- [x] 切片Slice介绍：
+
+  - Go语言切片是对数组的抽象。
+  - 切片是对底层数组一个连续片段的引用，所以切片是一个引用类型。
+  - 切片提供对该数组中编号的元素序列的访问。未初始化切片的值为nil。
+  - Go语言数组的长度不可改变，但切片好比动态数组，可以追加元素，在追加时可能使切片的容量增大。
+  - 因为切片是引用，不需要使用额外的内存且比使用数组更有效率，所以在Go代码中切片比数组更常用。
+  
+- [x] 定义切片：
+
+  - 切片有俩种定义方式
+
+    ```go
+    var 切片变量名 []type // 声明一个未指定大小的数组来定义切片
+    var silice = []int{2,4,6}
+    var silice = []string{"aaa","bbb","ccc"}
+    ```
+
+    ```go
+    var slice1 []type = make([]type, len,cap)// 使用make()函数来创建切片
+    ```
+
+  - 使用make生成切片：
+
+    ```go
+    package main
+    import "fmt"
+    
+    func main() {
+    	var slice1 []int = make([]int, 10)
+    	// load the array/slice:
+    	for i := 0; i < len(slice1); i++ {
+    		slice1[i] = 5 * i
+    	}
+    
+    	// print the slice:
+    	for i := 0; i < len(slice1); i++ {
+    		fmt.Printf("Slice at %d is %d\n", i, slice1[i])
+    	}
+    	fmt.Printf("\nThe length of slice1 is %d\n", len(slice1))
+    	fmt.Printf("The capacity of slice1 is %d\n", cap(slice1))
+    }
+    ```
+
+- [x] 将切片传递给函数：
+
+  ```go
+  func sum(a []int) int {
+  	s := 0
+  	for i := 0; i < len(a); i++ {
+  		s += a[i]
+  	}
+  	return s
+  }
+  
+  func main() {
+  	var arr = [5]int{0, 1, 2, 3, 4}
+  	sum(arr[:])
+  }
+  ```
+
+- [x] 切片重组
+
+  - 通过改变切片长度得到新切片的过程称之为切片重组 reslicing。
+  - 在一个切片基础上重新划分一个切片时，新的切片会继续引用原有切片的数组。
+  - 为了避免这个陷阱，我们需要从临时的切片中使用内置函数copy()，拷贝数据到新切片。
+
+- [ ] 切片初始化：
+
+- [ ] 空(nil)切片：
+
+- [ ] 切片参考：[参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)、[切片参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md)
+
+- [ ] 本节案例：
+
+  </details>
+<details>
+<summary>Day015: 数据-Go语言映射</summary>
+
+- [x] 本节说明：本节介绍集合Go语言映射(Map)的相关内容。
+
+- [x] 映射Map介绍：
+
+  - Go语言中的Map类型也称之为映射、字典、集合。
+  - Map 是一种元素对（pair）的无序集合，pair 的一个元素是 key，对应的另一个元素是 value，Map结构也称为关联数组或字典。
+  - Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。
+  - Map 是一种集合，所以我们可以像迭代数组和切片那样迭代它。不过，Map 是无序的，我们无法决定它的返回顺序，这是因为 Map 是使用 hash 表来实现的。
+  - 在声明的时候不需要知道 Map 的长度，Map 是可以动态增长的。
+  - 不要使用 new，永远用 make 来构造 map。
+  
+- [x] 申明定义Map：
+
+  - map 是引用类型，可以使用如下声明：
+
+    ```go
+    var map1 map[keytype]valuetype
+    var map1 map[string]int
+    map1 = map[string]int{"one": 1, "two": 2}
+    ```
+    
+  - 可以使用内建函数 make 也可以使用 map 关键字来定义 Map。
+
+    ```go
+    // 声明变量，默认 map 是 nil
+    var map_variable map[key_data_type]value_data_type
+    
+    // 使用 make 函数
+    map_variable := make(map[key_data_type]value_data_type)
+    
+    var m map[string]int
+    
+    // 声明但未初始化map，此时是map的零值状态
+    map1 := make(map[string]string, 5)
+    
+    map2 := make(map[string]string)
+    
+    // 创建了初始化了一个空的的map，这个时候没有任何元素
+    map3 := map[string]string{}
+    
+    // map中有三个值
+    map4 := map[string]string{"a": "1", "b": "2", "c": "3"}
+    ```
+
+  - 一个示例：
+
+    ```go
+    package main
+    import "fmt"
+    
+    func main() {
+    	var mapLit map[string]int
+    	//var mapCreated map[string]float32
+    	var mapAssigned map[string]int
+    
+    	mapLit = map[string]int{"one": 1, "two": 2}
+    	mapCreated := make(map[string]float32)
+    	mapAssigned = mapLit
+    
+    	mapCreated["key1"] = 4.5
+    	mapCreated["key2"] = 3.14159
+    	mapAssigned["two"] = 3
+    
+    	fmt.Printf("Map literal at \"one\" is: %d\n", mapLit["one"])
+    	fmt.Printf("Map created at \"key2\" is: %f\n", mapCreated["key2"])
+    	fmt.Printf("Map assigned at \"two\" is: %d\n", mapLit["two"])
+    	fmt.Printf("Map literal at \"ten\" is: %d\n", mapLit["ten"])
+    }
+    ```
+
+  - for-range与map
+
+    ```go
+    // 使用 for 循环构造 map
+    for key, value := range map1 {
+    	...
+    }
+    ```
+
+    ```go
+    // 只获取值
+    for _, value := range map1 {
+    	...
+    }
+    ```
+
+    ```go
+    // 只获取 key
+    for key := range map1 {
+    	fmt.Printf("key is: %d\n", key)
+    }
+    ```
+
+- [ ] 本节案例：
+  
+  
+  </details>
+<details>
+<summary>Day016: 数据-Go语言结构</summary>
+
+- [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
+- [x] 结构体struct介绍：
+  - Go语言通过类型别名（alias types）和结构体的形式支持用户自定义类型，或者叫定制类型。
+  - 一个带属性的结构体试图表示一个现实世界中的实体。
+  - 结构体是由一系列具有相同类型或不同类型的数据构成的数据集合。结构体中可以定义不同类型的数据。
+  - 结构体是复合类型（composite types），它由一系列属性组成，每个属性都有自己的类型和值的，结构体通过属性把数据聚集在一起。结构体也是值类型，因此可以通过new函数来创建。
+  - 组成结构体类型的那些数据称为 字段（fields）。每个字段都有一个类型和一个名字；在一个结构体中，字段名字必须是唯一的。
+  - Go语言结构体不支持字段联合（union）。
+  - 方法（Method）可以访问这些数据，就好像它们是这个独立实体的一部分。
+- [x] 定义结构体：
+  - 结构体定义需要使用 type 和 struct 语句。结构体中有一个或多个成员。type 语句设定了结构体的名称。结构体的格式如下：
+
+    ```go
+    struct {
+        title, author string
+        pages         int
+        X, Y   		  bool
+    }
+    ```
+    
+  - `type T struct {a, b int}` 也是合法的语法，它更适用于简单的结构体。
+  - 一个空结构体：struct {}
+  - 一旦定义了结构体类型，它就能用于变量的声明。
+  - 结构体的字段可以是任何类型，甚至是结构体本身，也可以是函数或者接口。可以声明结构体类型的一个变量，然后像下面这样给它的字段赋值：
+
+    ```go
+    var s T
+    s.a = 5
+    s.b = 8
+    ```
+
+  - 一些结构体例子：
+    ```go
+    package main
+    import "fmt"
+    
+    type struct1 struct {
+        i1  int
+        f1  float32
+        str string
+    }
+    
+    func main() {
+        ms := new(struct1)
+        ms.i1 = 10
+        ms.f1 = 15.5
+        ms.str= "Chris"
+    
+        fmt.Printf("The int is: %d\n", ms.i1)
+        fmt.Printf("The float is: %f\n", ms.f1)
+        fmt.Printf("The string is: %s\n", ms.str)
+        fmt.Println(ms)
+    }
+    ```
+    
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    type Book struct {
+    	title, author string
+    	pages         int
+    }
+    
+    func main() {
+    	book := Book{"Go语言笔记", "0e0w", 365}
+    	fmt.Println(book)
+    
+    	// 使用带字段名的组合字面量来表示结构体值。
+    	book = Book{author: "0e0w", pages: 365, title: "Go语言笔记"}
+    	book = Book{}
+    	book = Book{author: "0e0w"}
+    
+    	// 使用选择器来访问和修改字段值。
+    	var book2 Book // <=> book2 := Book{}
+    	book2.author = "Tapir"
+    	book2.pages = 300
+    	fmt.Println(book.pages) // 300
+    }
+    
+    func f() {
+    	book1 := Book{pages: 300}
+    	book2 := Book{"Go语言笔记", "0e0w", 365}
+    
+    	book2 = book1
+    	// 上面这行和下面这三行是等价的。
+    	book2.title = book1.title
+    	book2.author = book1.author
+    	book2.pages = book1.pages
+    }
+    ```
+
+- [x] 访问结构体成员：
+  - 如果要访问结构体成员，需要使用点号 . 操作符，格式为：
+    ```go
+    结构体.成员名
+    ```
+- [x] 结构体特性：
+  - 结构体的内存布局：Go 语言中，结构体和它所包含的数据在内存中是以连续块的形式存在的，即使结构体中嵌套有其他的结构体，这在性能上带来了很大的优势。
+  - 递归结构体：递归结构体类型可以通过引用自身指针来定义。这在定义链表或二叉树的节点时特别有用，此时节点包含指向临近节点的链接。
+  - 可见性：通过参考应用可见性规则，如果结构体名不能导出，可使用 new 函数使用工厂方法的方法达到同样的目的。
+  - 带标签的结构体：结构体中的字段除了有名字和类型外，还可以有一个可选的标签（tag）。它是一个附属于字段的字符串，可以是文档或其他的重要标记。标签的内容不可以在一般的编程中使用，只有 reflect 包能获取它。
+
+- [ ] 结构体参考：[结构体参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_18_struct.md)、[结构体参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.1.md)、[结构体参考3](https://gfw.go101.org/article/struct.html)
+  
+- [x] 本节案例：
+  
+  ```go
+  package main
+  
+  import (
+  	"fmt"
+  )
+  
+  type Human struct {
+  	name   string // 姓名
+  	Gender string // 性别
+  	Age    int    // 年龄
+  	string        // 匿名字段
+  }
+  
+  type Student struct {
+  	Human     // 匿名字段
+  	Room  int // 教室
+  	int       // 匿名字段
+  }
+  
+  func main() {
+  	//使用new方式
+  	stu := new(Student)
+  	stu.Room = 102
+  	stu.Human.name = "Titan"
+  	stu.Gender = "男"
+  	stu.Human.Age = 14
+  	stu.Human.string = "Student"
+  
+  	fmt.Println("stu is:", stu)
+  	fmt.Printf("Student.Room is: %d\n", stu.Room)
+  	fmt.Printf("Student.int is: %d\n", stu.int) // 初始化时已自动给予零值：0
+  	fmt.Printf("Student.Human.name is: %s\n", stu.name) //  (*stu).name
+  	fmt.Printf("Student.Human.Gender is: %s\n", stu.Gender)
+  	fmt.Printf("Student.Human.Age is: %d\n", stu.Age)
+  	fmt.Printf("Student.Human.string is: %s\n", stu.string)
+  
+  	// 使用结构体字面量赋值
+  	stud := Student{Room: 102, Human: Human{"Hawking", "男", 14, "Monitor"}}
+  
+  	fmt.Println("stud is:", stud)
+  	fmt.Printf("Student.Room is: %d\n", stud.Room)
+  	fmt.Printf("Student.int is: %d\n", stud.int) // 初始化时已自动给予零值：0
+  	fmt.Printf("Student.Human.name is: %s\n", stud.Human.name)
+  	fmt.Printf("Student.Human.Gender is: %s\n", stud.Human.Gender)
+  	fmt.Printf("Student.Human.Age is: %d\n", stud.Human.Age)
+  	fmt.Printf("Student.Human.string is: %s\n", stud.Human.string)
+  }
+  ```
+  
+  </details> 
 <details>
 <summary>Day007: 语法-Go基本语法</summary>
 
@@ -1656,416 +2066,6 @@
 
   </details>
 
-<details>
-<summary>Day013: 数据-Go语言数组</summary>
-
-- [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
-
-- [x] 数组Array介绍：
-
-  - 数组是具有相同类型的一组已知编号且长度固定的数据项序列。一个数组可以由零个或多个元素组成。
-  - 数组类型可以是任意的原始类型例如整型、字符串或者自定义类型。
-  - 数组长度必须是一个常量表达式，并且必须是一个非负整数。
-  - 以 [] 符号标识的数组类型几乎在所有的编程语言中都是一个基本主力。因为数组的长度是固定的，所以在Go语言中很少直接使用数组。
-  - 数组长度也是数组类型的一部分，所以[5]int和[10]int是属于不同类型的。
-  
-- [x] 声明数组：
-
-  - Go 语言数组声明需要指定元素类型及元素个数，语法格式如下：
-
-    ```go
-    var 数组变量名 [元素数量]Type
-    var a [3]int             // 定义三个整数的数组
-    ```
-  
-  - Go 语言中的数组是一种值类型，所以可以通过 new() 来创建：
-  
-    ```go
-    var arr1 = new([5]int)
-    ```
-  
-- [x] 初始化数组：
-
-  - 初始化数组中 {} 中的元素个数不能大于 [] 中的数字。
-
-- [x] 访问数组元素：
-
-  - 数组元素可以通过索引（位置）来读取。格式为数组名后加中括号，中括号中为索引的值。
-
-    ```go
-    var team [3]string
-    team[0] = "hammer"
-    team[1] = "soldier"
-    team[2] = "mum"
-    for k, v := range team {
-        fmt.Println(k, v)
-    }
-    ```
-
-- [x] 多维数组：
-
-  - 数数组通常是一维的，但是可以用来组装成多维数组例如：
-
-    ```
-    [3][5]int
-    [2][2][2]float64
-    ```
-
-- [x] 将数组传递给函数：
-
-  - 把一个大数组传递给函数会消耗很多内存。有两种方法可以避免这种现象：
-    - 传递数组的指针
-    - 使用数组的切片
-
-- [x] 本节案例：
-
-  </details>
-
-<details>
-<summary>Day014: 数据-Go语言切片</summary>
-
-- [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
-
-- [x] 切片Slice介绍：
-
-  - Go语言切片是对数组的抽象。
-  - 切片是对底层数组一个连续片段的引用，所以切片是一个引用类型。
-  - 切片提供对该数组中编号的元素序列的访问。未初始化切片的值为nil。
-  - Go语言数组的长度不可改变，但切片好比动态数组，可以追加元素，在追加时可能使切片的容量增大。
-  - 因为切片是引用，不需要使用额外的内存且比使用数组更有效率，所以在Go代码中切片比数组更常用。
-  
-- [x] 定义切片：
-
-  - 切片有俩种定义方式
-
-    ```go
-    var 切片变量名 []type // 声明一个未指定大小的数组来定义切片
-    var silice = []int{2,4,6}
-    var silice = []string{"aaa","bbb","ccc"}
-    ```
-
-    ```go
-    var slice1 []type = make([]type, len,cap)// 使用make()函数来创建切片
-    ```
-
-  - 使用make生成切片：
-
-    ```go
-    package main
-    import "fmt"
-    
-    func main() {
-    	var slice1 []int = make([]int, 10)
-    	// load the array/slice:
-    	for i := 0; i < len(slice1); i++ {
-    		slice1[i] = 5 * i
-    	}
-    
-    	// print the slice:
-    	for i := 0; i < len(slice1); i++ {
-    		fmt.Printf("Slice at %d is %d\n", i, slice1[i])
-    	}
-    	fmt.Printf("\nThe length of slice1 is %d\n", len(slice1))
-    	fmt.Printf("The capacity of slice1 is %d\n", cap(slice1))
-    }
-    ```
-
-- [x] 将切片传递给函数：
-
-  ```go
-  func sum(a []int) int {
-  	s := 0
-  	for i := 0; i < len(a); i++ {
-  		s += a[i]
-  	}
-  	return s
-  }
-  
-  func main() {
-  	var arr = [5]int{0, 1, 2, 3, 4}
-  	sum(arr[:])
-  }
-  ```
-
-- [x] 切片重组
-
-  - 通过改变切片长度得到新切片的过程称之为切片重组 reslicing。
-  - 在一个切片基础上重新划分一个切片时，新的切片会继续引用原有切片的数组。
-  - 为了避免这个陷阱，我们需要从临时的切片中使用内置函数copy()，拷贝数据到新切片。
-
-- [ ] 切片初始化：
-
-- [ ] 空(nil)切片：
-
-- [ ] 切片参考：[参考1：Go Slice全面指南](https://mp.weixin.qq.com/s/rYY6TnZcb0FIWjouD2cznQ)、[切片参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md)
-
-- [ ] 本节案例：
-
-  </details>
-<details>
-<summary>Day015: 数据-Go语言映射</summary>
-
-- [x] 本节说明：本节介绍集合Go语言映射(Map)的相关内容。
-
-- [x] 映射Map介绍：
-
-  - Go语言中的Map类型也称之为映射、字典、集合。
-  - Map 是一种元素对（pair）的无序集合，pair 的一个元素是 key，对应的另一个元素是 value，Map结构也称为关联数组或字典。
-  - Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。
-  - Map 是一种集合，所以我们可以像迭代数组和切片那样迭代它。不过，Map 是无序的，我们无法决定它的返回顺序，这是因为 Map 是使用 hash 表来实现的。
-  - 在声明的时候不需要知道 Map 的长度，Map 是可以动态增长的。
-  - 不要使用 new，永远用 make 来构造 map。
-  
-- [x] 申明定义Map：
-
-  - map 是引用类型，可以使用如下声明：
-
-    ```go
-    var map1 map[keytype]valuetype
-    var map1 map[string]int
-    map1 = map[string]int{"one": 1, "two": 2}
-    ```
-    
-  - 可以使用内建函数 make 也可以使用 map 关键字来定义 Map。
-
-    ```go
-    // 声明变量，默认 map 是 nil
-    var map_variable map[key_data_type]value_data_type
-    
-    // 使用 make 函数
-    map_variable := make(map[key_data_type]value_data_type)
-    
-    var m map[string]int
-    
-    // 声明但未初始化map，此时是map的零值状态
-    map1 := make(map[string]string, 5)
-    
-    map2 := make(map[string]string)
-    
-    // 创建了初始化了一个空的的map，这个时候没有任何元素
-    map3 := map[string]string{}
-    
-    // map中有三个值
-    map4 := map[string]string{"a": "1", "b": "2", "c": "3"}
-    ```
-
-  - 一个示例：
-
-    ```go
-    package main
-    import "fmt"
-    
-    func main() {
-    	var mapLit map[string]int
-    	//var mapCreated map[string]float32
-    	var mapAssigned map[string]int
-    
-    	mapLit = map[string]int{"one": 1, "two": 2}
-    	mapCreated := make(map[string]float32)
-    	mapAssigned = mapLit
-    
-    	mapCreated["key1"] = 4.5
-    	mapCreated["key2"] = 3.14159
-    	mapAssigned["two"] = 3
-    
-    	fmt.Printf("Map literal at \"one\" is: %d\n", mapLit["one"])
-    	fmt.Printf("Map created at \"key2\" is: %f\n", mapCreated["key2"])
-    	fmt.Printf("Map assigned at \"two\" is: %d\n", mapLit["two"])
-    	fmt.Printf("Map literal at \"ten\" is: %d\n", mapLit["ten"])
-    }
-    ```
-
-  - for-range与map
-
-    ```go
-    // 使用 for 循环构造 map
-    for key, value := range map1 {
-    	...
-    }
-    ```
-
-    ```go
-    // 只获取值
-    for _, value := range map1 {
-    	...
-    }
-    ```
-
-    ```go
-    // 只获取 key
-    for key := range map1 {
-    	fmt.Printf("key is: %d\n", key)
-    }
-    ```
-
-- [ ] 本节案例：
-  
-  
-  </details>
-<details>
-<summary>Day016: 数据-Go语言结构</summary>
-
-- [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
-- [x] 结构体struct介绍：
-  - Go语言通过类型别名（alias types）和结构体的形式支持用户自定义类型，或者叫定制类型。
-  - 一个带属性的结构体试图表示一个现实世界中的实体。
-  - 结构体是由一系列具有相同类型或不同类型的数据构成的数据集合。结构体中可以定义不同类型的数据。
-  - 结构体是复合类型（composite types），它由一系列属性组成，每个属性都有自己的类型和值的，结构体通过属性把数据聚集在一起。结构体也是值类型，因此可以通过new函数来创建。
-  - 组成结构体类型的那些数据称为 字段（fields）。每个字段都有一个类型和一个名字；在一个结构体中，字段名字必须是唯一的。
-  - Go语言结构体不支持字段联合（union）。
-  - 方法（Method）可以访问这些数据，就好像它们是这个独立实体的一部分。
-- [x] 定义结构体：
-  - 结构体定义需要使用 type 和 struct 语句。结构体中有一个或多个成员。type 语句设定了结构体的名称。结构体的格式如下：
-
-    ```go
-    struct {
-        title, author string
-        pages         int
-        X, Y   		  bool
-    }
-    ```
-    
-  - `type T struct {a, b int}` 也是合法的语法，它更适用于简单的结构体。
-  - 一个空结构体：struct {}
-  - 一旦定义了结构体类型，它就能用于变量的声明。
-  - 结构体的字段可以是任何类型，甚至是结构体本身，也可以是函数或者接口。可以声明结构体类型的一个变量，然后像下面这样给它的字段赋值：
-
-    ```go
-    var s T
-    s.a = 5
-    s.b = 8
-    ```
-
-  - 一些结构体例子：
-    ```go
-    package main
-    import "fmt"
-    
-    type struct1 struct {
-        i1  int
-        f1  float32
-        str string
-    }
-    
-    func main() {
-        ms := new(struct1)
-        ms.i1 = 10
-        ms.f1 = 15.5
-        ms.str= "Chris"
-    
-        fmt.Printf("The int is: %d\n", ms.i1)
-        fmt.Printf("The float is: %f\n", ms.f1)
-        fmt.Printf("The string is: %s\n", ms.str)
-        fmt.Println(ms)
-    }
-    ```
-    
-    ```go
-    package main
-    
-    import (
-    	"fmt"
-    )
-    
-    type Book struct {
-    	title, author string
-    	pages         int
-    }
-    
-    func main() {
-    	book := Book{"Go语言笔记", "0e0w", 365}
-    	fmt.Println(book)
-    
-    	// 使用带字段名的组合字面量来表示结构体值。
-    	book = Book{author: "0e0w", pages: 365, title: "Go语言笔记"}
-    	book = Book{}
-    	book = Book{author: "0e0w"}
-    
-    	// 使用选择器来访问和修改字段值。
-    	var book2 Book // <=> book2 := Book{}
-    	book2.author = "Tapir"
-    	book2.pages = 300
-    	fmt.Println(book.pages) // 300
-    }
-    
-    func f() {
-    	book1 := Book{pages: 300}
-    	book2 := Book{"Go语言笔记", "0e0w", 365}
-    
-    	book2 = book1
-    	// 上面这行和下面这三行是等价的。
-    	book2.title = book1.title
-    	book2.author = book1.author
-    	book2.pages = book1.pages
-    }
-    ```
-
-- [x] 访问结构体成员：
-  - 如果要访问结构体成员，需要使用点号 . 操作符，格式为：
-    ```go
-    结构体.成员名
-    ```
-- [x] 结构体特性：
-  - 结构体的内存布局：Go 语言中，结构体和它所包含的数据在内存中是以连续块的形式存在的，即使结构体中嵌套有其他的结构体，这在性能上带来了很大的优势。
-  - 递归结构体：递归结构体类型可以通过引用自身指针来定义。这在定义链表或二叉树的节点时特别有用，此时节点包含指向临近节点的链接。
-  - 可见性：通过参考应用可见性规则，如果结构体名不能导出，可使用 new 函数使用工厂方法的方法达到同样的目的。
-  - 带标签的结构体：结构体中的字段除了有名字和类型外，还可以有一个可选的标签（tag）。它是一个附属于字段的字符串，可以是文档或其他的重要标记。标签的内容不可以在一般的编程中使用，只有 reflect 包能获取它。
-
-- [ ] 结构体参考：[结构体参考1](https://github.com/ffhelicopter/Go42/blob/master/content/42_18_struct.md)、[结构体参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.1.md)、[结构体参考3](https://gfw.go101.org/article/struct.html)
-  
-- [x] 本节案例：
-  
-  ```go
-  package main
-  
-  import (
-  	"fmt"
-  )
-  
-  type Human struct {
-  	name   string // 姓名
-  	Gender string // 性别
-  	Age    int    // 年龄
-  	string        // 匿名字段
-  }
-  
-  type Student struct {
-  	Human     // 匿名字段
-  	Room  int // 教室
-  	int       // 匿名字段
-  }
-  
-  func main() {
-  	//使用new方式
-  	stu := new(Student)
-  	stu.Room = 102
-  	stu.Human.name = "Titan"
-  	stu.Gender = "男"
-  	stu.Human.Age = 14
-  	stu.Human.string = "Student"
-  
-  	fmt.Println("stu is:", stu)
-  	fmt.Printf("Student.Room is: %d\n", stu.Room)
-  	fmt.Printf("Student.int is: %d\n", stu.int) // 初始化时已自动给予零值：0
-  	fmt.Printf("Student.Human.name is: %s\n", stu.name) //  (*stu).name
-  	fmt.Printf("Student.Human.Gender is: %s\n", stu.Gender)
-  	fmt.Printf("Student.Human.Age is: %d\n", stu.Age)
-  	fmt.Printf("Student.Human.string is: %s\n", stu.string)
-  
-  	// 使用结构体字面量赋值
-  	stud := Student{Room: 102, Human: Human{"Hawking", "男", 14, "Monitor"}}
-  
-  	fmt.Println("stud is:", stud)
-  	fmt.Printf("Student.Room is: %d\n", stud.Room)
-  	fmt.Printf("Student.int is: %d\n", stud.int) // 初始化时已自动给予零值：0
-  	fmt.Printf("Student.Human.name is: %s\n", stud.Human.name)
-  	fmt.Printf("Student.Human.Gender is: %s\n", stud.Human.Gender)
-  	fmt.Printf("Student.Human.Age is: %d\n", stud.Human.Age)
-  	fmt.Printf("Student.Human.string is: %s\n", stud.Human.string)
-  }
-  ```
-  
-  </details> 
 <details>
 <summary>Day017: 基础-Go基础总结</summary>
 
