@@ -2367,21 +2367,60 @@
 
   </details>
 <details>
-<summary>Day020: 并发-Go语言并发</summary>
+<summary>Day020: 并发-Go语言协程</summary>
 
-- [x] 本节说明：本节是Go语言基础学习之后的总结。
+- [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
 
-- [x] Go基础总结：
+- [x] 协程goroutine介绍：
 
-  - 在学习Go语言基础之后，基本可以编写一些简单的程序代码。
-  - 但即使是基础内容，若不加以练习，对程序的实现依然无法很好的理解。也很难写出优秀的程序。
+  - Go语言原生支持应用之间的通信（网络，客户端和服务端，分布式计算）和程序的并发。
+    - 不要通过共享内存来通信，而通过通信来共享内存。 
+    - Go语言协程比其他语言协程更强大，也很容易从协程的逻辑复用到Go协程。
+    - 在Go语言中，协程是创建计算的唯一途径。
+    - Go语言不支持创建系统线程，协程是一个Go程序内部唯一的并发实现方式。
   
-- [x] Go语言命令：
+- [ ] 协程goroutine用法：
 
-  - go run hello.go //编译运行hello.go
-  
+  - 使用go关键字。
+  - 启动一个新的协程时，协程的调用会立即返回。与函数不同，程序控制不会去等待 Go 协程执行完毕。在调用 Go 协程之后，程序控制会立即返回到代码的下一行，忽略该协程的任何返回值。
+  - 如果希望运行其他 Go 协程，Go 主协程必须继续运行着。如果 Go 主协程终止，则程序终止，于是其他 Go 协程也不会继续运行。
+
+- [x] 协程goroutine案例：
+
+  - 案例一：使用延时来返回协程的返回值
+
+    ```go
+    func main() {	
+    	start := time.Now()
+    	go tester()
+    	time.Sleep(1 * time.Millisecond)
+    	end := time.Now()
+    	delta := end.Sub(start)
+    	g.Println(delta)
+    }
+    
+    func tester() {
+    	i := 0
+    HERE:
+    	g.Println(i)
+    	i++
+    	if i == 10 {
+    		return
+    	}
+    	goto HERE
+    }
+    ```
+
+- [ ] 恐慌：一些致命性错误不属于恐慌。对于官方标准编译器来说，很多致命性错误（比如堆栈溢出和内存不足）不能被恢复。它们一旦产生，程序将崩溃。
+
+  - 产生一个恐慌
+  - 消除一个恐慌
+
+- [ ] 恢复：
+
+- [x] 参考链接：[协程参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md)、[协程参考2](https://gfw.go101.org/article/control-flows-more.html)
+
 - [ ] 本节案例：
-
   
   </details>
 <details>
@@ -2620,63 +2659,6 @@
 
 - [ ] 本节案例：
 
-  </details>
-<details>
-<summary>Day022: 并发-Go语言协程</summary>
-
-- [x] 本节说明：本节介绍Go语言协程(goroutine)相关内容。
-
-- [x] 协程goroutine介绍：
-
-  - Go语言原生支持应用之间的通信（网络，客户端和服务端，分布式计算）和程序的并发。
-    - 不要通过共享内存来通信，而通过通信来共享内存。 
-    - Go语言协程比其他语言协程更强大，也很容易从协程的逻辑复用到Go协程。
-    - 在Go语言中，协程是创建计算的唯一途径。
-    - Go语言不支持创建系统线程，协程是一个Go程序内部唯一的并发实现方式。
-  
-- [ ] 协程goroutine用法：
-
-  - 使用go关键字。
-  - 启动一个新的协程时，协程的调用会立即返回。与函数不同，程序控制不会去等待 Go 协程执行完毕。在调用 Go 协程之后，程序控制会立即返回到代码的下一行，忽略该协程的任何返回值。
-  - 如果希望运行其他 Go 协程，Go 主协程必须继续运行着。如果 Go 主协程终止，则程序终止，于是其他 Go 协程也不会继续运行。
-
-- [x] 协程goroutine案例：
-
-  - 案例一：使用延时来返回协程的返回值
-
-    ```go
-    func main() {	
-    	start := time.Now()
-    	go tester()
-    	time.Sleep(1 * time.Millisecond)
-    	end := time.Now()
-    	delta := end.Sub(start)
-    	g.Println(delta)
-    }
-    
-    func tester() {
-    	i := 0
-    HERE:
-    	g.Println(i)
-    	i++
-    	if i == 10 {
-    		return
-    	}
-    	goto HERE
-    }
-    ```
-
-- [ ] 恐慌：一些致命性错误不属于恐慌。对于官方标准编译器来说，很多致命性错误（比如堆栈溢出和内存不足）不能被恢复。它们一旦产生，程序将崩溃。
-
-  - 产生一个恐慌
-  - 消除一个恐慌
-
-- [ ] 恢复：
-
-- [x] 参考链接：[协程参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md)、[协程参考2](https://gfw.go101.org/article/control-flows-more.html)
-
-- [ ] 本节案例：
-  
   </details>
 <details>
 <summary>Day023: 进阶-Go同步与锁</summary>
