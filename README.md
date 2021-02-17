@@ -741,7 +741,7 @@
   
   </details>
 <details>
-<summary>Day013: 数据-Go语言数组</summary>
+<summary>Day005: 数据-Go语言数组</summary>
 
 - [x] 本节说明：本节介绍Go语言数组(array)的相关内容。
 
@@ -806,7 +806,7 @@
   </details>
 
 <details>
-<summary>Day014: 数据-Go语言切片</summary>
+<summary>Day006: 数据-Go语言切片</summary>
 
 - [x] 本节说明：本节介绍Go语言切片(slice)的相关内容。
 
@@ -887,7 +887,7 @@
 
   </details>
 <details>
-<summary>Day015: 数据-Go语言映射</summary>
+<summary>Day007: 数据-Go语言映射</summary>
 
 - [x] 本节说明：本节介绍集合Go语言映射(Map)的相关内容。
 
@@ -984,10 +984,98 @@
 
 - [ ] 本节案例：
   
+- [x] 本节说明：本节介绍Go语言容器类型：数组、切片、映射的概况。
+
+- [x] Go语言容器：
+  
+  - Go语言中有三种一等公民容器类型：数组、切片和映射。
+  - 有时候，字符串类型和通道类型也属于容器类型。
+  - 每个容器（值）用来表示和存储一个元素（element）序列或集合。一个容器中的所有元素的类型是相同的。此相同的类型称为此容器的类型的元素类型（或简称此容器的元素类型）。
+  - 存储在一个容器中的每个元素值都关联着一个键值（key）。每个元素可以通过它的键值而被访问到。
+  - 每个容器值有一个长度属性，用来表明此容器中当前存储了多少个元素。
+  - 每个数组值仅由一个直接部分组成，而一个切片或者映射值是由一个直接部分和一个可能的被此直接部分引用着的间接部分组成。
+  - 容器字面量是不可寻址的但可以被取地址。
+  
+- [x] 非定义容器类型的字面表示：
+  
+  - 数组类型：[N]T
+  
+  - 切片类型：[]T
+  
+  - 映射类型：map[K]T
+  
+  - 说明：T可为任意类型，表示一个容器类型的元素类型。N必须为非负整数常量。K必须为一个可比较类型，K指定了映射类型的键值类型。
+  
+  - 一些例子：
+  
+    ```go
+    const Size = 32
+    
+    type Person struct {
+    	name string
+    	age  int
+    }
+    
+    // 数组类型
+    [5]string
+    [Size]int
+    [16][]byte  // 元素类型为一个切片类型：[]byte
+    [100]Person // 元素类型为一个结构体类型：Person
+    
+    // 切片类型
+    []bool
+    []int64
+    []map[int]bool // 元素类型为一个映射类型：map[int]bool
+    []*int         // 元素类型为一个指针类型：*int
+    
+    // 映射类型
+    map[string]int
+    map[int]bool
+    map[int16][6]string     // 元素类型为一个数组类型：[6]string
+    map[bool][]string       // 元素类型为一个切片类型：[]string
+    map[struct{x int}]*int8 // 元素类型为一个指针类型：*int8；
+                            // 键值类型为一个结构体类型。
+    ```
+  
+- [ ] 查看容器值的长度和容量：
+
+  - 长度：len()
+  - 容量：cap()
+  - 说明：数组值的长度和容量永不改变。切片值的长度和容量可在运行时改变。
+
+- [ ] 读取和修改容器元素：
+
+  - 一个容器值v中存储的对应着键值k的元素用语法形式v[k]来表示。 v[k]为一个元素索引表达式。
+
+- [ ] 添加和删除容器元素：
+
+- [ ] 使用内置make函数来创建切片和映射：
+
+- [ ] 使用内置new函数来创建容器值：
+
+- [ ] 从数组或者切片派生切片（取子切片）：
+
+- [ ] 使用内置copy函数来复制切片元素：
+
+- [ ] 遍历容器元素：
+
+  - 一个例子：
+
+    ```go
+    for key, element = range aContainer {
+    	// 使用key和element ...
+    }
+    ```
+  
+- [ ] 把数组指针当做数组来使用：
+
+- [ ] 单独修改一个切片的长度或者容量：
+
+- [ ] 容器参考：[容器参考链接1](https://gfw.go101.org/article/container.html)  
   
   </details>
 <details>
-<summary>Day016: 数据-Go语言结构</summary>
+<summary>Day008: 数据-Go语言结构</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 - [x] 结构体struct介绍：
@@ -1151,7 +1239,7 @@
   
   </details> 
 <details>
-<summary>Day007: 语法-Go基本语法</summary>
+<summary>Day009: 语法-Go基本语法</summary>
 
 - [x] 本节说明：本节介绍表达式、语句和简单语句的相关内容。
 
@@ -1197,7 +1285,7 @@
   
   </details>
 <details>
-<summary>Day008: 语句-Go运算符号</summary>
+<summary>Day010: 语句-Go运算符号</summary>
 
 - [x] 本节说明：本节介绍Go运算符相关内容。
 
@@ -1299,7 +1387,7 @@
   
   </details>
 <details>
-<summary>Day009: 语句-Go条件判断</summary>
+<summary>Day012: 语句-Go条件判断</summary>
 
 - [x] 本节说明：本节介绍Go语言条件判断语句的相关内容。
 
@@ -1463,7 +1551,7 @@
   
   </details>
 <details>
-<summary>Day010: 语句-Go循环语句</summary>
+<summary>Day013: 语句-Go循环语句</summary>
 
 - [x] 本节说明：本节介绍Go语言循环语句的相关内容。
 - [x] Go循环语句：
@@ -1716,7 +1804,7 @@
   
   </details> 
 <details>
-<summary>Day011: 函数-Go语言函数</summary>
+<summary>Day015: 函数-Go语言函数</summary>
 
 - [x] 本节说明：本节介绍Go语言函数的相关内容。
 
@@ -1973,7 +2061,7 @@
   </details>
 
 <details>
-<summary>Day018: 方法-Go语言方法</summary>
+<summary>Day016: 方法-Go语言方法</summary>
 
 - [x] 本节说明：本节介绍Go语言方法相关内容。
 
@@ -2060,7 +2148,7 @@
   
   </details>
 <details>
-<summary>Day019: 数据-Go语言指针</summary>
+<summary>Day017: 数据-Go语言指针</summary>
 
 - [x] 本节说明：本节介绍Go语言指针内存相关内容。
 
@@ -2147,7 +2235,7 @@
   
   </details>
 <details>
-<summary>Day020: 数据-Go语言接口</summary>
+<summary>Day018: 数据-Go语言接口</summary>
 
 - [x] 本节说明：本节介绍Go语言接口(interface)的相关内容。
 - [x] Go语言接口介绍：
@@ -2248,7 +2336,7 @@
   
   </details>
 <details>
-<summary>Day027: 错误-Go错误处理</summary>
+<summary>Day019: 错误-Go错误处理</summary>
 
 - [x] 本节说明：本节介绍Go语言中的错误处理。
 
@@ -2279,7 +2367,7 @@
 
   </details>
 <details>
-<summary>Day017: 并发-Go语言并发</summary>
+<summary>Day020: 并发-Go语言并发</summary>
 
 - [x] 本节说明：本节是Go语言基础学习之后的总结。
 
@@ -2297,7 +2385,7 @@
   
   </details>
 <details>
-<summary>Day024: 并发-Go语言通道</summary>
+<summary>Day021: 并发-Go语言通道</summary>
 
 - [x] 本节说明：本节介绍Go语言通道(channel)的相关内容。
 
@@ -2514,96 +2602,8 @@
 <details>
 <summary>Day012: 数据-Go语言容器</summary>
 
-- [x] 本节说明：本节介绍Go语言容器类型：数组、切片、映射的概况。
 
-- [x] Go语言容器：
-  
-  - Go语言中有三种一等公民容器类型：数组、切片和映射。
-  - 有时候，字符串类型和通道类型也属于容器类型。
-  - 每个容器（值）用来表示和存储一个元素（element）序列或集合。一个容器中的所有元素的类型是相同的。此相同的类型称为此容器的类型的元素类型（或简称此容器的元素类型）。
-  - 存储在一个容器中的每个元素值都关联着一个键值（key）。每个元素可以通过它的键值而被访问到。
-  - 每个容器值有一个长度属性，用来表明此容器中当前存储了多少个元素。
-  - 每个数组值仅由一个直接部分组成，而一个切片或者映射值是由一个直接部分和一个可能的被此直接部分引用着的间接部分组成。
-  - 容器字面量是不可寻址的但可以被取地址。
-  
-- [x] 非定义容器类型的字面表示：
-  
-  - 数组类型：[N]T
-  
-  - 切片类型：[]T
-  
-  - 映射类型：map[K]T
-  
-  - 说明：T可为任意类型，表示一个容器类型的元素类型。N必须为非负整数常量。K必须为一个可比较类型，K指定了映射类型的键值类型。
-  
-  - 一些例子：
-  
-    ```go
-    const Size = 32
-    
-    type Person struct {
-    	name string
-    	age  int
-    }
-    
-    // 数组类型
-    [5]string
-    [Size]int
-    [16][]byte  // 元素类型为一个切片类型：[]byte
-    [100]Person // 元素类型为一个结构体类型：Person
-    
-    // 切片类型
-    []bool
-    []int64
-    []map[int]bool // 元素类型为一个映射类型：map[int]bool
-    []*int         // 元素类型为一个指针类型：*int
-    
-    // 映射类型
-    map[string]int
-    map[int]bool
-    map[int16][6]string     // 元素类型为一个数组类型：[6]string
-    map[bool][]string       // 元素类型为一个切片类型：[]string
-    map[struct{x int}]*int8 // 元素类型为一个指针类型：*int8；
-                            // 键值类型为一个结构体类型。
-    ```
-  
-- [ ] 查看容器值的长度和容量：
 
-  - 长度：len()
-  - 容量：cap()
-  - 说明：数组值的长度和容量永不改变。切片值的长度和容量可在运行时改变。
-
-- [ ] 读取和修改容器元素：
-
-  - 一个容器值v中存储的对应着键值k的元素用语法形式v[k]来表示。 v[k]为一个元素索引表达式。
-
-- [ ] 添加和删除容器元素：
-
-- [ ] 使用内置make函数来创建切片和映射：
-
-- [ ] 使用内置new函数来创建容器值：
-
-- [ ] 从数组或者切片派生切片（取子切片）：
-
-- [ ] 使用内置copy函数来复制切片元素：
-
-- [ ] 遍历容器元素：
-
-  - 一个例子：
-
-    ```go
-    for key, element = range aContainer {
-    	// 使用key和element ...
-    }
-    ```
-  
-- [ ] 把数组指针当做数组来使用：
-
-- [ ] 单独修改一个切片的长度或者容量：
-
-- [ ] 容器参考：[容器参考链接1](https://gfw.go101.org/article/container.html)
-
-  </details>
 
 ### 第二章：Go语言进阶
 
