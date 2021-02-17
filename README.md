@@ -2599,11 +2599,6 @@
 
 
   </details>
-<details>
-<summary>Day012: 数据-Go语言容器</summary>
-
-
-
 
 ### 第二章：Go语言进阶
 
