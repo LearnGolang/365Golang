@@ -4,7 +4,7 @@
 
 这是自己准备用365天深入理解Go语言之后送给[自己](https://github.com/0e0w)的礼物。本项目记录这365天内的学习收获。本人编程零基础，只略懂一些Python。因此本项目部分章节可能很基础，请见谅。本项目大量的参考借鉴甚至复制了其他类似项目。感谢这些作者们，感谢Gopher。项目还未完成，仍持续更新整理中。
 
-本项目创建于2020年9月1日，最近的一次更新日期为2021年2月17日。
+本项目创建于2020年9月1日，最近的一次更新日期为2021年2月18日。
 
 本项目暂时计划共九章：
 
@@ -2633,9 +2633,24 @@
 
 ### 第二章：Go语言进阶
 
-
 <details>
-<summary>Day021: 数据-Go语言反射</summary>
+<summary>Day022: 测试-Go语言测试</summary>
+
+- [ ] 本节说明：本节介绍Go语言测试的相关内容。
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+
+  </details>
+<details>
+<summary>Day023: 数据-Go语言反射</summary>
 
 - [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
 
@@ -2653,7 +2668,7 @@
 
   </details>
 <details>
-<summary>Day023: 进阶-Go同步与锁</summary>
+<summary>Day024: 进阶-Go同步与锁</summary>
 
 - [ ] 本节说明：
 
@@ -2702,7 +2717,7 @@
 
   </details>
 <details>
-<summary>Day028: 进阶-Go反序列化</summary>
+<summary>Day027: 进阶-Go反序列化</summary>
 
 - [ ] 本节说明：
 
@@ -2719,7 +2734,7 @@
   
   </details>
 <details>
-<summary>Day029: 进阶-Go垃圾回收</summary>
+<summary>Day028: 进阶-Go垃圾回收</summary>
 
 - [ ] 本节说明：
 
@@ -2737,7 +2752,7 @@
 
   </details>
 <details>
-<summary>Day030: 函数-Go内置函数</summary>
+<summary>Day029: 函数-Go内置函数</summary>
 
 - [x] 本节说明：本节介绍Go语言内置函数的相关内容。
 
@@ -3674,10 +3689,10 @@
 
 特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)、[韩茹](https://github.com/rubyhan1314)
 
-- [ ] https://github.com/0e0w/LearnGolang
-- [x] https://www.runoob.com/go/go-tutorial.html
-- [x] https://github.com/ffhelicopter/Go42
-- [x] https://github.com/unknwon/the-way-to-go_ZH_CN
-- [x] https://github.com/golang101/golang101
-- [x] https://github.com/iswbm/GolangCodingTime
-- [x] https://space.bilibili.com/353694001
+- https://github.com/0e0w/LearnGolang
+- https://www.runoob.com/go/go-tutorial.html
+- https://github.com/ffhelicopter/Go42
+- https://github.com/unknwon/the-way-to-go_ZH_CN
+- https://github.com/golang101/golang101
+- https://github.com/iswbm/GolangCodingTime
+- https://space.bilibili.com/353694001
