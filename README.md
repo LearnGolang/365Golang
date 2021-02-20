@@ -2820,7 +2820,51 @@
 
   </details>
 <details>
-<summary>Day303: 库包-Go文本处理</summary>
+<summary>Day303: 库包-Go请求响应</summary>
+
+- [x] 本节说明：本节介绍Go语言中请求响应的内容。
+- [x] HTTP请求响应：
+  - 在漏洞利用或是在漏洞验证过程中， 经常使用到的一个方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
+  - 本小节内容是漏洞验证中较为重要的部分。
+- [ ] 请求响应包：
+
+  - net/http 
+- [x] 请求响应案例：
+  - 访问并读取页面：
+  
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"net/http"
+    )
+    
+    var urls = []string{
+    	"http://www.google.com",
+    	"http://golang.org",
+    	"http://blog.golang.org",
+    }
+    
+    func main() {
+    	for _, url := range urls {
+    		resp, err := http.Head(url)
+    		if err != nil {
+    			fmt.Println("Error:", url, err)
+    		}
+    		fmt.Println(url, ": ", resp.Status)
+    	}
+    }
+    ```
+    
+  - 发送get参数请求：
+  - 发送post参数请求：
+  - 发送cookie参数请求：  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day304: 库包-Go文本处理</summary>
 
 - [x] 本节说明：本节介绍Go语言处理文本格式的相关内容。
 - [x] Go文本处理：也就是处理TXT格式的文件。
@@ -2955,46 +2999,94 @@
 
   </details>
 <details>
-<summary>Day304: 库包-Go请求响应</summary>
+<summary>Day305: 库包-Go电子表格</summary>
 
-- [x] 本节说明：本节介绍Go语言中请求响应的内容。
-- [x] HTTP请求响应：
-  - 在漏洞利用或是在漏洞验证过程中， 经常使用到的一个方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
-  - 本小节内容是漏洞验证中较为重要的部分。
-- [ ] 请求响应包：
+- [ ] 本节说明：
 
-  - net/http 
-- [x] 请求响应案例：
-  - 访问并读取页面：
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
-    ```go
-    package main
-    
-    import (
-    	"fmt"
-    	"net/http"
-    )
-    
-    var urls = []string{
-    	"http://www.google.com",
-    	"http://golang.org",
-    	"http://blog.golang.org",
-    }
-    
-    func main() {
-    	for _, url := range urls {
-    		resp, err := http.Head(url)
-    		if err != nil {
-    			fmt.Println("Error:", url, err)
-    		}
-    		fmt.Println(url, ": ", resp.Status)
-    	}
-    }
-    ```
-    
-  - 发送get参数请求：
-  - 发送post参数请求：
-  - 发送cookie参数请求：  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day305: 库包-Go数据入库</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day307: 库包-Go日志处理</summary>
+
+- [ ] 本节说明：
+
+- [x] Go语言介绍：
+
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  
+- [x] Go语言命令：
+
+  - go run hello.go //编译运行hello.go
+  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day308: 库包-Go错误处理</summary>
+
+- [ ] 本节说明：
+- [x] Go语言介绍：
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+- [x] Go语言命令：
+  - go run hello.go //编译运行hello.go
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day309: 库包-Go单元测试</summary>
+
+- [ ] 本节说明：
+- [x] Go语言介绍：
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+- [x] Go语言命令：
+  - go run hello.go //编译运行hello.go
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day310: 库包-Go协程任务</summary>
+
+- [ ] 本节说明：
+- [x] Go语言介绍：
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+- [x] Go语言命令：
+  - go run hello.go //编译运行hello.go
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day311: 库包-Go发送邮件</summary>
+
+- [ ] 本节说明：
+- [x] Go语言介绍：
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+- [x] Go语言命令：
+  - go run hello.go //编译运行hello.go 
 - [ ] 本节案例：
   
   </details>
@@ -3005,7 +3097,6 @@
 - [ ] Go语言时间操作：
 - [ ] Go语言日期操作：
 - [x] 一些具体使用的例子。
-
   - 计算函数执行时间：
   
     ```go
@@ -3020,19 +3111,15 @@
 - [ ] [时间日期参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)、[时间日期参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.11.md)
 
 - [ ] 本节案例：
-
-  
+ 
   </details>
 <details>
 <summary>Day000: 库包-Go输入输出</summary>
 
 - [x] 本节说明：本节介绍Go语言中输入输出的相关内容。
-- [x] Go语言输入输出：
-  
-  - Go语言标准库就是Go包。需要import导入之后使用某些功能。
-  
+- [x] Go语言输入输出： 
+  - Go语言标准库就是Go包。需要import导入之后使用某些功能。  
 - [ ] 输入案例参考：
-
   - 案例1：
   
     ```
@@ -3053,22 +3140,15 @@
     ```
   
 - [ ] 本节案例：
-
   
   </details>
 <details>
 <summary>Day000: 库包-Go正则匹配</summary>
-
 - [x] 本节说明：本节介绍Go语言中正则匹配的相关内容。
-
 - [x] Go语言正则匹配：
-
-  - 在请求响应中经常会根据响应的内容作出判断及操作。也经常需要对响应的内容进行信息提取之后进行下一步的操作，操作的过程中会经常使用正则匹配的方法进行。
-  
+  - 在请求响应中经常会根据响应的内容作出判断及操作。也经常需要对响应的内容进行信息提取之后进行下一步的操作，操作的过程中会经常使用正则匹配的方法进行。  
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
+  - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
 
   </details>
@@ -3076,129 +3156,69 @@
 <summary>Day000: 库包-Go精密计算</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
+  - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
-
   
-
   </details>
 <details>
 <summary>Day000: 库包-Go读写数据</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
 - [x] Go语言命令：
-
   - go run hello.go //编译运行hello.go
   
 - [ ] 本节案例：
 
-  
-
   </details>
-
 <details>
 <summary>Day000: 库包-Go保存数据</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
+  - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
-
-  
-
-  </details>
-
-<details>
-<summary>Day000: 库包-Go发送邮件</summary>
-
-- [ ] 本节说明：
-
-- [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
-- [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
-- [ ] 本节案例：
-
-  
 
   </details>
 <details>
 <summary>Day000: 库包-Go语言库包</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
+  - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
-
-  
 
   </details>
 <details>
 <summary>Day000: 库包-Go语言库包</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
+  - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
-
-  
 
   </details>
 <details>
 <summary>Day000: 库包-Go语言库包</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
-  
+  - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
 
   
-
   </details>
   
 ### 第四章：Go语言算法
