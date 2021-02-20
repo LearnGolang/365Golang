@@ -2791,6 +2791,7 @@
 
 <details>
 <summary>Day301: 库包-Go包的管理</summary>
+
 - [x] 本节说明：本节介绍Go语言库包的相关内容。
 - [x] Go语言标准库概述：
   - Go语言标准库就是Go包。需要import导入之后使用某些功能。
