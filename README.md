@@ -2791,7 +2791,7 @@
 ### 第三章：Go标准库包
 
 <details>
-<summary>Day000: 库包-Go包的管理</summary>
+<summary>Day301: 库包-Go包的管理</summary>
 
 - [x] 本节说明：本节介绍Go语言库包的相关内容。
 
@@ -2806,134 +2806,26 @@
 
   </details>
 <details>
-<summary>Day000: 库包-Go命令控制</summary>
+<summary>Day302: 库包-Go命令控制</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
 - [x] Go语言命令：
-
+  
   - go run hello.go //编译运行hello.go
   
 - [ ] 本节案例：
 
   </details>
 <details>
-<summary>Day000: 库包-Go时间日期</summary>
-
-- [ ] 本节说明：本节介绍Go语言中时间和日期的相关内容。
-- [ ] Go语言时间操作：
-- [ ] Go语言日期操作：
-- [x] 一些具体使用的例子。
-
-  - 计算函数执行时间：
-  
-    ```go
-    start := time.Now()
-    end := time.Now()
-    delta := end.Sub(start)
-    fmt.Printf("all time: %s\n", delta)
-    ```
-    
-  - 计算日期差值：
-  
-- [ ] [时间日期参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)、[时间日期参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.11.md)
-
-- [ ] 本节案例：
-
-  
-  </details>
-<details>
-<summary>Day000: 库包-Go请求响应</summary>
-
-- [x] 本节说明：本节介绍Go语言中请求响应的内容。
-- [x] HTTP请求响应：
-  - 在漏洞利用或是在漏洞验证过程中， 经常使用到的一个方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
-  - 本小节内容是漏洞验证中较为重要的部分。
-- [ ] 请求响应包：
-
-  - net/http 
-- [x] 请求响应案例：
-  - 访问并读取页面：
-  
-    ```go
-    package main
-    
-    import (
-    	"fmt"
-    	"net/http"
-    )
-    
-    var urls = []string{
-    	"http://www.google.com",
-    	"http://golang.org",
-    	"http://blog.golang.org",
-    }
-    
-    func main() {
-    	for _, url := range urls {
-    		resp, err := http.Head(url)
-    		if err != nil {
-    			fmt.Println("Error:", url, err)
-    		}
-    		fmt.Println(url, ": ", resp.Status)
-    	}
-    }
-    ```
-    
-  - 发送get参数请求：
-  - 发送post参数请求：
-  - 发送cookie参数请求：
-  
-- [ ] 本节案例：
-
-  
-  </details>
-<details>
-<summary>Day000: 库包-Go输入输出</summary>
-
-- [x] 本节说明：本节介绍Go语言中输入输出的相关内容。
-- [x] Go语言输入输出：
-  
-  - Go语言标准库就是Go包。需要import导入之后使用某些功能。
-  
-- [ ] 输入案例参考：
-
-  - 案例1：
-  
-    ```
-    package main
-    
-    import (
-    	"fmt"
-    )
-    
-    func main() {
-    	var a int
-    	fmt.Printf("请输入a:")
-    	fmt.Scanf("%d", &a)
-    	//fmt.Scan(&a)
-    	fmt.Println("a =", a)
-    
-    }
-    ```
-  
-- [ ] 本节案例：
-
-  
-  </details>
-<details>
-<summary>Day000: 库包-Go文本处理</summary>
+<summary>Day303: 库包-Go文本处理</summary>
 
 - [x] 本节说明：本节介绍Go语言处理文本格式的相关内容。
-
 - [x] Go文本处理：也就是处理TXT格式的文件。
-
-  - 文本处理在Go开发中用到的比较多，在安全开发中经常会将文本文件的内容作为参数传递给函数，根据响应进行漏洞扫描与漏洞验证。
   
+  - 文本处理在Go开发中用到的比较多，在安全开发中经常会将文本文件的内容作为参数传递给函数，根据响应进行漏洞扫描与漏洞验证。  
 - [x] 按行读取文本文件：
 
   - io/ioutil
@@ -3018,7 +2910,6 @@
     ```
 
 - [ ] 把文本文件作为参数：
-
 - [ ] 把结果写入到文本文件中：
 
   - 案例一：
@@ -3062,6 +2953,108 @@
 
 - [ ] 本节案例：
 
+  </details>
+<details>
+<summary>Day304: 库包-Go请求响应</summary>
+
+- [x] 本节说明：本节介绍Go语言中请求响应的内容。
+- [x] HTTP请求响应：
+  - 在漏洞利用或是在漏洞验证过程中， 经常使用到的一个方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
+  - 本小节内容是漏洞验证中较为重要的部分。
+- [ ] 请求响应包：
+
+  - net/http 
+- [x] 请求响应案例：
+  - 访问并读取页面：
+  
+    ```go
+    package main
+    
+    import (
+    	"fmt"
+    	"net/http"
+    )
+    
+    var urls = []string{
+    	"http://www.google.com",
+    	"http://golang.org",
+    	"http://blog.golang.org",
+    }
+    
+    func main() {
+    	for _, url := range urls {
+    		resp, err := http.Head(url)
+    		if err != nil {
+    			fmt.Println("Error:", url, err)
+    		}
+    		fmt.Println(url, ": ", resp.Status)
+    	}
+    }
+    ```
+    
+  - 发送get参数请求：
+  - 发送post参数请求：
+  - 发送cookie参数请求：  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day000: 库包-Go时间日期</summary>
+
+- [ ] 本节说明：本节介绍Go语言中时间和日期的相关内容。
+- [ ] Go语言时间操作：
+- [ ] Go语言日期操作：
+- [x] 一些具体使用的例子。
+
+  - 计算函数执行时间：
+  
+    ```go
+    start := time.Now()
+    end := time.Now()
+    delta := end.Sub(start)
+    fmt.Printf("all time: %s\n", delta)
+    ```
+    
+  - 计算日期差值：
+  
+- [ ] [时间日期参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/04.8.md)、[时间日期参考2](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.11.md)
+
+- [ ] 本节案例：
+
+  
+  </details>
+<details>
+<summary>Day000: 库包-Go输入输出</summary>
+
+- [x] 本节说明：本节介绍Go语言中输入输出的相关内容。
+- [x] Go语言输入输出：
+  
+  - Go语言标准库就是Go包。需要import导入之后使用某些功能。
+  
+- [ ] 输入案例参考：
+
+  - 案例1：
+  
+    ```
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    func main() {
+    	var a int
+    	fmt.Printf("请输入a:")
+    	fmt.Scanf("%d", &a)
+    	//fmt.Scan(&a)
+    	fmt.Println("a =", a)
+    
+    }
+    ```
+  
+- [ ] 本节案例：
+
+  
   </details>
 <details>
 <summary>Day000: 库包-Go正则匹配</summary>
