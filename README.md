@@ -2863,7 +2863,20 @@
   
   </details>
 <details>
-<summary>Day304: 库包-Go文本处理</summary>
+<summary>Day304: 库包-Go配置文件</summary>
+
+- [ ] 本节说明：
+- [x] Go语言介绍：
+  
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。  
+- [x] Go语言命令：
+  
+  - go run hello.go //编译运行hello.go  
+- [ ] 本节案例：
+  
+  </details>
+<details>
+<summary>Day305: 库包-Go文本文件</summary>
 
 - [x] 本节说明：本节介绍Go语言处理文本格式的相关内容。
 - [x] Go文本处理：也就是处理TXT格式的文件。
@@ -2998,58 +3011,49 @@
 
   </details>
 <details>
-<summary>Day305: 库包-Go电子表格</summary>
+<summary>Day306: 库包-Go电子表格</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。  
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
   
+  - go run hello.go //编译运行hello.go 
 - [ ] 本节案例：
   
   </details>
 <details>
-<summary>Day305: 库包-Go数据入库</summary>
+<summary>Day307: 库包-Go数据入库</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
   
+  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。  
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
   
+  - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
   
   </details>
 <details>
-<summary>Day307: 库包-Go日志处理</summary>
+<summary>Day308: 库包-Go日志处理</summary>
 
 - [ ] 本节说明：
-
 - [x] Go语言介绍：
-
+  
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-  
 - [x] Go语言命令：
-
-  - go run hello.go //编译运行hello.go
   
+  - go run hello.go //编译运行hello.go
 - [ ] 本节案例：
   
   </details>
 <details>
-<summary>Day308: 库包-Go错误处理</summary>
+<summary>Day309: 库包-Go错误处理</summary>
 
 - [ ] 本节说明：
-- [x] Go语言介绍：
+- [x] Go语言介绍： 
   
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
 - [x] Go语言命令：
@@ -3062,7 +3066,7 @@
 <summary>Day309: 库包-Go单元测试</summary>
 
 - [ ] 本节说明：
-- [x] Go语言介绍：
+- [x] Go语言介绍： 
   
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
 - [x] Go语言命令：
@@ -3238,7 +3242,6 @@
   - go run hello.go //编译运行hello.go  
 - [ ] 本节案例：
 
-  
   </details>
   
 ### 第四章：Go语言算法
@@ -3366,7 +3369,6 @@
 - [ ] 本节说明：
 - [ ] 完全算法介绍：
 - [x] Go完全算法：
-  
   - 递归函数、递归算法、
 - [ ] 本节案例：
   
