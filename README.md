@@ -2,21 +2,19 @@
 
 ## 0x01-项目说明 
 
-这是作者深入理解Go语言之后送给[自己](https://github.com/0e0w)的礼物。本项目记录这365天内的学习收获。本人编程几乎零基础，只略懂一些Python、PHP、Java等。因此本项目大部分章节都会很基础，请见谅。本项目大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！项目未完成，持续更新整理中。
+本项目是记录自己在学习Go语言的过程中的思考与感悟。本项目大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
 本项目创建于2020年9月1日，最近的一次更新日期为2021年5月25日。
 
-本项目暂时计划共九章：
+项目暂计划共七章：项目未完成，持续更新整理中！
 
 - [第一章：Go语言基础](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%80%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
 - [第二章：Go语言进阶](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%8C%E7%AB%A0go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
 - [第三章：Go语言库包](https://github.com/0e0w/365Golang#%E7%AC%AC%E4%B8%89%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%BA%93%E5%8C%85)
 - [第四章：Go语言算法](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
 - [第五章：Go安全开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91)
-- [第六章：Go网络爬虫](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB)
-- [第七章：Go网站开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91)
-- [第八章：Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AB%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
-- [第九章：Go逆向工程](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B9%9D%E7%AB%A0go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
+- [第六章：Go语言源码]()
+- [第七章：Go逆向工程]()
 
 ## 0x02-学习进度
 
@@ -3485,41 +3483,8 @@
   - go run hello.go //编译运行hello.go
 - [ ] 本节案例：
   
-  
   </details>
-### 第六章：Go网络爬虫
-
-<details>
-<summary>Day000: 基础-Go语言并发</summary>
-
-- [ ] 本节说明：
-- [x] Go语言介绍：
-  
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-- [x] Go语言命令：
-  
-  - go run hello.go //编译运行hello.go
-- [ ] 本节案例：
-
-  </details>
-
-### 第七章：Go网站开发
-
-<details>
-<summary>Day000: 基础-Go语言并发</summary>
-
-- [ ] 本节说明：
-- [x] Go语言介绍：
-  
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
-- [x] Go语言命令：
-  
-  - go run hello.go //编译运行hello.go
-- [ ] 本节案例：
-
-  </details>
-
-### 第八章：Go语言源码
+### 第六章：Go语言源码
 
 <details>
 <summary>Day000: 源码-Go漏洞扫描</summary>
@@ -3550,7 +3515,7 @@
   
   </details>
 
-### 第九章：Go逆向工程
+### 第七章：Go逆向工程
 
 <details>
 <summary>Day000: 逆向-Go逆向工程</summary>
