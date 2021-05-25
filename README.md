@@ -1,6 +1,6 @@
 # 《365天深入理解Go语言》
 
-## 0x01-项目说明 
+## 一、项目说明 
 
 本项目是记录自己在学习Go语言的过程中遇到的思考与感悟。本项目大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
@@ -16,7 +16,7 @@
 - [第六章：Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
 - [第七章：Go逆向工程](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
 
-## 0x02-学习进度
+## 二、学习内容
 
 ### 第一章：Go语言基础
 
@@ -3546,7 +3546,7 @@
   
   </details>
 
-## 0x03-参考资源
+## 三、参考资源
 
 特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)、[韩茹](https://github.com/rubyhan1314)
 
