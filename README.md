@@ -16,7 +16,7 @@
 - [第六章：Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
 - [第七章：Go逆向工程](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
 
-## 二、学习内容
+## 二、本书章节
 
 ### 第一章：Go语言基础
 
