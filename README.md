@@ -4,7 +4,7 @@
 
 本项目是记录自己在学习Go语言的过程中遇到的思考与感悟。本项目大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新日期为2021年6月8日。
+本项目创建于2020年9月1日，最近的一次更新日期为2021年7月3日。
 
 项目暂计划共七章：项目未完成，持续更新整理中！
 
@@ -2630,7 +2630,7 @@
 ### 第二章：Go语言进阶
 
 <details>
-<summary>Day022: 测试-Go语言测试</summary>
+<summary>Day023: 测试-Go语言测试</summary>
 
 - [ ] 本节说明：本节介绍Go语言测试的相关内容。
 
@@ -2642,24 +2642,6 @@
 
   - go run hello.go //编译运行hello.go
   
-- [ ] 本节案例：
-
-  </details>
-<details>
-<summary>Day023: 数据-Go语言反射</summary>
-
-- [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
-
-- [ ] 反射概念介绍：
-  
-  - 在计算机科学中，反射是指计算机程序在运行时（Run time）可以访问、检测和修改它本身状态或行为的一种能力。用比喻来说，反射就是程序在运行的时候能够“观察”并且修改自己的行为。
-  
-- [ ] Go语言反射介绍：
-  
-  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。是元编程的一种形式。  
-  
-- [ ] [反射参考1](http://c.biancheng.net/golang/reflect/)、[反射参考2](https://www.cnblogs.com/qcrao-2018/p/10822655.html)、
-
 - [ ] 本节案例：
 
   </details>
@@ -2680,7 +2662,7 @@
 
   </details>
 <details>
-<summary>Day025: 对象-Go面向对象</summary>
+<summary>Day024: 对象-Go面向对象</summary>
 
 - [x] 本节说明：本节介绍Go语言面向对象的相关内容。
 
@@ -2695,18 +2677,40 @@
   
   </details>
 <details>
+<summary>Day025: 数据-Go语言反射</summary>
+
+- [x] 本节说明：本节介绍Go语言反射(reflect)相关内容。
+
+- [ ] 反射概念介绍：
+  
+  - 在计算机科学中，反射是指计算机程序在运行时（Run time）可以访问、检测和修改它本身状态或行为的一种能力。用比喻来说，反射就是程序在运行的时候能够“观察”并且修改自己的行为。
+  
+- [ ] Go语言反射介绍：
+  
+  - 反射是程序执行时检查其所拥有的结构。尤其是类型的一种能力。是元编程的一种形式。  
+  
+- [ ] [反射参考1](http://c.biancheng.net/golang/reflect/)、[反射参考2](https://www.cnblogs.com/qcrao-2018/p/10822655.html)、
+
+- [ ] 本节案例：
+
+  </details>
+<details>
 <summary>Day026: 泛型-Go语言泛型</summary>
 
-- [ ] 本节说明：
+- [ ] 本节说明：本节介绍Go语言中泛型的相关内容。
 
-- [x] Go语言介绍：
+- [x] 泛型介绍：
 
-  - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。 
+  - 泛型程序设计（generic programming）是程序设计语言的一种风格或范式。泛型允许程序员在强类型程序设计语言中编写代码时使用一些以后才指定的类型，在实例化时作为参数指明这些类型。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。Ada、Delphi、Eiffel、Java、C#、F#、Swift和Visual Basic .NET称之为泛型（generics）；ML、Scala和Haskell称之为参数多态（parametric polymorphism）；C++和D称之为模板。具有广泛影响的1994年版的《Design Patterns》一书称之为参数化类型（parameterized type）。
+  - 泛型就是把类型当成参数。
   
-- [x] Go语言命令：
+- [x] Go语言中的泛型：
 
-  - go run hello.go //编译运行hello.go
+  - Go目前不支持自定义泛型。
+  - 泛型指日可待！
   
+- [ ] 泛型的优点？为什么需要泛型？
+
 - [ ] 本节案例：
 
   </details>
