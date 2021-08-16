@@ -1,24 +1,20 @@
 # 《365天深入理解Go语言》
 
-## 一、项目说明 
-
 本项目是记录自己在学习Go语言的过程中遇到的思考与感悟。本项目大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新日期为2021年7月3日。
+本项目创建于2020年9月1日，最近的一次更新日期为2021年8月16日。本项目会持续更新，直到海枯石烂。
 
-项目暂计划共七章：项目未完成，持续更新整理中！
+项目暂计划共八章：项目未完成，持续更新整理中！
 
-- [第一章：Go语言基础](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%80%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
-- [第二章：Go语言进阶](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%8C%E7%AB%A0go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
-- [第三章：Go语言库包](https://github.com/0e0w/365Golang#%E7%AC%AC%E4%B8%89%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%BA%93%E5%8C%85)
-- [第四章：Go语言算法](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
-- [第五章：Go安全开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91)
-- [第六章：Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
-- [第七章：Go逆向工程](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
+- [0x01-Go语言基础](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%80%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
+- [0x02-Go语言进阶](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%8C%E7%AB%A0go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
+- [0x03-Go语言库包](https://github.com/0e0w/365Golang#%E7%AC%AC%E4%B8%89%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%BA%93%E5%8C%85)
+- [0x04-Go语言算法](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
+- [0x05-Go安全开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91)
+- [0x06-Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
+- [0x07-Go逆向工程](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
 
-## 二、本书章节
-
-### 第一章：Go语言基础
+## 0x01-Go语言基础
 
 <details>
 <summary>Day001: 基础-Go语言入门</summary>
@@ -98,20 +94,24 @@
     
     ```
     // Linux下编译Mac, Windows平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
-    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
+    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go
+    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go
+    
+    // Linux下编译Mac, Windows平台的32位可执行程序：
+    CGO_ENABLED=0 GOOS=windows GOARCH=386 go build main.go
+    CGO_ENABLED=0 GOOS=darwin GOARCH=386 go build main.go
     ```
     
     ```
     // Windows下编译Mac, Linux平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build 001.go
-    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build 001.go
+    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go
+    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
     ```
     
     ```
     // Mac下编译Linux, Windows平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build 001.go
-    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build 001.go
+    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
+    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go
     ```
     
   - 安装依赖：
@@ -2627,7 +2627,7 @@
 
   </details>
 
-### 第二章：Go语言进阶
+## 0x02-Go语言进阶
 
 <details>
 <summary>Day023: 测试-Go语言测试</summary>
@@ -2800,7 +2800,7 @@
 
   </details>
 
-### 第三章：Go语言库包
+## 0x03-Go语言库包
 
 <details>
 <summary>Day301: 库包-Go包的管理</summary>
@@ -3253,7 +3253,7 @@
 
   </details>
   
-### 第四章：Go语言算法
+## 0x04-Go语言算法
 
 <details>
 <summary>Day000: 算法-Go排序算法</summary>
@@ -3397,7 +3397,7 @@
   
   </details>
 
-### 第五章：Go安全开发
+## 0x05-Go安全开发
 
 <details>
 <summary>Day000: 安全-Go域名扫描</summary>
@@ -3507,7 +3507,7 @@
 - [ ] 本节案例：
   
   </details>
-### 第六章：Go语言源码
+## 0x06-Go语言源码
 
 <details>
 <summary>Day000: 源码-Go漏洞扫描</summary>
@@ -3538,7 +3538,7 @@
   
   </details>
 
-### 第七章：Go逆向工程
+## 0x07-Go逆向工程
 
 <details>
 <summary>Day000: 逆向-Go逆向工程</summary>
@@ -3565,7 +3565,7 @@
   
   </details>
 
-## 三、参考资源
+## 0x08-Go参考资源
 
 特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)、[韩茹](https://github.com/rubyhan1314)
 
