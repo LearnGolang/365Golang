@@ -2802,7 +2802,7 @@
 
 ## 0x03-Go语言库包
 
-​		本部分用来记录Go语言官方标准库的相关内容。包括很多具体的使用例子，初学者拿来即可使用，甚至不需要任何的修改。当然，此部分也包括一些优秀的第三方库，可以利用这些第三方库构建更完善的代码。
+本部分用来记录Go语言官方标准库的相关内容。包括很多具体的使用例子，初学者拿来即可使用，甚至不需要任何的修改。当然，此部分也包括一些优秀的第三方库，可以利用这些第三方库构建更完善的代码。
 
 <details>
 <summary>Day301: 库包-Go包的管理</summary>
@@ -2818,7 +2818,7 @@
 <details>
 <summary>Day302: 库包-Go命令控制</summary>
 
-- [ ] 本节说明：
+- [x] 本节说明：本节介绍命令控制的相关内容。主要是flag标准库的使用。
 - [x] Go语言介绍：
   
   - Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。   
@@ -3080,6 +3080,8 @@
   	// 日志保存到文件中-结束
   
   	logger.Println("Hello World!")
+  
+  }
   ```
 
 - [ ] 本节案例：
@@ -3159,7 +3161,7 @@
   	}
   
   	// msg := []byte("To: " + to + "\r\nFrom: " + user + "<" + user + ">\r\nSubject: " + subject + "\r\n" + content_type + "\r\n\r\n" + body)
-  	msg := []byte("To: " + to + "\r\nFrom: " + "nmccb" + "<" + user + ">\r\nSubject: " + subject + "\r\n" + content_type + "\r\n\r\n" + body)
+  	msg := []byte("To: " + to + "\r\nFrom: " + "fajianren" + "<" + user + ">\r\nSubject: " + subject + "\r\n" + content_type + "\r\n\r\n" + body)
   
   	send_to := strings.Split(to, ";")
   	err := smtp.SendMail(host, auth, user, send_to, msg)
