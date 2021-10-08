@@ -1,18 +1,18 @@
 # 《365天深入理解Go语言》
 
-本项目是记录自己在学习Go语言的过程中遇到的思考与感悟。本项目大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
+本书籍是记录自己在学习Go语言的过程中遇到的思考与感悟。写作过程中，大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新时间为2021年10月2日。本项目会持续更新，直到海枯石烂。
+本项目创建于2020年9月1日，最近的一次更新时间为2021年10月8日。本项目会持续更新，直到海枯石烂。
 
-项目暂计划共八章。项目未完成，持续更新整理中！感谢关注！
+项目暂计划共七章。项目未完成，持续更新整理中！感谢关注！
 
-- [0x01-Go语言基础](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%80%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
-- [0x02-Go语言进阶](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%8C%E7%AB%A0go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
-- [0x03-Go语言库包](https://github.com/0e0w/365Golang#%E7%AC%AC%E4%B8%89%E7%AB%A0go%E8%AF%AD%E8%A8%80%E5%BA%93%E5%8C%85)
-- [0x04-Go语言算法](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%9B%9B%E7%AB%A0go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
-- [0x05-Go安全开发](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%BA%94%E7%AB%A0go%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91)
-- [0x06-Go语言源码](https://github.com/0e0w/365GoLang#%E7%AC%AC%E5%85%AD%E7%AB%A0go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
-- [0x07-Go逆向工程](https://github.com/0e0w/365GoLang#%E7%AC%AC%E4%B8%83%E7%AB%A0go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
+- [0x01-Go语言基础](https://github.com/0e0w/365GoLang#0x01-go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
+- [0x02-Go语言进阶](https://github.com/0e0w/365GoLang#0x02-go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
+- [0x03-Go语言库包](https://github.com/0e0w/365GoLang#0x03-go%E8%AF%AD%E8%A8%80%E5%BA%93%E5%8C%85)
+- [0x04-Go语言算法](https://github.com/0e0w/365GoLang#0x04-go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
+- [0x05-Go安全开发](https://github.com/0e0w/365GoLang#0x05-go%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91)
+- [0x06-Go语言源码](https://github.com/0e0w/365GoLang#0x06-go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
+- [0x07-Go逆向工程](https://github.com/0e0w/365GoLang#0x07-go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
 
 ## 0x01-Go语言基础
 
@@ -284,8 +284,6 @@
   - 尽管高级编程语言代码比底层机器指令友好和易懂，我们还是需要一些注释来帮助自己和其他程序员理解我们所写的代码。
   - 行注释：使用双斜线//开始，一般后面紧跟一个空格。行注释是Go语言中最常见的注释形式，在标准包中，一般都采用行注释，建议采用这种方式。
   - 块注释：使用 /* */，块注释不能嵌套。块注释一般用于包描述或注释成块的代码片段。
-  
-  
   
   </details>
 <details>
@@ -2804,7 +2802,7 @@
 
 ## 0x03-Go语言库包
 
-本部分用来记录Go语言官方标准库的相关内容。包括很多具体的使用例子，初学者拿来即可使用，甚至不需要任何的修改。当然，此部分也包括一些优秀的第三方库，可以利用这些第三方库构建更完善的代码。
+​		本章节用来记录Go语言官方标准库的相关内容。包括很多具体的使用例子，初学者拿来即可使用，甚至不需要任何的修改。也包括优秀的第三方库，利用这些第三方库可以构建更完善的项目代码。
 
 <details>
 <summary>Day301: 库包-Go包的管理</summary>
@@ -3419,7 +3417,7 @@
 - [ ] 本节说明：
 - [x] 动态规划算法介绍：
   
-  - 递归函数、递归算法、  
+  - 递归函数、递归算法  
 - [ ] Go动态规划算法：  
 - [ ] 本节案例：
   
@@ -3525,6 +3523,8 @@
   </details>
 
 ## 0x05-Go安全开发
+
+​		本章节是在深入学习Go语言的基础上开发安全项目的实例。包括域名扫描、漏洞扫描、密码爆破、病毒免杀等项目。方便在红队攻防领域或是渗透测试领域有自己开发的完善的武器库。
 
 <details>
 <summary>Day000: 安全-Go域名扫描</summary>
@@ -3636,6 +3636,8 @@
   </details>
 ## 0x06-Go语言源码
 
+​		本章节是深入理解Go语言必须要学习的内容。包括Go语言底层的功能实现方式，通过深入阅读Go语言源码达到真正深入理解Go语言的境界。
+
 <details>
 <summary>Day000: 源码-Go漏洞扫描</summary>
 
@@ -3666,6 +3668,8 @@
   </details>
 
 ## 0x07-Go逆向工程
+
+​		本章节是关于逆向工程的内容，包括Go语言开发项目的逆向工程等。
 
 <details>
 <summary>Day000: 逆向-Go逆向工程</summary>
