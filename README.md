@@ -2,7 +2,7 @@
 
 本书籍是记录自己在学习Go语言的过程中遇到的思考与感悟。写作过程中，大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新时间为2021年10月13日。本项目会持续更新，直到海枯石烂。
+本项目创建于2020年9月1日，最近的一次更新时间为2021年10月14日。本项目会持续更新，直到海枯石烂。
 
 项目暂计划共七章。项目未完成，持续更新整理中！感谢关注！今天你学习Go语言了吗？
 
@@ -96,6 +96,9 @@
     go build main.go
     //去掉符号表去掉调试信息
     go build -ldflags "-w -s" main.go
+    go build -ldflags="-s -w" main.go
+    //实现无窗口运行
+    go build -ldflags "-w -s -H windowsgui" main.go
     ```
     
   - 生成不同平台下的可执行程序：需配置GOPATH。
