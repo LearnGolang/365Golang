@@ -2,7 +2,7 @@
 
 本书籍是记录自己在学习Go语言的过程中遇到的思考与感悟。写作过程中，大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新时间为2021年10月14日。本项目会持续更新，直到海枯石烂。
+本项目创建于2020年9月1日，最近的一次更新时间为2021年11月21日。本项目会持续更新，直到海枯石烂。
 
 项目暂计划共七章。项目未完成，持续更新整理中！感谢关注！今天你学习Go语言了吗？
 
@@ -2899,9 +2899,11 @@
 <summary>Day305: 库包-Go文本文件</summary>
 
 - [x] 本节说明：本节介绍Go语言处理文本格式的相关内容。
+
 - [x] Go文本处理：也就是处理TXT格式的文件。
   
   - 文本处理在Go开发中用到的比较多，在安全开发中经常会将文本文件的内容作为参数传递给函数，根据响应进行漏洞扫描与漏洞验证。  
+  
 - [x] 按行读取文本文件：
 
   - io/ioutil
@@ -2986,6 +2988,7 @@
     ```
 
 - [ ] 把文本文件作为参数：
+
 - [ ] 把结果写入到文本文件中：
 
   - 案例一：
@@ -3025,11 +3028,12 @@
     fd.Close()
     ```
 
-- [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)、[文本处理参考1](http://c.biancheng.net/golang/102/)
+- [x] [读写数据参考1](https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.0.md)、[文本处理参考1](http://c.biancheng.net/golang/102/)、[golang 逐行读取文件](https://www.cnblogs.com/rojas/p/4395866.html)、[Go语言文件读取的一些总结](https://segmentfault.com/a/1190000023691973)
 
 - [ ] 本节案例：
 
   </details>
+
 <details>
 <summary>Day306: 库包-Go电子表格</summary>
 
