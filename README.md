@@ -2811,7 +2811,7 @@
 
 ## 0x03-Go语言库包
 
-​		本章节用来记录Go语言官方标准库的相关内容。包括很多具体的使用例子，初学者拿来即可使用，甚至不需要任何的修改。也包括优秀的第三方库，利用这些第三方库可以构建更完善的项目代码。
+​		本章节包括大量的案例，这些案例是Go语言官方标准库的使用教学。也包括优秀的第三方库，利用这些第三方库可以构建更完善的项目代码。
 
 <details>
 <summary>Day301: 库包-Go包的管理</summary>
@@ -2842,12 +2842,15 @@
 <summary>Day303: 库包-Go请求响应</summary>
 
 - [x] 本节说明：本节介绍Go语言中请求响应的内容。
+
 - [x] HTTP请求响应：
   - 在漏洞利用或是在漏洞验证过程中， 经常使用到的一个方法就是对一个URL发送一个请求，然后从响应中获取相关数据来判断漏洞是否存在。
   - 本小节内容是漏洞验证中较为重要的部分。
+  
 - [ ] 请求响应包：
 
   - net/http 
+  
 - [x] 请求响应案例：
   - 访问并读取页面：
   
@@ -2875,10 +2878,52 @@
     	}
     }
     ```
-    
-  - 发送get参数请求：
-  - 发送post参数请求：
-  - 发送cookie参数请求：  
+  
+- [ ] 发送GET参数请求：
+  
+- [x] 发送POST参数请求：
+  
+  - 案例一：直接传入post参数
+  
+  ```go
+  payloads := "http://www.baidu.com/admin"
+  postStr := `username=admin&password=123456`
+  req, err := http.NewRequest("POST", payloads, strings.NewReader(postStr))
+  req.Header.Set("Accept-Encoding", "")
+  req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0")
+  req.Header.Set("Content-Type", " application/x-www-form-urlencoded")
+  ```
+  
+  - 案例二：base64加密之后进行传参
+  
+  ```go
+  payloads := "http://www.baidu.com/admin"
+  base64Table2 := "REJTVEVQIFYzLjAgICAgI"
+  re, e := base64.StdEncoding.DecodeString(base64Table2)
+  if e != nil {
+  	return nil
+  }
+  data := string(re)
+  req, err := http.NewRequest("POST", payloads, strings.NewReader(data))
+  req.Header.Set("Accept-Encoding", "")
+  req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0")
+  req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+  ```
+  
+  - 案例三：使用json格式进行传参
+  
+  ```go
+  payloads := "http://www.baidu.com/admin"
+  data := url.Values{"start":{"0"}, "offset":{"xxxx"}}
+  req, err := http.NewRequest("POST", payloads, strings.NewReader(data.Encode())
+  req.Header.Set("Accept-Encoding", "")
+  req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0")
+  req.Header.Set("Content-Type", "application/json;charset=UTF-8")
+  req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+  ```
+  
+- [ ] 发送cookie参数请求：  
+  
 - [ ] 本节案例：
   
   </details>
@@ -2898,17 +2943,26 @@
 <details>
 <summary>Day305: 库包-Go文本文件</summary>
 
-- [x] 本节说明：本节介绍Go语言处理文本格式的相关内容。
+- [x] 本节说明：本节介绍Go语言处理文本文件格式的相关内容，包括文件的读取、文件的写入等。
 
 - [x] Go文本处理：也就是处理TXT格式的文件。
   
-  - 文本处理在Go开发中用到的比较多，在安全开发中经常会将文本文件的内容作为参数传递给函数，根据响应进行漏洞扫描与漏洞验证。  
+  - 文本处理在Go语言安全开发中用到的比较多，在安全开发中经常会将文本文件的内容作为参数传递给函数，根据响应状态进行漏洞扫描与漏洞验证。 比如带扫描的网站列表，要爆破的账号密码列表等。 
   
 - [x] 按行读取文本文件：
 
-  - io/ioutil
+  - ioutil：案例一：按行读取之按行打印内容
 
-  - 案例一：按行读取之按行打印内容
+    ```go
+    b, err := ioutil.ReadFile(filename)
+    if err != nil {
+    	fmt.Println("Open file error!", err)
+    }
+    fmt.Println(string(b))
+    return string(b)
+    ```
+
+  - os.File：案例二：按行读取之按行打印内容
 
     ```go
     package main
@@ -2937,7 +2991,7 @@
     }
     ```
 
-  - 案例二：按行读取之按行打印内容
+  - bufio：案例三：按行读取之按行打印内容
 
     ```go
     package main
