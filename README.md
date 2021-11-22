@@ -2,7 +2,7 @@
 
 本书籍是记录自己在学习Go语言的过程中遇到的思考与感悟。写作过程中，大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新时间为2021年11月21日。本项目会持续更新，直到海枯石烂。
+本项目创建于2020年9月1日，最近的一次更新时间为2021年11月22日。本项目会持续更新，直到海枯石烂。
 
 项目暂计划共七章。项目未完成，持续更新整理中！感谢关注！今天你学习Go语言了吗？
 
@@ -3039,6 +3039,53 @@
     	}
     }
     
+    ```
+
+  - 案例四：
+
+    ```go
+    func main(){
+    	lines, err := LineReader("file.txt", 0)
+    	if err != nil {
+    	}
+    	for line := range lines {
+    		fmt.Println(line)
+    	}
+    }
+    
+    func LineReader(filename string, noff int64) (chan string,error) {
+    	fp, err := os.Open(filename)
+    	if err != nil {
+    		return nil, err
+    	}
+    
+    	// if offset defined then start from there
+    	if noff > 0 {
+    		// and go to the start of the line
+    		b := make([]byte, 1)
+    		for b[0] != '\n' {
+    			noff--
+    			//fp.Seek(noff, os.SEEK_SET)
+    			fp.Read(b)
+    		}
+    		noff++
+    	}
+    	out := make(chan string)
+    	go func() {
+    		defer fp.Close()
+    		// we need to close the out channel in order
+    		// to signal the end-of-data condition
+    		defer close(out)
+    		scanner := bufio.NewScanner(fp)
+    		scanner.Split(bufio.ScanLines)
+    		for scanner.Scan() {
+    			noff, _ = fp.Seek(0, os.SEEK_CUR)
+    			out <- scanner.Text()
+    		}
+    	}()
+    
+    	return out, nil
+    }
     ```
 
 - [ ] 把文本文件作为参数：
