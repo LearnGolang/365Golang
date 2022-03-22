@@ -1,20 +1,22 @@
 # 《365天深入理解Go语言》
 
-本书籍是记录自己在学习Go语言的过程中遇到的思考与感悟。写作过程中，大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w/LearnGolang)。Less is More or Less is Less.
+本书籍是记录自己在学习Go语言的过程中遇到的问题与思考。写作过程中，大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新时间为2022年1月1日。本项目会持续更新，直到海枯石烂。
+本项目创建于2020年9月1日，最近的一次更新时间为2022年3月22日。本项目会持续更新，直到海枯石烂。
 
-项目暂计划共七章。项目未完成，持续更新整理中！感谢关注！今天你学习Go语言了吗？
+项目暂时计划共七章。项目未完成，持续更新整理中！**今天你学习Go语言了吗？**
 
-- [0x01-Go语言基础](https://github.com/0e0w/365GoLang#0x01-go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80)
-- [0x02-Go语言进阶](https://github.com/0e0w/365GoLang#0x02-go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6)
-- [0x03-Go语言库包](https://github.com/0e0w/365GoLang#0x03-go%E8%AF%AD%E8%A8%80%E5%BA%93%E5%8C%85)
-- [0x04-Go语言算法](https://github.com/0e0w/365GoLang#0x04-go%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95)
-- [0x05-Go安全开发](https://github.com/0e0w/365GoLang#0x05-go%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91)
-- [0x06-Go语言源码](https://github.com/0e0w/365GoLang#0x06-go%E8%AF%AD%E8%A8%80%E6%BA%90%E7%A0%81)
-- [0x07-Go逆向工程](https://github.com/0e0w/365GoLang#0x07-go%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)
+- [01-Go语言基础]()
+- [02-Go语言进阶]()
+- [03-Go语言库包]()
+- [04-Go语言算法]()
+- [05-Go产品开发]()
+- [06-Go语言源码]()
+- [07-Go加密解密]()
 
-## 0x01-Go语言基础
+## 01-Go语言基础
+
+基础不牢地动山摇，此理论不仅适用于建筑行业，在学习Go语言过程中更是这样！即使是最基础的内容，也需要反复学习，多次试验，刻意练习，直至达到深入理解的目的！
 
 <details>
 <summary>Day001: 基础-Go语言入门</summary>
@@ -43,7 +45,7 @@
 - [x] Go语言资源：有大量的教程和代码想项目案例。
 
   - https://github.com/golang
-  - https://github.com/0e0w/LearnGolang
+  - https://github.com/LearnGolang
 
 
 - [x] Go语言安装：
@@ -2636,7 +2638,7 @@
 
   </details>
 
-## 0x02-Go语言进阶
+## 02-Go语言进阶
 
 <details>
 <summary>Day023: 测试-Go语言测试</summary>
@@ -2809,9 +2811,9 @@
 
   </details>
 
-## 0x03-Go语言库包
+## 03-Go语言库包
 
-​		本章节包括大量的案例，这些案例是Go语言官方标准库的使用教学。也包括优秀的第三方库，利用这些第三方库可以构建更完善的项目代码。
+本章节包括大量的案例，这些案例是Go语言官方标准库的使用教学。也包括优秀的第三方库，利用这些第三方库可以构建更完善的项目代码。
 
 <details>
 <summary>Day301: 库包-Go包的管理</summary>
@@ -3247,105 +3249,6 @@
 
 - [x] net/smtp标准库：
 
-  ```go
-  package main
-  
-  import (
-  	"bufio"
-  	"encoding/base64"
-  	"flag"
-  	"fmt"
-  	"io"
-  	"log"
-  	"net/smtp"
-  	"os"
-  	"strings"
-  	"time"
-  )
-  
-  //发送邮件的逻辑函数。这个例子大部分是66所写，感谢66。
-  func SendMail(user, password, host, to, subject, body, mailtype string) error {
-  	hp := strings.Split(host, ":")
-  	auth := smtp.PlainAuth("", user, password, hp[0])
-  	var content_type string
-  	if mailtype == "html" {
-  		content_type = "Content-Type: text/" + mailtype + "; charset=UTF-8"
-  	} else {
-  		content_type = "Content-Type: text/plain" + "; charset=UTF-8"
-  	}
-  
-  	// msg := []byte("To: " + to + "\r\nFrom: " + user + "<" + user + ">\r\nSubject: " + subject + "\r\n" + content_type + "\r\n\r\n" + body)
-  	msg := []byte("To: " + to + "\r\nFrom: " + "fajianren" + "<" + user + ">\r\nSubject: " + subject + "\r\n" + content_type + "\r\n\r\n" + body)
-  
-  	send_to := strings.Split(to, ";")
-  	err := smtp.SendMail(host, auth, user, send_to, msg)
-  	return err
-  }
-  
-  func main() {
-  	// 日志保存到文件中-开始
-  	filename := time.Now().Format("20060102150405") + ".log"
-  	f, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
-  	if err != nil {
-  		log.Fatal(err)
-  	}
-  	defer f.Close()
-  	writers := []io.Writer{
-  		f,
-  		os.Stdout}
-  	fileAndStdoutWriter := io.MultiWriter(writers...)
-  	logger := log.New(fileAndStdoutWriter, "", log.Ldate|log.Ltime)
-  	// 日志保存到文件中-结束
-  
-  	url := "http://127.0.0.1"
-  
-  	host := "smtp.163.com:25"
-  	username := "username@163.com"
-  	password := "password"
-  
-  	logger.Println("程序启动，准备发送邮件！")
-  
-  	var toFileList string
-  
-  	flag.StringVar(&toFileList, "f", "", "指定发送的文件，换行结束。")
-  	flag.Parse()
-  
-  	if toFileList == "" {
-  		fmt.Print("请通过参数 -f 指定接收的邮箱列表！")
-  		return
-  	}
-  	if !strings.HasSuffix(url, "/") {
-  		url += "/"
-  	}
-  	if toFileList != "" {
-  		f, _ := os.Open(toFileList)
-  		defer f.Close()
-  		r := bufio.NewReader(f)
-  		for {
-  			if line, _, err := r.ReadLine(); err == nil {
-  				email := string(line)
-  				diaoyuurl := url + email[0:strings.Index(email, "@")]
-  
-  				subject := "=?UTF-8?B?" + base64.StdEncoding.EncodeToString([]byte("紧急通知：体检报名")) + "?="
-  				body := "<p>全体同事：</p> <p>为了解和掌握员工健康状况、确保员工合理安排健康检查和职业病危害因素检测活动。</p> <p>本年度体检计划将进行调整，从8月开始将分批次安排员工进行上岗前职业健康检查以及在岗期间职业健康检查。</p> <p>请打开如下链接选择合适的时间进行体检报名。每个批次人数报满即止，报名时间截止9月3日。</p> <p>请尽快点击下面链接按照步骤进行报名！</p><a href=\"" + diaoyuurl + "\">第一步：点击填写报名信息</a></p></p><a href=\"http://127.0.0.1\">第二步：点击查看是否报名成功</a></p>"
-  				logger.Println("准备 " + email + " 发送邮件！")
-  				if err := SendMail(username, password, host, email, subject, body, "html"); err != nil {
-  					logger.Println("邮件 "+email+" 发送失败！\n", err.Error())
-  				} else {
-  					logger.Println("邮件 " + email + " 发送成功！")
-  					time.Sleep(time.Duration(3) * time.Second)
-  					logger.Println("休眠 3 秒继续发送！请耐心等待！")
-  				}
-  			} else {
-  				break
-  			}
-  		}
-  	}
-  	logger.Println("邮件已经全部发送完毕！")
-  
-  }
-  ```
-
 - [ ] 本节案例：
   
   </details>
@@ -3492,7 +3395,7 @@
 
   </details>
   
-## 0x04-Go语言算法
+## 04-Go语言算法
 
 <details>
 <summary>Day000: 算法-Go排序算法</summary>
@@ -3636,9 +3539,9 @@
   
   </details>
 
-## 0x05-Go安全开发
+## 05-Go产品开发
 
-​		本章节是在深入学习Go语言的基础上开发安全项目的实例。包括域名扫描、漏洞扫描、密码爆破、病毒免杀等项目。方便在红队攻防领域或是渗透测试领域有自己开发的完善的武器库。
+本章节是在深入学习Go语言的基础上开发安全项目的实例。包括域名扫描、漏洞扫描、密码爆破、病毒免杀等项目。方便在红队攻防领域或是渗透测试领域有自己开发的完善的武器库。
 
 <details>
 <summary>Day000: 安全-Go域名扫描</summary>
@@ -3748,9 +3651,9 @@
 - [ ] 本节案例：
   
   </details>
-## 0x06-Go语言源码
+## 06-Go语言源码
 
-​		本章节是深入理解Go语言必须要学习的内容。包括Go语言底层的功能实现方式，通过深入阅读Go语言源码达到真正深入理解Go语言的境界。
+本章节是深入理解Go语言必须要学习的内容。包括Go语言底层的功能实现方式，通过深入阅读Go语言源码达到真正深入理解Go语言的境界。
 
 <details>
 <summary>Day000: 源码-Go漏洞扫描</summary>
@@ -3781,12 +3684,12 @@
   
   </details>
 
-## 0x07-Go逆向工程
+## 07-Go加密解密
 
-​		本章节是关于逆向工程的内容，包括Go语言开发项目的逆向工程等。
+本章节是关于逆向工程的内容，包括Go语言开发项目的逆向工程等。
 
 <details>
-<summary>Day000: 逆向-Go逆向工程</summary>
+<summary>Day000: 逆向-Go授权认证</summary>
 
 - [ ] 本节说明：
 - [x] Go语言介绍：
@@ -3810,7 +3713,9 @@
   
   </details>
 
-## 0x08-Go参考资源
+## 更新记录
+
+## 致谢名单
 
 特别感谢：[柴树杉](https://github.com/golang-china/gopl-zh)、[无闻](https://github.com/Unknwon/the-way-to-go_ZH_CN)、[李骁](https://github.com/ffhelicopter/Go42)、[老貘](https://gfw.go101.org/article/101.html)、[王炳明](https://github.com/iswbm)、[韩茹](https://github.com/rubyhan1314)
 
@@ -3821,3 +3726,14 @@
 - https://github.com/golang101/golang101
 - https://github.com/iswbm/GolangCodingTime
 - https://space.bilibili.com/353694001
+
+## Stargazers
+
+[![Stargazers @LearnGolang/365Golang](https://reporoster.com/stars/LearnGolang/365Golang)](https://github.com/LearnGolang/365Golang/stargazers)
+
+## Forkers
+
+[![Forkers @LearnGolang/365Golang](https://reporoster.com/forks/LearnGolang/365Golang)](https://github.com/LearnGolang/365Golang/network/members)
+
+
+[![Stargazers over time](https://starchart.cc/LearnGolang/365Golang.svg)](https://starchart.cc/LearnGolang/365Golang)
