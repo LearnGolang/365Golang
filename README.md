@@ -2,7 +2,7 @@
 
 本书籍是记录自己在学习Go语言的过程中遇到的问题与思考。写作过程中，大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。学习Go语言，面向信仰编程！作者：[0e0w](https://github.com/0e0w)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新时间为2022年4月7日。本项目会持续更新，直到海枯石烂。
+本项目创建于2020年9月1日，最近的一次更新时间为2022年4月12日。本项目会持续更新，直到海枯石烂。
 
 项目暂时计划共七章。项目未完成，持续更新整理中！**今天你学习Go语言了吗？**
 
@@ -125,9 +125,22 @@
     ```
     
     ```
-    // Windows下编译Mac, Linux平台的64位可执行程序：
-    CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go
-    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
+    // Windows下编译Mac, Linux平台的64位可执行程序：将下面代码保存为bat格式执行即可。
+    
+    @echo off
+    go build -ldflags "-w -s" main.go
+    
+    @echo off
+    SET CGO_ENABLED=0
+    SET GOOS=darwin
+    SET GOARCH=amd64
+    go build -o Banli_darwin -ldflags "-w -s" main.go
+    
+    @echo off
+    SET CGO_ENABLED=0
+    SET GOOS=linux
+    SET GOARCH=amd64
+    go build -o Banli_linux -ldflags "-w -s" main.go
     ```
     
     ```
@@ -139,6 +152,7 @@
   - 安装依赖：
     
     ```
+    go mod tidy
     go mod download
     go get -u github.com/0e0w/365GoLang
     ```
