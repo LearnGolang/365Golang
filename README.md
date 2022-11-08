@@ -1,8 +1,8 @@
 # 《365天深入理解Go语言》
 
-本书籍是记录自己在学习Go语言的过程中遇到的问题与思考。写作过程中大量参考借鉴甚至是复制了其他类似的项目。感谢每一个项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。**学习Go语言，面向信仰编程！ **作者：[0e0w](https://github.com/0e0w)。Less is More or Less is Less.
+本书籍是记录自己在学习Go语言的过程中遇到的问题与思考。写作过程中大量参考借鉴甚至是复制了其他类似的项目。感谢每一个开源项目，致敬每一位Gopher！尽可能的熟练使用Go语言，尽可能的深入理解Go语言。努力成为Go语言特长型程序员。**学习Go语言，面向信仰编程！** 作者：[0e0w](https://github.com/0e0w)。Less is More or Less is Less.
 
-本项目创建于2020年9月1日，最近的一次更新时间为2022年5月19日。本项目会持续更新，直到海枯石烂。
+本项目创建于2020年9月1日，最近的一次更新时间为2022年11月8日。本项目会持续更新，直到海枯石烂。
 
 项目暂时计划共七章。项目未完成，持续更新整理中！**今天你学习Go语言了吗？**
 
@@ -23,9 +23,9 @@
 
 - [x] 本节说明：本节介绍Go语言的历史与发展。
 - [x] 程序语言概述：程序语言是用来定义计算机程序的形式语言。它是一种被标准化的交流技巧，用来向计算机发出指令，一种能够让程序员准确地定义计算机所需要使用数据的计算机语言，并精确地定义在不同情况下所应当采取的行动。最早的编程语言是在电脑发明之前产生的，当时是用来控制提花织布机及自动演奏钢琴的动作。在电脑领域已发明了上千不同的编程语言，而且每年仍有新的编程语言诞生。
-- [x] Go语言概述：Go语言是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。通过Go语言可以容易的构造出简单、可靠且高效的软件。 Go语言也是开源的，所以编译器、库和工具的源代码都可以免费获得。
+- [x] Go语言概述：Go语言是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。通过Go语言可以容易的构造出简单、可靠且高效的软件。 Go语言本身也是开源的，编译器、库和工具的源代码都可以免费获得。
 
-  - Go语言是由[Robert Griesemer](https://github.com/griesemer)、[Rob Pike](https://github.com/robpike)、[Ken Thompson](https://baike.baidu.com/item/Ken%20Thompson/3441433)在2007年9月开始设计，之后[Ian Lance Taylor](https://github.com/ianlancetaylor/)、[Russ Cox](https://github.com/rsc)加入项目。Go于2009年11月正式宣布推出，成为开放源代码项目，支持Linux、macOS、Windows等操作系统。在2012年发布了Go1稳定版本。
+  - Go语言是由[Robert Griesemer](https://github.com/griesemer)、[Rob Pike](https://github.com/robpike)、[Ken Thompson](https://baike.baidu.com/item/Ken%20Thompson/3441433)在2007年9月开始设计，之后[Ian Lance Taylor](https://github.com/ianlancetaylor/)、[Russ Cox](https://github.com/rsc)加入项目。Go语言于2009年11月正式宣布推出，成为开放源代码项目，支持Linux、macOS、Windows等操作系统。在2012年发布了Go1稳定版本，目前稳定版本是Go1.19。
   - Go语言没有构造或析构函数、没有运算符重载、没有形参默认值、没有异常、没有宏、没有函数注解、没有线程局部存储。Go语言在1.18 中正式支持泛型。
   - Go 语言不是面向对象编程语言：没有类继承，甚至没有类。Go语言以一种不同寻常的方式来诠释面向对象程序设计。
   - Go语言有垃圾回收、有包系统、有一等公民函数、有词法作用域、有系统调用接口等。
@@ -210,7 +210,7 @@
 
 - [x] Go语言代理：
 
-  - Go语言大量项目托管于Github，导致国内进行构建程序时会很慢。可使用下列的代理加快构建。
+  - Go语言大量项目托管在Github，导致国内IP进行构建程序时会很慢，可使用下列的代理加快构建。
 
     ```
     https://mirrors.aliyun.com/goproxy/
@@ -1153,7 +1153,7 @@
   
   </details>
 <details>
-<summary>Day009: 数据-Go语言结构</summary>
+<summary>Day009: 数据-Go的结构体</summary>
 
 - [x] 本节说明：本节介绍Go语言结构体(struct)的相关内容。
 
